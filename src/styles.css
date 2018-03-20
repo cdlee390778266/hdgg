@@ -1,0 +1,50 @@
+/* You can add global styles to this file, and also import other style files */
+html {
+    font-size: 10px;
+}
+body {
+    font-size: 1.4rem !important;
+    background: #f7f7f7;
+    color: #333 !important;
+}
+a {
+    color: #666;
+    text-decoration: none;
+}
+.img-responsive {
+    display: block;
+    width: 100%;
+    max-height: 100%;
+}
+.bgWhite {
+    background: #fff !important;
+}
+.lrSpace {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.mt10 {
+    margin-top: 10px;
+}
+.mb10 {
+    margin-bottom: 10px;
+}
+.tl{
+    text-align: left;
+}
+.tc{
+    text-align: center;
+}
+.tr{
+    text-align: right;
+}
+nz-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
+nz-content {
+    padding-top: 64px;
+}

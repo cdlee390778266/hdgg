@@ -1,0 +1,19 @@
+.hd-footer {
+    padding: 20px 0;
+    font-size: 1.2rem;
+}
+.login-link a{
+    font-size: 1.6rem;
+    color: #333 !important;
+}
+.login-link span {
+    margin:  0 5px;
+}
+.link a {
+    display: inline-block;
+    margin: 0 5px;
+    color: #333;
+}
+.link a:hover {
+    text-decoration: underline;
+}
