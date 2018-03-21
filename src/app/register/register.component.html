@@ -1,0 +1,35 @@
+<nz-layout class="hd-login">
+  <nz-header>
+    <hd-nav-bar viewTitle="注册"></hd-nav-bar>
+  </nz-header>
+  <nz-content>
+  	<form>
+  		<div class="hd-form-group bt" nz-row>
+  			<label nz-col [nzSpan]="6">用户名</label>
+  			<input nz-col [nzSpan]="18" type="" name="">
+  		</div>
+  		<div class="hd-form-group" nz-row>
+  			<label nz-col [nzSpan]="6">电子邮箱</label>
+  			<input nz-col [nzSpan]="18" type="" name="">
+  		</div>
+  		<div class="hd-form-group" nz-row>
+  			<label nz-col [nzSpan]="6">密码</label>
+  			<input nz-col [nzSpan]="18" type="password" name="" minlength="6" maxlength="20">
+  		</div>
+      <div class="hd-form-group" nz-row>
+        <label nz-col [nzSpan]="6">重复密码</label>
+        <input nz-col [nzSpan]="18" type="password" name="" minlength="6" maxlength="20">
+      </div>
+  		<div class="login-btn-box">
+  			<div class="login-btn">
+  				<a href="javascript: void(0);">注册</a>
+  			</div>
+  			<div class="login-tip">
+  				<a></a>
+  				<a routerLink="/login">已有账号？</a>
+  			</div>
+  			
+  		</div>
+  	</form>
+  </nz-content>
+</nz-layout>

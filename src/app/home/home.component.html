@@ -1,7 +1,7 @@
 <nz-layout>
   <nz-header class="home-head">
     <div nz-row>
-        <div nz-col [nzSpan]="4" [nzOffset]="'20'"><a href="javascript: void(0);">登录</a></div>
+        <div nz-col [nzSpan]="4" [nzOffset]="'20'"><a routerLink="/login">登录</a></div>
     </div>
   </nz-header>
   <nz-content>
@@ -12,7 +12,7 @@
     <!-- 九宫格 -->
     <div nz-row class="lattices">
         <div nz-col [nzSpan]="6" *ngFor="let lattice of lattices; let i=index;">
-            <a [routerLink]="['/nav', i]" ><img [src]="lattice.imgSrc"  alt=""  />{{lattice.text}}</a>
+            <a [routerLink]="['/pe', i]" ><img [src]="lattice.imgSrc"  alt=""  />{{lattice.text}}</a>
         </div>
     </div>
     <!-- 文章 -->
@@ -31,7 +31,5 @@
         </div>
     </div>
   </nz-content>
-  <nz-footer class="home-footer bgWhite mt10">
-    <hd-foot></hd-foot>
-  </nz-footer>
+  <hd-foot></hd-foot>
 </nz-layout>

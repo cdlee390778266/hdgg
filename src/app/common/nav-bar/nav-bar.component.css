@@ -5,6 +5,10 @@
     padding: 0 10px;
     background: #3e9bd5;
 }
+.hd-nav-bar a {
+    color: #fff;
+    font-size: 30px;
+}
 .goBack {
     font-size: 20px;
 }

@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit {
   private lattices = [
       {
           imgSrc: '/assets/images/icon1.png',
-          text: '广告体验',
+          text: '产品体验',
           href: ''
       },
       {

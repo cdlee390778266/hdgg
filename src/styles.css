@@ -4,8 +4,9 @@ html {
 }
 body {
     font-size: 1.4rem !important;
-    background: #f7f7f7;
+    background-color: #f7f7f7 !important;
     color: #333 !important;
+    font-family: "微软雅黑" !important;
 }
 a {
     color: #666;
@@ -23,11 +24,21 @@ a {
     padding-left: 10px;
     padding-right: 10px;
 }
+.tbSpace {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
 .mt10 {
     margin-top: 10px;
 }
 .mb10 {
     margin-bottom: 10px;
+}
+.mt20 {
+    margin-top: 20px;
+}
+.mb20 {
+    margin-bottom: 20px;
 }
 .tl{
     text-align: left;
@@ -38,6 +49,12 @@ a {
 .tr{
     text-align: right;
 }
+.bt {
+    border-top: 1px solid #d7d7d7;
+}
+.bb {
+    border-bottom: 1px solid #d7d7d7;
+}
 nz-header {
     position: fixed;
     top: 0;
@@ -47,4 +64,125 @@ nz-header {
 }
 nz-content {
     padding-top: 64px;
+}
+.hd-pe .ant-collapse-header{
+    text-align: center !important;
+    line-height: 40px !important;
+    border-top: 1px solid #d7d7d7;
+}
+.hd-pe .arrow{
+    top: 7px !important;
+    left: auto !important;
+    font-size: 18px !important;
+    color: #333 !important;
+    right: 10px !important;
+}
+.bar {
+    margin-top: 10px;
+    padding: 15px 10px;
+    background: #fff;
+    border-top: 1px solid #d7d7d7;
+    border-bottom: 1px solid #d7d7d7;
+}
+.red {
+    color: red;
+}
+.article p {
+    text-indent: 2em;
+    margin-bottom: 10px;
+}
+.hd-login form{
+    padding-top: 10px;
+    background: #fff;
+}
+.hd-form-group{
+    font-size: 16px;
+    padding: 15px 10px;
+    border-bottom: 1px solid #d7d7d7;
+}
+.hd-form-group label {
+    text-align: right;
+    padding-right: 10px;
+}
+.hd-form-group input {
+    border: none;
+    outline: none;
+}
+.hd-form-group input:focus {
+
+}
+.login-btn-box {
+    padding: 40px 10px;
+}
+.login-btn > a {
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 20px;
+    background: #3e9bd5;
+}
+.login-tip a:first-child {
+    margin-top: 5px;
+    float: left;
+}
+.login-tip a:last-child {
+    margin-top: 5px;
+    color: #d09912;
+    float: right;
+}
+.list {
+    background: #fff;
+}
+.list .list-item {
+    font-size: 1.6rem;
+    color: #333;
+    padding: 15px 10px;
+    border-bottom: 1px solid #d7d7d7;
+}
+.list .list-item:first-child {
+    border-top: 1px solid #d7d7d7;
+}
+.list .list-title {
+    font-size: 1.6rem;
+    color: #333;
+    padding: 10px;
+    border-bottom: 1px solid #d7d7d7;
+    background: #f7f7f7;
+}
+.list .list-item i{
+    text-align: right;
+    font-size: 26px;
+    color: #ddd;
+}
+.list .list-item span:nth-child(2){
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.list .list-item img {
+    height: 24px;
+    float: left;
+}
+.list .list-item strong {
+    font-weight: normal;
+    float: left;
+    margin-left: 10px;
+}
+.c999 {
+    color: #999;
+}
+.blue {
+    color: #3e9bd5;
+}
+.ant-table-wrapper {
+    margin-top: 10px;
+    background: #fff;
+}
+.ant-table-wrapper th, .ant-table-wrapper td {
+    text-align: center !important;
 }

@@ -1,0 +1,18 @@
+.hd-pe-btn {
+	padding: 20px 0;
+}
+.hd-pe-btn a {
+	display: block;
+    width: 80%;
+    padding: 20px 0;
+    text-align: center;
+    background: #ff7404;
+    display: block;
+    margin: 0 auto;
+    color: #fff;
+    border-radius: 4px; 
+}
+.hd-pe-btn a:hover, .hd-pe-btn a:focus {
+	background: #d46a14;
+	transition: all .4s;
+}

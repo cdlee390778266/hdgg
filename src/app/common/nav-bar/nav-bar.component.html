@@ -1,8 +1,11 @@
 <nz-header class="hd-nav-bar">
     <div nz-row>
-        <div nz-col [nzSpan]="4" class="tl goBack"><i class="anticon anticon-left"></i></div>
+        <div nz-col [nzSpan]="4" class="tl goBack"><a href="javascript: history.go(-1);"><i class="anticon anticon-left"></i></a></div>
         <div nz-col [nzSpan]="16">{{viewTitle}}</div>
-        <div nz-col [nzSpan]="4" class="tr"></div>
+        <div nz-col [nzSpan]="4" class="tr">
+            <button (click)="emitter()" *ngIf="hasBtn && btnType == 'btn'">{{btnText}}</button>
+            <a *ngIf="hasBtn && btnType == 'link'" [routerLink]="['/home']"><i class="anticon anticon-home"></i></a>
+        </div>
     </div>
 </nz-header>
 
