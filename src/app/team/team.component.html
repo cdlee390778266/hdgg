@@ -1,0 +1,51 @@
+<nz-layout>
+  <nz-header>
+    <hd-nav-bar viewTitle="团队信息"></hd-nav-bar>
+  </nz-header>
+  <nz-content>
+  	<div class="list ">
+  		<div class="list-title" nz-row>
+  			<span nz-col [nzSpan]="24">我的当前等级：3级</span>
+  		</div>
+  		<div class="lrSpace tc tbSpace c999" nz-row>
+  			<div nz-col [nzSpan]="24"><img src="/assets/images/grade1.png" alt="" class="img-responsive">张三</div>
+  		</div>
+  		<div nz-row class="team-tree bgWhite">
+	  		<div nz-col [nzSpan]="8"><span><img src="/assets/images/grade1.png" alt="">张三</span><i></i></div>
+	  		<div nz-col [nzSpan]="8"><span><img src="/assets/images/grade1.png" alt="">李四</span><i></i></div>
+	  		<div nz-col [nzSpan]="8"><span><img src="/assets/images/grade1.png" alt="">酱油</span><i></i></div>
+	  	</div>
+	  	<div class="list-title bt" nz-row>
+  			<span nz-col [nzSpan]="24">等级详情</span>
+  		</div>
+  		<div class="list-item grade" nz-row>
+  			<span nz-col [nzSpan]="12"><img src="/assets/images/grade1.png" alt="">一级经纪人</span>
+  			<span nz-col [nzSpan]="12"><img src="/assets/images/grade2.png" alt="">二级经纪人</span>
+  			<span nz-col [nzSpan]="12"><img src="/assets/images/grade3.png" alt="">三级经纪人</span>
+  			<span nz-col [nzSpan]="12"><img src="/assets/images/grade4.png" alt="">四级经纪人</span>
+  			<span nz-col [nzSpan]="12"><img src="/assets/images/grade5.png" alt="">五级经纪人</span>
+  			<span nz-col [nzSpan]="12"><img src="/assets/images/grade6.png" alt="">六级经纪人</span>
+  			<span nz-col [nzSpan]="12"><img src="/assets/images/grade7.png" alt="">七级经纪人</span>
+  			<span nz-col [nzSpan]="12"><img src="/assets/images/grade8.png" alt="">八级经纪人</span>
+  		</div>
+  		<div class="list-title" nz-row>
+  			<span nz-col [nzSpan]="24">&nbsp;</span>
+  		</div>
+		<a routerLink="/teamsize" class="list-item" nz-row>
+			<span nz-col [nzSpan]="6">团队规模</span>
+			<span nz-col [nzSpan]="16" class="tr c999"></span>
+			<i nz-col [nzSpan]="2" class="anticon anticon-right"></i>
+		</a>
+		<a routerLink="/upgraded" class="list-item" nz-row>
+			<span nz-col [nzSpan]="6">升级情况</span>
+			<span nz-col [nzSpan]="16" class="tr c999"></span>
+			<i nz-col [nzSpan]="2" class="anticon anticon-right"></i>
+		</a>
+  	</div>
+  	<div class="login-btn-box">
+		<div class="login-btn">
+			<a href="javascript: void(0);">要求加入</a>
+		</div>
+	</div>
+  </nz-content>
+</nz-layout>

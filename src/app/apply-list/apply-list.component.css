@@ -1,0 +1,33 @@
+.apply-list .list-item > a{
+	color: #999;
+	font-size: 1.4rem;
+}
+.apply-list .list-item > a > span > span:first-child {
+	font-size: 1.8rem;
+}
+.apply-list .list-item > a > strong {
+	display: block;
+	font-size: 1.8rem;
+	color: #333;
+	margin-left: 0;
+	font-weight: bold;
+}
+.apply-list .list-item > div {
+	text-align: right;
+	color: #999;
+}
+.apply-list .list-item > div i {
+	font-size: 1.6rem;
+}
+.apply-list .list-item > div p  {
+	font-size: 1.4rem;
+}
+.apply-list .list-item > div p span {
+	margin-left: 20px;
+	color: #3e9bd5;
+}
+.apply-list .list-item > div p span i {
+	font-style: normal;
+	font-size: 2rem;
+	color: #3e9bd5;
+}

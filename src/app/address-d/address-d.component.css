@@ -1,0 +1,9 @@
+.addressD .hd-form-group{
+	border-bottom: none;
+}
+.addressD textarea {
+	resize: none;
+	outline: none;
+	border: 1px solid #d7d7d7;
+	padding: 10px;
+}

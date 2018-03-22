@@ -1,0 +1,39 @@
+<nz-layout class="hd-login">
+  <nz-header>
+    <hd-nav-bar viewTitle="找回密码"></hd-nav-bar>
+  </nz-header>
+  <nz-content>
+  	<form>
+      <div class="hd-form-group bt" nz-row>
+        <label nz-col [nzSpan]="6">商品标题</label>
+        <input nz-col [nzSpan]="18" type="" name="" placeholder="请输入商品标题">
+      </div>
+      <div class="hd-form-group" nz-row>
+        <textarea name="" id="" cols="30" rows="10" class="hd-textarea" nz-col [nzSpan]="18" placeholder="描述一下您的商品吧~"></textarea>
+        <div nz-col [nzSpan]="24" class="mt20">
+          <nz-upload
+            nzAction="https://jsonplaceholder.typicode.com/posts/"
+            nzListType="picture-card"
+            [(nzFileList)]="fileList"
+            [nzShowButton]="fileList.length < 3">
+              <i class="anticon anticon-plus"></i>
+              <div class="ant-upload-text">上传</div>
+          </nz-upload>
+        </div>
+      </div>
+  		<div class="hd-form-group" nz-row>
+  			<label nz-col [nzSpan]="6">商品单价</label>
+  			<input nz-col [nzSpan]="18" type="" name="" placeholder="请输入商品单价">
+  		</div>
+      <div class="hd-form-group" nz-row>
+        <label nz-col [nzSpan]="6">商品数量</label>
+        <input nz-col [nzSpan]="18" type="" name="" placeholder="请输入商品数量">
+      </div>
+  		<div class="login-btn-box">
+  			<div class="login-btn login-btn-green">
+  				<a href="javascript: void(0);">确定上传</a>
+  			</div>
+  		</div>
+  	</form>
+  </nz-content>
+</nz-layout>

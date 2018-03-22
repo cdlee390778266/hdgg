@@ -1,0 +1,37 @@
+.ad {
+	padding: 10px;
+}
+.ad .close {
+	position: absolute;
+    right: 13px;
+    bottom: 10px;
+    color: #999;
+    font-size: 1.7rem;
+}
+.ad-text {
+	padding: 10px;
+	padding-bottom: 20px;
+}
+.ad-text h1 {
+	font-size: 2rem;
+	color: #666;
+}
+.ad-text p {
+	color: #999;
+}
+.ad-empty {
+	padding: 66px 10px;
+	text-align: center;
+	font-size: 1.8rem;
+	color: #999;
+}
+.ad-empty img {
+	width: 30%;
+}
+.ad-empty a {
+	color: #666;
+	margin-top: 20px;
+	padding: 10px 40px;
+    border: 1px solid #3e9bd5;
+    font-size: 1.4rem;
+}

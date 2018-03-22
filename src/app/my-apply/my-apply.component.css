@@ -1,0 +1,14 @@
+.progress {
+	font-size: 1.8rem;
+	line-height: 1.6rem;
+}
+.progress i {
+	display: block;
+	font-style: normal;
+	text-align: left;
+	font-size: 1.2rem;
+	color: #999;
+}
+.examine {
+	font-weight: bold;
+}

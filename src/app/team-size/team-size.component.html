@@ -1,0 +1,23 @@
+<nz-layout class="hd-login">
+  <nz-header>
+    <hd-nav-bar viewTitle="团队规模"></hd-nav-bar>
+  </nz-header>
+  <nz-content>
+	<nz-table #nzTable [nzBordered]="true" [nzDataSource]="data" [nzPageSize]="10"  class="bgWhite upgrade">
+      <thead nz-thead>
+        <tr>
+          <th nz-th>队列</th>
+          <th nz-th>数量</th>
+        </tr>
+      </thead>
+      <tbody nz-tbody>
+        <tr nz-tbody-tr *ngFor="let data of nzTable.data">
+          <td nz-td class="team-td">
+            <img src="/assets/images/grade4.png" height="30"  alt=""/><span>四级</span>
+          </td>
+          <td nz-td>3</td>
+        </tr>
+      </tbody>
+    </nz-table>
+  </nz-content>
+</nz-layout>

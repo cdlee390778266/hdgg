@@ -1,0 +1,8 @@
+.team-td span{
+	position: relative;
+	top: 2px;
+}
+.team-td img{
+	vertical-align: middle;
+	margin-right: 5px;
+}
