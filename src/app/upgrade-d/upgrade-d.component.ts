@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import  { simAnim } from '../animations';
 
 @Component({
   selector: 'hd-upgrade-d',
   templateUrl: './upgrade-d.component.html',
-  styleUrls: ['./upgrade-d.component.css']
+  styleUrls: ['./upgrade-d.component.css'],
+  animations: [simAnim]
 })
 export class UpgradeDComponent implements OnInit {
 

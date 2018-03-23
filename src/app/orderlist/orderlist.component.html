@@ -1,0 +1,46 @@
+<nz-layout>
+  <nz-header>
+    <hd-nav-bar viewTitle="我的订单"></hd-nav-bar>
+  </nz-header>
+  <nz-content>
+  	<div class="list">
+  		<a routerLink="/orderd" nz-row>
+  			<div nz-col [nzSpan]="24" class="product-title">订单已完成 <span>2015-10-28</span> <span>2015-10-28</span><i class="anticon anticon-delete fr"></i></div>
+  			<div nz-col [nzSpan]="8">
+  				<img src="/assets/images/img1.png" alt="" class="img-responsive">
+  			</div>
+  			<div nz-col [nzSpan]="16" class="product-dsc">
+  				<h1>臧马卡</h1>
+  				<p>一份 <span class="blue">￥88.2</span> <span class="line-through">原价: 100.00</span></p>
+  			</div>
+  		</a>
+  		<div class="list-title"></div>
+  		<a routerLink="/orderd" nz-row>
+  			<div nz-col [nzSpan]="24" class="product-title">订单已完成 <span>2015-10-28</span> <span>2015-10-28</span><i class="anticon anticon-delete fr"></i></div>
+  			<div nz-col [nzSpan]="8">
+  				<img src="/assets/images/img1.png" alt="" class="img-responsive">
+  			</div>
+  			<div nz-col [nzSpan]="16" class="product-dsc">
+  				<h1>臧马卡</h1>
+  				<p>一份 <span class="blue">￥88.2</span> <span class="line-through">原价: 100.00</span></p>
+  			</div>
+  		</a>
+  		<div class="list-title"></div>
+  		<a routerLink="/orderd" nz-row>
+  			<div nz-col [nzSpan]="24" class="product-title">订单已完成 <span>2015-10-28</span> <span>2015-10-28</span><i class="anticon anticon-delete fr"></i></div>
+  			<div nz-col [nzSpan]="8">
+  				<img src="/assets/images/img1.png" alt="" class="img-responsive">
+  			</div>
+  			<div nz-col [nzSpan]="16" class="product-dsc">
+  				<h1>臧马卡</h1>
+  				<p>一份 <span class="blue">￥88.2</span> <span class="line-through">原价: 100.00</span></p>
+  			</div>
+  		</a>
+  	</div>
+  	<div class="order-empty" *ngIf="false">
+  		<img src="/assets/images/cart.png"   alt=""/>
+         <p class="mt40 fc999">当前没有订单，马上免费领取体验品吧~</p>
+         <p class="mt20"><a href="" class="btn-blue">免费领取</a></p>
+  	</div>
+  </nz-content>
+</nz-layout>

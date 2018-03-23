@@ -1,53 +1,31 @@
 import { Component, OnInit } from '@angular/core';
+import  { simAnim } from '../animations';
+import { HttpService } from '../http.service'
+import { NzModalService } from 'ng-zorro-antd';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+  animations: [simAnim]
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private httpService: HttpService, private nzModal: NzModalService) { }
 
-  private banners = [
-      {
-          imgSrc: '/assets/images/flash1.png',
-          href: ''
-      },
-      {
-          imgSrc: '/assets/images/flash1.png',
-          href: ''
-      },
-      {
-          imgSrc: '/assets/images/flash1.png',
-          href: ''
-      }
-  ]
+  private banners = []
 
-  private lattices = [
-      {
-          imgSrc: '/assets/images/icon1.png',
-          text: '产品体验',
-          href: ''
-      },
-      {
-          imgSrc: '/assets/images/icon2.png',
-          text: '系统公告',
-          href: ''
-      },
-      {
-          imgSrc: '/assets/images/icon3.png',
-          text: '经纪交流',
-          href: ''
-      },
-      {
-          imgSrc: '/assets/images/icon4.png',
-          text: '互动规则',
-          href: ''
-      }
-  ]
+  private lattices = []
+
+  private article: string;
 
   ngOnInit() {
+    this.httpService.get('/assets/data/banners.json')
+    .subscribe(res => this.banners = res)
+    this.httpService.get('/assets/data/lattices.json')
+    .subscribe(res => this.lattices = res)
+    this.httpService.get('/assets/data/article.json')
+    .subscribe(res => this.article = res.content)
   }
 
 }

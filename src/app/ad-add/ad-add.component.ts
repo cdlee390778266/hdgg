@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import  { simAnim } from '../animations';
 
 @Component({
   selector: 'hd-ad-add',
   templateUrl: './ad-add.component.html',
-  styleUrls: ['./ad-add.component.css']
+  styleUrls: ['./ad-add.component.css'],
+  animations: [simAnim]
 })
 export class AdAddComponent implements OnInit {
 

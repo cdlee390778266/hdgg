@@ -1,0 +1,18 @@
+.orderd-title {
+	font-weight: bold;
+	font-size: 1.8rem;
+}
+.list-item, .list-title {
+	font-size: 1.4rem;
+}
+.orderd-top-title {
+	font-size: 1.8rem;
+	line-height: 1.6rem;
+}
+.orderd-top-title strong {
+	display: block;
+	font-size: 1.2rem;
+	color: #999;	
+	float: none;
+	margin-left: 0;
+}

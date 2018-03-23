@@ -4,7 +4,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
-
+import { HttpService } from './http.service';
+import { LoadingService }  from './loading/loading.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -40,6 +41,9 @@ import { AdUploadComponent } from './ad-upload/ad-upload.component';
 import { MyApplyComponent } from './my-apply/my-apply.component';
 import { ApplyListComponent } from './apply-list/apply-list.component';
 import { SmComponent } from './sm/sm.component';
+import { OrderdComponent } from './orderd/orderd.component';
+import { OrderlistComponent } from './orderlist/orderlist.component';
+import { LoadingComponent } from './loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -75,7 +79,10 @@ import { SmComponent } from './sm/sm.component';
     AdUploadComponent,
     MyApplyComponent,
     ApplyListComponent,
-    SmComponent
+    SmComponent,
+    OrderdComponent,
+    OrderlistComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
@@ -85,7 +92,7 @@ import { SmComponent } from './sm/sm.component';
     BrowserAnimationsModule,
     NgZorroAntdModule.forRoot()
   ],
-  providers: [],
+  providers: [HttpService, LoadingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

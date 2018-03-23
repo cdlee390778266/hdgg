@@ -30,6 +30,8 @@ import { AdUploadComponent } from './ad-upload/ad-upload.component';
 import { MyApplyComponent } from './my-apply/my-apply.component';
 import { ApplyListComponent } from './apply-list/apply-list.component';
 import { SmComponent } from './sm/sm.component';
+import { OrderdComponent } from './orderd/orderd.component';
+import { OrderlistComponent } from './orderlist/orderlist.component';
 
 const routes: Routes = [
   {
@@ -147,6 +149,14 @@ const routes: Routes = [
   {
     path: 'myapply',
     component: MyApplyComponent
+  },
+  {
+    path: 'orderd',
+    component: OrderdComponent
+  },
+  {
+    path: 'orderlist',
+    component: OrderlistComponent
   },
   {
     path: '**',

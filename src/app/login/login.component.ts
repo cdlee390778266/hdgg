@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import  { simAnim } from '../animations';
 import {
   FormBuilder,
   FormGroup,
@@ -8,7 +9,8 @@ import {
 @Component({
   selector: 'hd-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  animations: [simAnim]
 })
 export class LoginComponent implements OnInit {
 

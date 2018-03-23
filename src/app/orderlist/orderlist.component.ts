@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import  { simAnim } from '../animations';
 
 @Component({
-  selector: 'hd-updatepwd',
-  templateUrl: './updatepwd.component.html',
-  styleUrls: ['./updatepwd.component.css'],
+  selector: 'hd-orderlist',
+  templateUrl: './orderlist.component.html',
+  styleUrls: ['./orderlist.component.css'],
   animations: [simAnim]
 })
-export class UpdatepwdComponent implements OnInit {
+export class OrderlistComponent implements OnInit {
 
   constructor() { }
 

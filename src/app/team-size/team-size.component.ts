@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import  { simAnim } from '../animations';
 
 @Component({
   selector: 'hd-team-size',
   templateUrl: './team-size.component.html',
-  styleUrls: ['./team-size.component.css']
+  styleUrls: ['./team-size.component.css'],
+  animations: [simAnim]
 })
 export class TeamSizeComponent implements OnInit {
 
