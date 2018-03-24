@@ -31,7 +31,7 @@ export class HttpService {
     	if(!url) return;
         this.loading.open();
         return this.http.get(url)
-            .pipe(retry(1), catchError(this.handleError))
+            .pipe(tap(data => {this.loading.close();}), catchError(this.handleError))
     }
 
 }
