@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { HttpService } from './http.service';
 import { LoadingService }  from './loading/loading.service';
+import { LoginService } from './login/login.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -92,7 +93,7 @@ import { LoadingComponent } from './loading/loading.component';
     BrowserAnimationsModule,
     NgZorroAntdModule.forRoot()
   ],
-  providers: [HttpService, LoadingService],
+  providers: [HttpService, LoadingService, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

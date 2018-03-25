@@ -20,11 +20,11 @@ export class HomeComponent implements OnInit {
   private article: string;
 
   ngOnInit() {
-    this.httpService.get('/assets/data/banners.json')
+    this.httpService.get('/assets/data/home/banners.json')
     .subscribe(res => this.banners = res)
-    this.httpService.get('/assets/data/lattices.json')
+    this.httpService.get('/assets/data/home/lattices.json')
     .subscribe(res => this.lattices = res)
-    this.httpService.get('/assets/data/article.json')
+    this.httpService.get('/assets/data/home/article.json')
     .subscribe(res => this.article = res.content)
   }
 

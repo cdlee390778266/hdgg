@@ -79,7 +79,7 @@ nz-header {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 9999;
+    z-index: 999;
 }
 nz-content {
     padding-top: 64px;
@@ -136,7 +136,7 @@ nz-content {
 .login-btn-box {
     padding: 40px 10px;
 }
-.login-btn > a {
+.login-btn > a, .login-btn > button {
     display: block !important; 
     width: 70%;
     padding: 10px 0;
@@ -147,11 +147,12 @@ nz-content {
     color: #fff;
     font-size: 20px;
     background: #3e9bd5;
+    transition: all .4s;
 }
-.login-btn-disabled > a{
+.login-btn-disabled > button{
     background: #d0d0d0;
 }
-.login-btn-green > a{
+.login-btn-green > button{
     background: #54cb6c !important;
 }
 .login-tip a:first-child {
@@ -293,4 +294,19 @@ nz-content {
 }
 .ant-spin-dot i{
     background-color: #fff !important;
+}
+.ant-alert-with-description {
+    border-radius: 0 !important;
+}
+.vertical-center-modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.vertical-center-modal .ant-modal {
+  top: 0;
+}
+.hd-tip .ant-modal {
+    display: block;
+    flex: 0 1 auto !important;
 }
