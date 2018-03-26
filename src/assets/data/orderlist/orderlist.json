@@ -1,0 +1,50 @@
+{
+	"status": 200,
+	"statusText": "登录成功",
+	"data": [
+		{
+		  "pid": 10,
+	      "status": "订单已完成",
+	      "date": "2015-08-1",
+	      "time": "20:24:06",
+	      "imgSrc": "/assets/images/img1.png",
+	      "pname": "藏玛卡",
+	      "num": "一份",
+	      "price": "￥88.22",
+	      "sprice": "原价：100.23"
+	    },
+	    {
+		  "pid": 11,
+	      "status": "订单已完成",
+	      "date": "2015-08-11",
+	      "time": "20:24:06",
+	      "imgSrc": "/assets/images/img1.png",
+	      "pname": "藏玛卡",
+	      "num": "一份",
+	      "price": "￥88.22",
+	      "sprice": "原价：100.23"
+	    },
+	    {
+		  "pid": 12,
+	      "status": "订单已完成",
+	      "date": "2015-08-15",
+	      "time": "20:24:06",
+	      "imgSrc": "/assets/images/img1.png",
+	      "pname": "藏玛卡",
+	      "num": "一份",
+	      "price": "￥88.22",
+	      "sprice": "原价：100.23"
+	    },
+	    {
+		  "pid": 13,
+	      "status": "订单已完成",
+	      "date": "2015-08-20",
+	      "time": "20:24:06",
+	      "imgSrc": "/assets/images/img1.png",
+	      "pname": "藏玛卡",
+	      "num": "一份",
+	      "price": "￥88.22",
+	      "sprice": "原价：100.23"
+	    }
+	]
+}

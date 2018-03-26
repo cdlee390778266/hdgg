@@ -29,7 +29,7 @@ export class HttpService {
 
     get(url) {
     	if(!url) return;
-        this.loading.open();
+        //this.loading.open();
         return this.http.get(url)
             .pipe(tap(data => {this.loading.close();}), catchError(this.handleError))
     }

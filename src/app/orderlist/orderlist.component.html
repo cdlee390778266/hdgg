@@ -3,41 +3,22 @@
     <hd-nav-bar viewTitle="我的订单"></hd-nav-bar>
   </nz-header>
   <nz-content>
-  	<div class="list">
-  		<a routerLink="/orderd" nz-row>
-  			<div nz-col [nzSpan]="24" class="product-title">订单已完成 <span>2015-10-28</span> <span>2015-10-28</span><i class="anticon anticon-delete fr"></i></div>
-  			<div nz-col [nzSpan]="8">
-  				<img src="/assets/images/img1.png" alt="" class="img-responsive">
-  			</div>
-  			<div nz-col [nzSpan]="16" class="product-dsc">
-  				<h1>臧马卡</h1>
-  				<p>一份 <span class="blue">￥88.2</span> <span class="line-through">原价: 100.00</span></p>
-  			</div>
-  		</a>
-  		<div class="list-title"></div>
-  		<a routerLink="/orderd" nz-row>
-  			<div nz-col [nzSpan]="24" class="product-title">订单已完成 <span>2015-10-28</span> <span>2015-10-28</span><i class="anticon anticon-delete fr"></i></div>
-  			<div nz-col [nzSpan]="8">
-  				<img src="/assets/images/img1.png" alt="" class="img-responsive">
-  			</div>
-  			<div nz-col [nzSpan]="16" class="product-dsc">
-  				<h1>臧马卡</h1>
-  				<p>一份 <span class="blue">￥88.2</span> <span class="line-through">原价: 100.00</span></p>
-  			</div>
-  		</a>
-  		<div class="list-title"></div>
-  		<a routerLink="/orderd" nz-row>
-  			<div nz-col [nzSpan]="24" class="product-title">订单已完成 <span>2015-10-28</span> <span>2015-10-28</span><i class="anticon anticon-delete fr"></i></div>
-  			<div nz-col [nzSpan]="8">
-  				<img src="/assets/images/img1.png" alt="" class="img-responsive">
-  			</div>
-  			<div nz-col [nzSpan]="16" class="product-dsc">
-  				<h1>臧马卡</h1>
-  				<p>一份 <span class="blue">￥88.2</span> <span class="line-through">原价: 100.00</span></p>
-  			</div>
-  		</a>
+  	<div class="list" *ngIf="data.length">
+      <div *ngFor="let item of data" [@simAnim]="'shrinkOut'">
+    		<div nz-row class="list-item">
+    			<div nz-col [nzSpan]="24" class="product-title">{{item.status}} <span>{{item.date}}</span> <span>{{item.time}}</span><i class="anticon anticon-delete fr" (click)="delete(item)"></i></div>
+    			<div nz-col [nzSpan]="8">
+    				<a routerLink="/orderd/{{item.pid}}"><img src="/assets/images/img1.png" alt="" class="img-responsive"></a>
+    			</div>
+    			<div nz-col [nzSpan]="16" class="product-dsc">
+    				<h1>{{item.pname}}</h1>
+    				<p>{{item.num}} <span class="blue">{{item.price}}</span> <span class="line-through">{{item.sprice}}</span></p>
+    			</div>
+    		</div>
+    		<div class="list-title"></div>
+    	</div>	
   	</div>
-  	<div class="order-empty" *ngIf="false">
+  	<div class="order-empty" *ngIf="!data.length">
   		<img src="/assets/images/cart.png"   alt=""/>
          <p class="mt40 fc999">当前没有订单，马上免费领取体验品吧~</p>
          <p class="mt20"><a href="" class="btn-blue">免费领取</a></p>

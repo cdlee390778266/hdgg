@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import  { simAnim } from '../animations';
+import { Router } from '@angular/router';
+import { LoginService } from '../login/login.service';
+import { HttpService } from '../http.service'
+import { NzModalService } from 'ng-zorro-antd';
+import { CONFIG } from '../config';
 
 @Component({
   selector: 'hd-upgrade',
@@ -9,28 +14,29 @@ import  { simAnim } from '../animations';
 })
 export class UpgradeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private httpService: HttpService, private nzModalService: NzModalService, private loginService: LoginService, private router: Router) { }
 
-  private data = [
-    {
-      key    : '1',
-      name   : 'John Brown',
-      age    : 32,
-      address: 'New York No. 1 Lake Park',
-    }, {
-      key    : '2',
-      name   : 'Jim Green',
-      age    : 42,
-      address: 'London No. 1 Lake Park',
-    }, {
-      key    : '3',
-      name   : 'Joe Black',
-      age    : 32,
-      address: 'Sidney No. 1 Lake Park',
-    }
-  ];
+  private data = [];
+
+  showModal(data) {
+    var that = this;
+    this.nzModalService.open({
+      title: '升级确认框',
+      content : '您确认要升级此等级？',
+      closable: false,
+      wrapClassName: 'vertical-center-modal',
+      onOk() {
+        return new Promise((resolve) => {
+          resolve();
+          that.router.navigate(['/pay']);
+        });
+      }
+    })
+  }
 
   ngOnInit() {
+    this.httpService.get('/assets/data/upgrade/upgrade.json')
+      .subscribe(res => this.data = res.data)
   }
 
 }

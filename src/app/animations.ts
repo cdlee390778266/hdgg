@@ -54,6 +54,10 @@ var opts = {
   zoomOut: [
     style({ transform: '*' }),
     animate(styles.inOutBack, style({ transform: 'scale(.5)' }))
+  ],
+  shrinkOut: [
+    style({ transform: '*' }),
+    animate(styles.inOutBack, style({ height: 0 }))
   ]
 }
 
@@ -69,6 +73,7 @@ export const flyIn = [trigger('flyIn', [transition('void => *', opts.flyIn)])]
 export const flyOut = [trigger('flyOut', [transition('* => void', opts.flyOut)])]
 export const zoomIn = [trigger('zoomIn', [transition('void => *', opts.zoomIn)])]
 export const zoomOut = [trigger('zoomOut', [transition('* => void', opts.zoomOut)])]
+export const shrinkOut = [trigger('shrinkOut', [transition('* => void', opts.shrinkOut)])]
 
 export const simAnim = [
   trigger('simAnim', [
@@ -79,6 +84,7 @@ export const simAnim = [
     transition('* => flyIn', opts.flyIn),
     transition('* => flyOut', opts.flyOut),
     transition('* => zoomIn', opts.zoomIn),
-    transition('* => zoomOut', opts.zoomOut)
+    transition('* => zoomOut', opts.zoomOut),
+    transition('* => void', opts.shrinkOut)
   ])
 ]
