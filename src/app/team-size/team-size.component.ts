@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import  { simAnim } from '../animations';
+import { LoginService } from '../login/login.service';
+import { HttpService } from '../http.service'
+import { NzModalService } from 'ng-zorro-antd';
+import { CONFIG } from '../config';
 
 @Component({
   selector: 'hd-team-size',
@@ -9,28 +13,13 @@ import  { simAnim } from '../animations';
 })
 export class TeamSizeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private httpService: HttpService, private nzModalService: NzModalService, private loginService: LoginService) { }
 
-  private data = [
-    {
-      key    : '1',
-      name   : 'John Brown',
-      age    : 32,
-      address: 'New York No. 1 Lake Park',
-    }, {
-      key    : '2',
-      name   : 'Jim Green',
-      age    : 42,
-      address: 'London No. 1 Lake Park',
-    }, {
-      key    : '3',
-      name   : 'Joe Black',
-      age    : 32,
-      address: 'Sidney No. 1 Lake Park',
-    }
-  ];
+  private data = [];
 
   ngOnInit() {
+    this.httpService.get('/assets/data/teamsize/teamsize.json')
+      .subscribe(res => this.data = res.data)
   }
 
 }

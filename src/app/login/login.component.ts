@@ -43,6 +43,7 @@ export class LoginComponent implements OnInit {
           }
           if(isloginSuccess) {
             this.isLogin = true;
+            this.loginService.setLogin(true);
             var successModal = this.nzModalService.open({
               content : CONFIG.success.s2,
               closable: false,

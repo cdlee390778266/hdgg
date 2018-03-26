@@ -1,0 +1,8 @@
+.upgrade span{
+	position: relative;
+	top: 2px;
+}
+.upgrade img{
+	vertical-align: middle;
+	margin-right: 5px;
+}

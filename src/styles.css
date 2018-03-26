@@ -149,11 +149,11 @@ nz-content {
     background: #3e9bd5;
     transition: all .4s;
 }
-.login-btn-disabled > button{
-    background: #d0d0d0;
-}
 .login-btn-green > button{
     background: #54cb6c !important;
+}
+.login-btn-disabled > button{
+    background: #d0d0d0 !important;
 }
 .login-tip a:first-child {
     margin-top: 5px;

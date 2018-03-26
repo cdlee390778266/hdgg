@@ -3,29 +3,31 @@
     <hd-nav-bar viewTitle="收款账号"></hd-nav-bar>
   </nz-header>
   <nz-content>
-  	<form>
+  	<form #receiveForm="ngForm" (ngSubmit)="save()">
   		<div class="bgWhite">
 	  		<div class="hd-form-group bt" nz-row>
 	  			<label nz-col [nzSpan]="6">支付宝</label>
-	  			<input nz-col [nzSpan]="18" type="" name="" placeholder="请输入支付宝账号">
+	  			<input nz-col [nzSpan]="18" type="" placeholder="请输入支付宝账号" name="zfb" [(ngModel)]="zfb" (keyup)="checkCanSubmit()">
 	  		</div>
 	  		<div class="hd-form-group" nz-row>
 	  			<label nz-col [nzSpan]="6">QQ钱包</label>
-	  			<input nz-col [nzSpan]="18" type="" name="" placeholder="请输入QQ账号">
+	  			<input nz-col [nzSpan]="18" type="" placeholder="请输入QQ账号" name="qq" [(ngModel)]="qq" (keyup)="checkCanSubmit()">
 	  		</div>
 	  		<div class="hd-form-group" nz-row>
 	  			<label nz-col [nzSpan]="6">微信账号</label>
-	  			<input nz-col [nzSpan]="18" type="" name="" placeholder="请输入微信账号">
+	  			<input nz-col [nzSpan]="18" type="" placeholder="请输入微信账号" name="wx" [(ngModel)]="wx" (keyup)="checkCanSubmit()">
 	  		</div>
 	  		<div class="hd-form-group" nz-row>
 	  			<label nz-col [nzSpan]="6">银行卡号</label>
-	  			<input nz-col [nzSpan]="18" type="" name="" placeholder="请输入银行卡号">
+	  			<input nz-col [nzSpan]="18" type="" placeholder="请输入银行卡号" name="yhk" [(ngModel)]="yhk" (keyup)="checkCanSubmit()">
 	  		</div>
+	  		<nz-alert [nzType]="'error'" nzCloseable
+        	[nzDescription]="'至少填写一个收款账号！'" [hidden]="isCanSubmit"></nz-alert>
   		</div>
   		<div class="lrSpace c999">为了您能准确的收到资金，请至少填写一个账号。</div>
   		<div class="login-btn-box">
-  			<div class="login-btn login-btn-green">
-  				<a href="javascript: void(0);">确定</a>
+  			<div class="login-btn login-btn-green" [class.login-btn-disabled]="!isCanSubmit">
+  				<button [disabled]="!isCanSubmit">保存</button>
   			</div>
   		</div>
   	</form>

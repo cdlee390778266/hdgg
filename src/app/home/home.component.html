@@ -1,7 +1,7 @@
 <nz-layout [@simAnim]="'flyIn'">
   <nz-header class="home-head">
     <div nz-row>
-        <div nz-col [nzSpan]="4" [nzOffset]="'20'"><a routerLink="/login">登录</a></div>
+        <div nz-col [nzSpan]="4" [nzOffset]="'20'" *ngIf="isShowTopLink"><a [routerLink]="topLink.href">{{topLink.text}}</a></div>
     </div>
   </nz-header>
   <nz-content>

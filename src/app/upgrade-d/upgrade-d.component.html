@@ -14,10 +14,10 @@
       <tbody nz-tbody>
         <tr nz-tbody-tr *ngFor="let data of nzTable.data">
           <td nz-td class="team-td">
-            <img src="/assets/images/grade4.png" height="30"  alt=""/><span>四级</span>
+            <img [src]="data.imgSrc" height="30"  alt=""/><span>{{data.key}}</span>
           </td>
-          <td nz-td>￥120</td>
-          <td nz-td>1/3</td>
+          <td nz-td>{{data.price}}</td>
+          <td nz-td>{{data.proccess}}</td>
         </tr>
       </tbody>
     </nz-table>

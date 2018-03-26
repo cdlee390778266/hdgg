@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import  { simAnim } from '../animations';
+import { User } from '../login/user';
+import { LoginService } from '../login/login.service';
+import { HttpService } from '../http.service';
 
 @Component({
   selector: 'hd-view',
@@ -9,9 +12,24 @@ import  { simAnim } from '../animations';
 })
 export class ViewComponent implements OnInit {
 
-  constructor() { }
+  constructor(private loginService: LoginService, private httpService: HttpService) { }
+
+  private nname: string;
+
+  private uid: number;
+
+  private level: number;
+
+  private record: number;
 
   ngOnInit() {
+  	this.httpService.get('/assets/data/login/login.json')
+  		.subscribe(res => {
+  			this.nname = this.loginService.getUserVal('nname');
+  			this.uid = this.loginService.getUserVal('uid');
+  			this.level = this.loginService.getUserVal('level');
+  			this.record = this.loginService.getUserVal(['extend', 'record']);
+  		})
   }
 
 }

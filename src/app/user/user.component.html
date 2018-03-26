@@ -4,68 +4,68 @@
   </nz-header>
   <nz-content>
   	<div class="list">
-     <a routerLink="" class="list-item" nz-row>
+     <a routerLink="/updatesingle" [queryParams]="{'title': '我的昵称', 'keyName': 'nname', 'inputText': '我的昵称'}" class="list-item" nz-row>
        <span nz-col [nzSpan]="6">我的昵称</span>
-       <span nz-col [nzSpan]="16" class="tr c999">互动广告</span>
+       <span nz-col [nzSpan]="16" class="tr c999">{{user.nname}}</span>
        <i nz-col [nzSpan]="2" class="anticon anticon-right"></i>
      </a>
-     <a routerLink="" class="list-item" nz-row>
-       <span nz-col [nzSpan]="6">登录名</span>
-       <span nz-col [nzSpan]="16" class="tr c999">13684054806</span>
+     <a routerLink="/updatesingle" [queryParams]="{'title': '用户名', 'keyName': 'name', 'inputText': '用户名'}" class="list-item" nz-row>
+       <span nz-col [nzSpan]="6">用户名</span>
+       <span nz-col [nzSpan]="16" class="tr c999">{{user.name}}</span>
        <i nz-col [nzSpan]="2" class="anticon anticon-right"></i>
      </a>
-     <a routerLink="" class="list-item" nz-row>
+     <a routerLink="/updatesingle" [queryParams]="{'title': '详细地址', 'keyName': 'address', 'inputText': '详细地址'}" class="list-item" nz-row>
        <span nz-col [nzSpan]="6">详细地址</span>
-       <span nz-col [nzSpan]="16" class="tr c999">四川省成都市新都区</span>
+       <span nz-col [nzSpan]="16" class="tr c999">{{user.address}}</span>
        <i nz-col [nzSpan]="2" class="anticon anticon-right"></i>
      </a>
      <div class="list-title" nz-row>
        <span nz-col [nzSpan]="24">联系方式</span>
      </div>
-     <a routerLink="" class="list-item" nz-row>
+     <a routerLink="/updatesingle" [queryParams]="{'title': '电话', 'keyName': 'extend.phone', 'inputText': '电话'}" class="list-item" nz-row>
        <span nz-col [nzSpan]="6">电话</span>
-       <span nz-col [nzSpan]="16" class="tr c999">13684054806</span>
+       <span nz-col [nzSpan]="16" class="tr c999">{{user.extend.phone}}</span>
        <i nz-col [nzSpan]="2" class="anticon anticon-right"></i>
      </a>
-     <a routerLink="/email" class="list-item" nz-row>
+     <a routerLink="/updatesingle" [queryParams]="{'title': '邮箱', 'keyName': 'email', 'inputText': '邮箱'}" class="list-item" nz-row>
        <span nz-col [nzSpan]="6">邮箱</span>
-       <span nz-col [nzSpan]="16" class="tr c999">390778266@qq.com</span>
+       <span nz-col [nzSpan]="16" class="tr c999">{{user.email}}</span>
        <i nz-col [nzSpan]="2" class="anticon anticon-right"></i>
      </a>
      <div class="list-title" nz-row>
        <span nz-col [nzSpan]="24">账号绑定</span>
      </div>
-     <a routerLink="" class="list-item" nz-row>
+     <a routerLink="/updatesingle" [queryParams]="{'title': 'QQ绑定', 'keyName': 'extend.qqAccount', 'inputText': 'QQ账号'}" class="list-item" nz-row>
        <span nz-col [nzSpan]="6"><img src="/assets/images/icon14.png" alt=""><strong>QQ</strong></span>
-       <span nz-col [nzSpan]="16" class="tr blue">未绑定</span>
+       <span nz-col [nzSpan]="16" class="tr blue">{{qqAccount ? '已绑定' : '未绑定'}}</span>
        <i nz-col [nzSpan]="2" class="anticon anticon-right"></i>
      </a>
-     <a routerLink="" class="list-item" nz-row>
+     <a routerLink="/updatesingle" [queryParams]="{'title': '微信绑定', 'keyName': 'extend.wxAccount', 'inputText': '微信账号'}" class="list-item" nz-row>
        <span nz-col [nzSpan]="6"><img src="/assets/images/icon13.png" alt=""><strong>微信</strong></span>
-       <span nz-col [nzSpan]="16" class="tr blue">未绑定</span>
+       <span nz-col [nzSpan]="16" class="tr blue">{{wxAccount ? '已绑定' : '未绑定'}}</span>
        <i nz-col [nzSpan]="2" class="anticon anticon-right"></i>
      </a>
-     <a routerLink="" class="list-item" nz-row>
+     <a routerLink="/updatesingle" [queryParams]="{'title': '陌陌绑定', 'keyName': 'extend.mmAccount', 'inputText': '陌陌账号'}" class="list-item" nz-row>
        <span nz-col [nzSpan]="6"><img src="/assets/images/icon12.png" alt=""><strong>陌陌</strong></span>
-       <span nz-col [nzSpan]="16" class="tr blue">未绑定</span>
+       <span nz-col [nzSpan]="16" class="tr blue">{{mmAccount ? '已绑定' : '未绑定'}}</span>
        <i nz-col [nzSpan]="2" class="anticon anticon-right"></i>
      </a>
-     <a routerLink="" class="list-item" nz-row>
+     <a routerLink="/updatesingle" [queryParams]="{'title': '微博绑定', 'keyName': 'extend.wbAccount', 'inputText': '微博账号'}" class="list-item" nz-row>
        <span nz-col [nzSpan]="6"><img src="/assets/images/icon11.png" alt=""><strong>微博</strong></span>
-       <span nz-col [nzSpan]="16" class="tr blue">未绑定</span>
+       <span nz-col [nzSpan]="16" class="tr blue">{{wbAccount ? '已绑定' : '未绑定'}}</span>
        <i nz-col [nzSpan]="2" class="anticon anticon-right"></i>
      </a>
      <div class="list-title" nz-row>
        <span nz-col [nzSpan]="24">安全信息</span>
      </div>
-     <a routerLink="" class="list-item" nz-row>
+     <a routerLink="/auth" class="list-item" nz-row>
        <span nz-col [nzSpan]="6">实名认证</span>
-       <span nz-col [nzSpan]="16" class="tr c999">应龙</span>
+       <span nz-col [nzSpan]="16" class="tr c999">{{user.rname}}</span>
        <i nz-col [nzSpan]="2" class="anticon anticon-right"></i>
      </a>
-     <a routerLink="" class="list-item" nz-row>
+     <a routerLink="/receive" class="list-item" nz-row>
        <span nz-col [nzSpan]="6">收款账号</span>
-       <span nz-col [nzSpan]="16" class="tr c999">390778266@qq.com</span>
+       <span nz-col [nzSpan]="16" class="tr c999">{{cardId}}</span>
        <i nz-col [nzSpan]="2" class="anticon anticon-right"></i>
      </a>
      <a routerLink="/updatepwd" class="list-item" nz-row>

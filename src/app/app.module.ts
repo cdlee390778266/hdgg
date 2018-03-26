@@ -20,6 +20,7 @@ import { RegisterComponent } from './register/register.component';
 import { GetpwdComponent } from './getpwd/getpwd.component';
 import { UserComponent } from './user/user.component';
 import { EmailComponent } from './email/email.component';
+import { UpdateSingleComponent } from './update-single/update-single.component';
 import { UpdatepwdComponent } from './updatepwd/updatepwd.component';
 import { PayComponent } from './pay/pay.component';
 import { AuthComponent } from './auth/auth.component';
@@ -83,7 +84,8 @@ import { LoadingComponent } from './loading/loading.component';
     SmComponent,
     OrderdComponent,
     OrderlistComponent,
-    LoadingComponent
+    LoadingComponent,
+    UpdateSingleComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,24 @@
+<nz-layout class="hd-login" [@simAnim]="'flyIn'">
+  <nz-header>
+    <hd-nav-bar viewTitle="修改密码"></hd-nav-bar>
+  </nz-header>
+  <nz-content>
+  	<form #updateForm="ngForm" (ngSubmit)="update()">
+  		<div class="hd-form-group bt" nz-row>
+  			<label nz-col [nzSpan]="6">{{inputText}}</label>
+  			<input nz-col [nzSpan]="18" type="text" name="inputVal" [(ngModel)]="inputVal" placeholder="请输入{{inputText}}" required #inputRef="ngModel" (focus)="hideUpdateError()">
+  		</div>
+
+      <nz-alert [nzType]="'error'" nzCloseable
+        [nzDescription]="'请输入'+inputText" [hidden]="inputRef.valid || inputRef.pristine"></nz-alert>
+
+        <nz-alert [nzType]="'error'" nzCloseable
+        [nzDescription]="'修改'+ inputText + '失败，请检查输入是否正确！'" [hidden]="isUpdateSuccess"></nz-alert>
+  		<div class="login-btn-box">
+  			<div class="login-btn" [class.login-btn-disabled]="!updateForm.form.valid">
+  				<button type="submit" [disabled]="!updateForm.form.valid">保存</button>
+  			</div>
+  		</div>
+  	</form>
+  </nz-content>
+</nz-layout>

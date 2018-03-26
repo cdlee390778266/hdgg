@@ -1,0 +1,46 @@
+{
+	"status": 200,
+	"statusText": "登录成功",
+	"data": [
+		{
+	      "key": "一级",
+	      "num": 1,
+	      "imgSrc": "/assets/images/grade1.png"
+	    },
+	    {
+	      "key": "二级",
+	      "num": 2,
+	      "imgSrc": "/assets/images/grade2.png"
+	    },
+	    {
+	      "key": "三级",
+	      "num": 3,
+	      "imgSrc": "/assets/images/grade3.png"
+	    },
+	    {
+	      "key": "四级",
+	      "num": 4,
+	      "imgSrc": "/assets/images/grade4.png"
+	    },
+	    {
+	      "key": "五级",
+	      "num": 5,
+	      "imgSrc": "/assets/images/grade5.png"
+	    },
+	    {
+	      "key": "六级",
+	      "num": 6,
+	      "imgSrc": "/assets/images/grade6.png"
+	    },
+	    {
+	      "key": "七级",
+	      "num": 7,
+	      "imgSrc": "/assets/images/grade7.png"
+	    },
+	    {
+	      "key": "八级",
+	      "num": 8,
+	      "imgSrc": "/assets/images/grade8.png"
+	    }
+	]
+}

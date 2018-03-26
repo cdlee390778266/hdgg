@@ -7,6 +7,7 @@ import { RegisterComponent } from './register/register.component';
 import { GetpwdComponent } from './getpwd/getpwd.component';
 import { PEComponent } from './pe/pe.component';
 import { UserComponent } from './user/user.component';
+import { UpdateSingleComponent } from './update-single/update-single.component';
 import { EmailComponent } from './email/email.component';
 import { UpdatepwdComponent } from './updatepwd/updatepwd.component';
 import { PayComponent } from './pay/pay.component';
@@ -57,6 +58,10 @@ const routes: Routes = [
   {
     path: 'user',
     component: UserComponent
+  },
+  {
+    path: 'updatesingle',
+    component: UpdateSingleComponent
   },
   {
     path: 'email',
@@ -119,43 +124,43 @@ const routes: Routes = [
     component: ViewComponent
   },
   {
-    path: 'team',
+    path: 'team/:id',
     component: TeamComponent
   },
   {
-    path: 'teamsize',
+    path: 'teamsize/:id',
     component: TeamSizeComponent
   },
   {
-    path: 'upgraded',
+    path: 'upgraded/:id',
     component: UpgradeDComponent
   },
   {
-    path: 'examine',
+    path: 'examine/:id',
     component: ExamineComponent
   },
   {
-    path: 'adadd',
+    path: 'adadd/:id',
     component: AdAddComponent
   },
   {
-    path: 'adupload',
+    path: 'adupload/:id',
     component: AdUploadComponent
   },
   {
-    path: 'applylist',
+    path: 'applylist/:id',
     component: ApplyListComponent
   },
   {
-    path: 'myapply',
+    path: 'myapply/:id',
     component: MyApplyComponent
   },
   {
-    path: 'orderd',
+    path: 'orderd/:id',
     component: OrderdComponent
   },
   {
-    path: 'orderlist',
+    path: 'orderlist/:id',
     component: OrderlistComponent
   },
   {

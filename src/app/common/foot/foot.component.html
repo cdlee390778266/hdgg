@@ -1,5 +1,5 @@
 <nz-footer class="hd-footer">
-	<p class="login-link">
+	<p class="login-link" *ngIf="!isLogin">
 		<a routerLink="/login">登录</a><span>|</span>
 		<a routerLink="/register">注册</a>
 	</p>

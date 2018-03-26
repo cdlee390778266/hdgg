@@ -3,22 +3,31 @@
     <hd-nav-bar viewTitle="修改密码"></hd-nav-bar>
   </nz-header>
   <nz-content>
-  	<form>
+  	<form #upPwdForm="ngForm" (ngSubmit)="upPwd()">
   		<div class="hd-form-group bt" nz-row>
   			<label nz-col [nzSpan]="6">旧密码</label>
-  			<input nz-col [nzSpan]="18" type="password" name="">
+  			<input nz-col [nzSpan]="18" type="password" name="oldPwd" [(ngModel)]="oldPwd" placeholder="请输入旧密码" required #oldPwdRef="ngModel" minlength="6" maxlength="20" (focus)="hideUpdatePwdError()">
   		</div>
+      <nz-alert [nzType]="'error'" nzCloseable
+        [nzDescription]="'请输入6-20位的旧密码！'" [hidden]="oldPwdRef.valid || oldPwdRef.pristine"></nz-alert>
   		<div class="hd-form-group" nz-row>
   			<label nz-col [nzSpan]="6">新密码</label>
-  			<input nz-col [nzSpan]="18" type="password" name="">
+  			<input nz-col [nzSpan]="18" type="password" name="newPwd" [(ngModel)]="newPwd" placeholder="请输入新密码" required #newPwdRef="ngModel" minlength="6" maxlength="20" (focus)="hideUpdatePwdError()">
   		</div>
+      <nz-alert [nzType]="'error'" nzCloseable
+        [nzDescription]="'请输入6-20位的新密码！'" [hidden]="newPwdRef.valid || newPwdRef.pristine"></nz-alert>
   		<div class="hd-form-group" nz-row>
   			<label nz-col [nzSpan]="6">重复密码</label>
-  			<input nz-col [nzSpan]="18" type="password" name="">
+  			<input nz-col [nzSpan]="18" type="password" name="confirmPwd" [(ngModel)]="confirmPwd" placeholder="请重复输入新密码" required #confirmPwdRef="ngModel" minlength="6" maxlength="20" (focus)="hideUpdatePwdError()">
   		</div>
+      <nz-alert [nzType]="'error'" nzCloseable
+        [nzDescription]="'重复密码与新密码不同！'" [hidden]=" confirmPwdRef.pristine || confirmPwdRef.value == newPwdRef.value"></nz-alert>
+
+        <nz-alert [nzType]="'error'" nzCloseable
+        [nzDescription]="'修改密码失败，旧密码不正确！'" [hidden]="isUpdateSuccess"></nz-alert>
   		<div class="login-btn-box">
-  			<div class="login-btn">
-  				<a href="javascript: void(0);">修改</a>
+  			<div class="login-btn" [class.login-btn-disabled]="!upPwdForm.form.valid">
+  				<button type="submit" [disabled]="!upPwdForm.form.valid">修改</button>
   			</div>
   		</div>
   	</form>

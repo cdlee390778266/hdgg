@@ -5,7 +5,7 @@
   <nz-content>
   	<div class="list ">
   		<div class="list-title" nz-row>
-  			<span nz-col [nzSpan]="24">我的当前等级：3级</span>
+  			<span nz-col [nzSpan]="24">我的当前等级：{{level}}级</span>
   		</div>
   		<div class="lrSpace tc tbSpace c999" nz-row>
   			<div nz-col [nzSpan]="24"><img src="/assets/images/grade1.png" alt="" class="img-responsive">张三</div>
@@ -31,12 +31,12 @@
   		<div class="list-title" nz-row>
   			<span nz-col [nzSpan]="24">&nbsp;</span>
   		</div>
-		<a routerLink="/teamsize" class="list-item" nz-row>
+		<a routerLink="/teamsize/{{uid}}" class="list-item" nz-row>
 			<span nz-col [nzSpan]="6">团队规模</span>
 			<span nz-col [nzSpan]="16" class="tr c999"></span>
 			<i nz-col [nzSpan]="2" class="anticon anticon-right"></i>
 		</a>
-		<a routerLink="/upgraded" class="list-item" nz-row>
+		<a routerLink="/upgraded/{{uid}}" class="list-item" nz-row>
 			<span nz-col [nzSpan]="6">升级情况</span>
 			<span nz-col [nzSpan]="16" class="tr c999"></span>
 			<i nz-col [nzSpan]="2" class="anticon anticon-right"></i>
@@ -44,7 +44,7 @@
   	</div>
   	<div class="login-btn-box">
 		<div class="login-btn">
-			<a href="javascript: void(0);">要求加入</a>
+			<a href="javascript: void(0);" (click)="apply()">要求加入</a>
 		</div>
 	</div>
   </nz-content>
