@@ -31,3 +31,6 @@
 	font-size: 2rem;
 	color: #3e9bd5;
 }
+.list-title:last-child {
+	border: none;
+}

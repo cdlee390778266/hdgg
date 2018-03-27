@@ -19,7 +19,6 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { GetpwdComponent } from './getpwd/getpwd.component';
 import { UserComponent } from './user/user.component';
-import { EmailComponent } from './email/email.component';
 import { UpdateSingleComponent } from './update-single/update-single.component';
 import { UpdatepwdComponent } from './updatepwd/updatepwd.component';
 import { PayComponent } from './pay/pay.component';
@@ -46,6 +45,7 @@ import { SmComponent } from './sm/sm.component';
 import { OrderdComponent } from './orderd/orderd.component';
 import { OrderlistComponent } from './orderlist/orderlist.component';
 import { LoadingComponent } from './loading/loading.component';
+import { RecordComponent } from './record/record.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +59,6 @@ import { LoadingComponent } from './loading/loading.component';
     RegisterComponent,
     GetpwdComponent,
     UserComponent,
-    EmailComponent,
     UpdatepwdComponent,
     PayComponent,
     AuthComponent,
@@ -85,7 +84,8 @@ import { LoadingComponent } from './loading/loading.component';
     OrderdComponent,
     OrderlistComponent,
     LoadingComponent,
-    UpdateSingleComponent
+    UpdateSingleComponent,
+    RecordComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,6 @@
 .ad {
 	padding: 10px;
+	transition: all .4s;
 }
 .ad .close {
 	position: absolute;
@@ -18,6 +19,8 @@
 }
 .ad-text p {
 	color: #999;
+	height: 40px;
+    overflow: hidden;
 }
 .ad-empty {
 	padding: 66px 10px;
@@ -34,4 +37,10 @@
 	padding: 10px 40px;
     border: 1px solid #3e9bd5;
     font-size: 1.4rem;
+}
+.ad-img {
+	display: block;
+	width: 100%;
+	height: 100px;
+	background-size: cover;
 }

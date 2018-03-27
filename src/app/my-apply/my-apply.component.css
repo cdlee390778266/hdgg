@@ -12,3 +12,30 @@
 .examine {
 	font-weight: bold;
 }
+.pop_mes {
+	margin-top: 100px;
+}
+.pop_mes .fc54 {
+	color: #54cb6c;
+	font-size: 1.6rem;
+}
+.btn-blue {
+	position: relative;
+	top: 20px;
+}
+.pop-body h1 {
+	font-size: 1.6rem;
+	font-weight: bold;
+}
+.pop-success img {
+	position: relative;
+	top: -46px;
+	width: 280px;
+}
+.pop-title {
+	position: relative;
+	z-index: 2;
+}
+.pop-success {
+	margin-top: 66px;
+}

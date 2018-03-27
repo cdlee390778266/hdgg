@@ -3,62 +3,24 @@
     <hd-nav-bar viewTitle="广告列表"></hd-nav-bar>
   </nz-header>
   <nz-content>
-  	<div nz-row class="mt10 ">
-  		<div nz-col [nzSpan]="12" class="ad">
-  			<div class="close"><i class="anticon anticon-delete"></i></div>
+  	<div nz-row class="mt10 " *ngIf="data.length">
+  		<div nz-col [nzSpan]="12" class="ad oh" *ngFor="let item of data" [@simAnim]="'opts.shrinkhwOut'">
+  			<div class="close" (click)="showModal(item)"><i class="anticon anticon-delete"></i></div>
   			<div class="bgWhite">
-	  			<div class="ad-img">
-	  				<a routerLink="/adadd"><img src="/assets/images/data_img3.png" alt="" class="img-responsive"></a>
-	  			</div>
+	  			<a class="ad-img" routerLink="/adadd/99" [ngStyle]="{'background-image': 'url(' + item.imgsrc +')'}"></a>
 	  			<div class="ad-text">
-	  				<h1>皇朝御窖陈酿</h1>
-	  				<p>皇朝御窖35年 皇家味 香型：浓香型 酒精</p>
-	  			</div>
-	  		</div>
-		</div>
-		<div nz-col [nzSpan]="12" class="ad">
-  			<div class="close"><i class="anticon anticon-delete"></i></div>
-  			<div class="bgWhite">
-	  			<div class="ad-img">
-	  				<a routerLink="/adadd"><img src="/assets/images/data_img3.png" alt="" class="img-responsive"></a>
-	  			</div>
-	  			<div class="ad-text">
-	  				<h1>皇朝御窖陈酿</h1>
-	  				<p>皇朝御窖35年 皇家味 香型：浓香型 酒精</p>
-	  			</div>
-	  		</div>
-		</div>
-		<div nz-col [nzSpan]="12" class="ad">
-  			<div class="close"><i class="anticon anticon-delete"></i></div>
-  			<div class="bgWhite">
-	  			<div class="ad-img">
-	  				<a routerLink="/adadd"><img src="/assets/images/data_img3.png" alt="" class="img-responsive"></a>
-	  			</div>
-	  			<div class="ad-text">
-	  				<h1>皇朝御窖陈酿</h1>
-	  				<p>皇朝御窖35年 皇家味 香型：浓香型 酒精</p>
-	  			</div>
-	  		</div>
-		</div>
-		<div nz-col [nzSpan]="12" class="ad">
-  			<div class="close"><i class="anticon anticon-delete"></i></div>
-  			<div class="bgWhite">
-	  			<div class="ad-img">
-	  				<a routerLink="/adadd"><img src="/assets/images/data_img3.png" alt="" class="img-responsive"></a>
-	  			</div>
-	  			<div class="ad-text">
-	  				<h1>皇朝御窖陈酿</h1>
-	  				<p>皇朝御窖35年 皇家味 香型：浓香型 酒精</p>
+	  				<h1>{{item.title}}</h1>
+	  				<p>{{item.dsc}}</p>
 	  			</div>
 	  		</div>
 		</div>
 	</div>
 	<!-- 没有广告 -->
-	<div nz-row class="mt10 ">
+	<div nz-row class="mt10 " *ngIf="!data.length">
   		<div nz-col [nzSpan]="24" class="ad-empty">
   			<img src="/assets/images/up_ad.png" alt=""><br>
   			快点上传广告体验商品吧~ <br>和大家分享你的好东西<br><br>
-  			<a href="" routerLink="/adadd">我要上传</a>
+  			<a href="" routerLink="/adadd/99">我要上传</a>
   		</div>
   	</div>
   </nz-content>

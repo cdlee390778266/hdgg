@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import  { simAnim } from '../animations';
+import { LoginService } from '../login/login.service';
+import { HttpService } from '../http.service'
+import { NzModalService } from 'ng-zorro-antd';
+import { CONFIG } from '../config';
 
 @Component({
   selector: 'hd-examine',
@@ -9,9 +13,13 @@ import  { simAnim } from '../animations';
 })
 export class ExamineComponent implements OnInit {
 
-  constructor() { }
+  constructor(private httpService: HttpService, private nzModalService: NzModalService, private loginService: LoginService) { }
+
+  private data: Array<Object>;
 
   ngOnInit() {
+  	this.httpService.get('/assets/data/examine/examine.json')
+      .subscribe(res => this.data = res.data)
   }
 
 }

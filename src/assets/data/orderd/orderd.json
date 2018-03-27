@@ -1,0 +1,26 @@
+{
+	"status": 200,
+	"statusText": "登录成功",
+	"data": {
+	      "pid": 12,
+            "status": 1,
+            "statusText": "订单已发货",
+            "statusText1": "等待买家发货",
+            "date": "2015-08-15",
+            "time": "20:24:06",
+            "imgSrc": "/assets/images/img1.png",
+            "pname": "藏玛卡",
+            "num": "X1",
+            "price": "￥88.22",
+            "tprice": "￥88.22",
+            "pstype": "快递",
+            "psid": 1568546854652135,
+            "ddid": 1568546854652135,
+            "ddname": "大古",
+            "ddphone": 3903028,
+            "ddaddress": "四川省成都市锦江区XXXX",
+            "paytype": "微信支付",
+            "dddate": "2015-10-28 11:44",
+            "sddate": "2015-10-29 08:44"
+      }
+}

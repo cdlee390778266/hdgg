@@ -4,38 +4,19 @@
   </nz-header>
   <nz-content>
   	<div class="list apply-list">
-     <div class="list-item" nz-row>
-       <a routerLink="/myapply" nz-col [nzSpan]="16">
-         <span><span class="red">待审核</span><span class="ml10 line-through">2015-10-28</span> <span class="ml10">11:44:33</span></span>
-         <strong>申请人：猫儿</strong>
-       </a>
-       <div nz-col [nzSpan]="8">
-         <i class="anticon anticon-delete"></i>
-         <p>第一级 <span>￥<i>60</i></span></p>
-       </div>
-     </div> 
-     <div class="list-title"></div>
-     <div class="list-item mt10" nz-row>
-       <a routerLink="/myapply" nz-col [nzSpan]="16">
-         <span><span class="red">待审核</span><span class="ml10 line-through">2015-10-28</span> <span class="ml10">11:44:33</span></span>
-         <strong>申请人：猫儿</strong>
-       </a>
-       <div nz-col [nzSpan]="8">
-         <i class="anticon anticon-delete"></i>
-         <p>第一级 <span>￥<i>60</i></span></p>
-       </div>
-     </div> 
-     <div class="list-title"></div>
-     <div class="list-item mt10" nz-row>
-       <a routerLink="/myapply" nz-col [nzSpan]="16">
-         <span><span class="red">待审核</span><span class="ml10 line-through">2015-10-28</span> <span class="ml10">11:44:33</span></span>
-         <strong>申请人：猫儿</strong>
-       </a>
-       <div nz-col [nzSpan]="8">
-         <i class="anticon anticon-delete"></i>
-         <p>第一级 <span>￥<i>60</i></span></p>
-       </div>
-     </div> 
+      <div *ngFor="let item of data" [@simAnim]="'shrinkOut'" class="oh">
+       <div class="list-item" nz-row>
+         <a routerLink="/myapply/{{item?.sid}}" nz-col [nzSpan]="16">
+           <span><span class="red">{{item?.statusText}}</span><span class="ml10 line-through">{{item?.date}}</span> <span class="ml10">{{item?.time}}</span></span>
+           <strong>申请人：{{item?.sname}}</strong>
+         </a>
+         <div nz-col [nzSpan]="8">
+           <i class="anticon anticon-delete" (click)="showModal(item)"></i>
+           <p>{{item?.slevel}} <span>￥<i>{{item?.price}}</i></span></p>
+         </div>
+       </div> 
+       <div class="list-title"></div>
+      </div>
     </div>
   </nz-content>
 </nz-layout>

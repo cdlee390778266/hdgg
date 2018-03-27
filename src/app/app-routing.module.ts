@@ -8,7 +8,6 @@ import { GetpwdComponent } from './getpwd/getpwd.component';
 import { PEComponent } from './pe/pe.component';
 import { UserComponent } from './user/user.component';
 import { UpdateSingleComponent } from './update-single/update-single.component';
-import { EmailComponent } from './email/email.component';
 import { UpdatepwdComponent } from './updatepwd/updatepwd.component';
 import { PayComponent } from './pay/pay.component';
 import { AuthComponent } from './auth/auth.component';
@@ -33,6 +32,7 @@ import { ApplyListComponent } from './apply-list/apply-list.component';
 import { SmComponent } from './sm/sm.component';
 import { OrderdComponent } from './orderd/orderd.component';
 import { OrderlistComponent } from './orderlist/orderlist.component';
+import { RecordComponent } from './record/record.component';
 
 const routes: Routes = [
   {
@@ -62,10 +62,6 @@ const routes: Routes = [
   {
     path: 'updatesingle',
     component: UpdateSingleComponent
-  },
-  {
-    path: 'email',
-    component: EmailComponent
   },
   {
     path: 'updatepwd',
@@ -162,6 +158,10 @@ const routes: Routes = [
   {
     path: 'orderlist/:id',
     component: OrderlistComponent
+  },
+  {
+    path: 'record',
+    component: RecordComponent
   },
   {
     path: '**',

@@ -1,0 +1,60 @@
+{
+	"status": 200,
+	"statusText": "登录成功",
+	"data": [
+        {
+  	         "sid": 12,
+             "statusText": "待审核",
+             "date": "2015-10-28",
+             "time": "11.22.11",
+             "sname": "阿卡",
+             "slevel": "第一级",
+             "price": 60
+        },
+        {
+             "sid": 13,
+             "statusText": "待审核",
+             "date": "2015-09-08",
+             "time": "11.22.11",
+             "sname": "暗夜猫娘",
+             "slevel": "第一级",
+             "price": 60
+        },
+        {
+             "sid": 14,
+             "statusText": "待审核",
+             "date": "2016-12-28",
+             "time": "11.22.11",
+             "sname": "暗夜猫娘",
+             "slevel": "第一级",
+             "price": 60
+        },
+        {
+             "sid": 15,
+             "statusText": "待审核",
+             "date": "2015-01-28",
+             "time": "11.22.11",
+             "sname": "暗夜猫娘",
+             "slevel": "第一级",
+             "price": 60
+        },
+        {
+             "sid": 16,
+             "statusText": "待审核",
+             "date": "2005-10-28",
+             "time": "11.22.11",
+             "sname": "暗夜猫娘",
+             "slevel": "第一级",
+             "price": 60
+        },
+        {
+             "sid": 19,
+             "statusText": "待审核",
+             "date": "2015-10-28",
+             "time": "11.22.11",
+             "sname": "暗夜猫娘",
+             "slevel": "第一级",
+             "price": 60
+        }
+      ]
+}

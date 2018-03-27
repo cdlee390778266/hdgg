@@ -1,0 +1,18 @@
+{
+	"status": 200,
+	"statusText": "登录成功",
+	"data": {
+	      "pid": 12,
+            "status": 0,
+            "statusText": "已通过",
+            "statusText1": "您已通过猫儿的审核",
+            "shid": 3978266,
+            "shname": "叶子",
+            "shphone": 13684054802,
+            "yhtype": "工商银行",
+            "yhid": 6217995840011368578,
+            "price": "￥60",
+            "level": "第一级",
+            "date": "2015-10-28 11:44"
+      }
+}

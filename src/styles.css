@@ -310,3 +310,13 @@ nz-content {
     display: block;
     flex: 0 1 auto !important;
 }
+.ant-layout {
+    background: #f7f7f7 !important;
+}
+.oh {
+    overflow: hidden !important;
+}
+.qy-modal .ant-modal-body {
+    font-size: 1.8rem;
+    text-align: center;
+ }

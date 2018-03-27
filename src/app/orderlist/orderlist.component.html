@@ -4,7 +4,7 @@
   </nz-header>
   <nz-content>
   	<div class="list" *ngIf="data.length">
-      <div *ngFor="let item of data" [@simAnim]="'shrinkOut'">
+      <div *ngFor="let item of data" [@simAnim]="'shrinkOut'" class="oh">
     		<div nz-row class="list-item">
     			<div nz-col [nzSpan]="24" class="product-title">{{item.status}} <span>{{item.date}}</span> <span>{{item.time}}</span><i class="anticon anticon-delete fr" (click)="delete(item)"></i></div>
     			<div nz-col [nzSpan]="8">

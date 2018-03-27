@@ -1,9 +1,9 @@
-<nz-layout [@simAnim]="'flyIn'" class="agent">
+<nz-layout class="agent" [@simAnim]="'flyIn'">
   <nz-header>
-    <hd-nav-bar viewTitle="签约代理"></hd-nav-bar>
+    <hd-nav-bar viewTitle="积分"></hd-nav-bar>
   </nz-header>
   <nz-content>
-  	<div nz-row class="bgWhite lrSpace tbSpace">
+  	<div nz-row class="bgWhite lrSpace tbSpace record">
         <div nz-col [nzSpan]="24">
         	<h1 class="tc mt20">互动广告经纪人积分规则</h1>
             <p class="mt10">一、积分取得办法：</p>
@@ -25,17 +25,6 @@
             <p><img src="/assets/images/p_dot3.png"  alt=""/>注册拥有经纪人账号积200分原始积分</p>
         </div>
     </div>
-    <div class="login-btn-box">
-      <div class="login-btn">
-        <button (click)="showModal(confirmTpl)">我要签约</button>
-      </div>
-    </div>
-
-    <ng-template #confirmTpl>
-      <div>
-        <p>我们将扣除3万积分</p>
-        <p class="mt10"><img src="/assets/images/mes.png"  height="100" alt="" /></p>
-      </div>
-    </ng-template>
   </nz-content>
+  <hd-foot></hd-foot>
 </nz-layout>
