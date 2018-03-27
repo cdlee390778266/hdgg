@@ -10,16 +10,13 @@
            		<span>邀请您一生中最想帮助的人</span>
   			</div>
   		</div>
-		<div class="list-item" nz-row>
-			<span nz-col [nzSpan]="24">我已经成为互动广告经纪人...</span>
-		</div>
-		<div class="list-item" nz-row>
-			<span nz-col [nzSpan]="24">我已经成为互动广告经纪人...</span>
-		</div>
+  		<div class="list-item" [class.list-item-active]="item.isactive" nz-row *ngFor="let item of data" (click)="changeStatus(item)">
+  			<span nz-col [nzSpan]="24">{{item.mdetail}}</span>
+  		</div>
   	</div>
   	<div class="login-btn-box">
-		<div class="login-btn login-btn-green">
-			<a href="javascript: void(0);">发送</a>
+		<div class="login-btn login-btn-green" [class.login-btn-disabled]="!isCanSend">
+			<button (click)="send()">发送</button>
 		</div>
 	</div>
   </nz-content>

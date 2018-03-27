@@ -1,0 +1,26 @@
+{
+	"status": 200,
+	"statusText": "登录成功",
+	"data": [
+		{
+			"mid": 1,
+			"mdetail": "我已经成为互动广告经纪人,你也快来申请吧，优惠多多，福利多多",
+			"isactive": false
+		},
+		{
+			"mid": 2,
+			"mdetail": "我已经成为互动广告经纪人,你也快来申请吧，优惠多多，福利多多",
+			"isactive": false 
+		},
+		{
+			"mid": 3,
+			"mdetail": "我已经成为互动广告经纪人,你也快来申请吧，优惠多多，福利多多",
+			"isactive": false 
+		},
+		{
+			"mid": 4,
+			"mdetail": "我已经成为互动广告经纪人,你也快来申请吧，优惠多多，福利多多",
+			"isactive": false 
+		}
+	]
+}

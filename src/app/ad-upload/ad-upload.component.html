@@ -4,7 +4,7 @@
   </nz-header>
   <nz-content>
   	<div nz-row class="mt10 " *ngIf="data.length">
-  		<div nz-col [nzSpan]="12" class="ad oh" *ngFor="let item of data" [@simAnim]="'opts.shrinkhwOut'">
+  		<div nz-col [nzSpan]="12" class="ad oh" *ngFor="let item of data" [@shrinkhwOut]>
   			<div class="close" (click)="showModal(item)"><i class="anticon anticon-delete"></i></div>
   			<div class="bgWhite">
 	  			<a class="ad-img" routerLink="/adadd/99" [ngStyle]="{'background-image': 'url(' + item.imgsrc +')'}"></a>

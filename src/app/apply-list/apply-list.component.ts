@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import  { simAnim } from '../animations';
+import  { simAnim, shrinkOut } from '../animations';
 import { LoginService } from '../login/login.service';
 import { HttpService } from '../http.service'
 import { NzModalService } from 'ng-zorro-antd';
@@ -9,7 +9,7 @@ import { CONFIG } from '../config';
   selector: 'hd-apply-list',
   templateUrl: './apply-list.component.html',
   styleUrls: ['./apply-list.component.css'],
-  animations: [simAnim]
+  animations: [simAnim, shrinkOut]
 })
 export class ApplyListComponent implements OnInit {
 

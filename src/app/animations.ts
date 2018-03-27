@@ -78,7 +78,7 @@ export const flyOut = [trigger('flyOut', [transition('* => void', opts.flyOut)])
 export const zoomIn = [trigger('zoomIn', [transition('void => *', opts.zoomIn)])]
 export const zoomOut = [trigger('zoomOut', [transition('* => void', opts.zoomOut)])]
 export const shrinkOut = [trigger('shrinkOut', [transition('* => void', opts.shrinkOut)])]
-export const shrinkhwOut = [trigger('shrinkhwOut', [transition('* => void', opts.shrinkOut)])]
+export const shrinkhwOut = [trigger('shrinkhwOut', [transition('* => void', opts.shrinkhwOut)])]
 
 export const simAnim = [
   trigger('simAnim', [
@@ -90,7 +90,7 @@ export const simAnim = [
     transition('* => flyOut', opts.flyOut),
     transition('* => zoomIn', opts.zoomIn),
     transition('* => zoomOut', opts.zoomOut),
-    transition('* => void', opts.shrinkOut),
-    transition('* => void', opts.shrinkhwOut)
+    transition('* => shrinkOut', opts.shrinkOut),
+    transition('* => shrinkhwOut', opts.shrinkhwOut)
   ])
 ]

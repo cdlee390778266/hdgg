@@ -1,15 +1,17 @@
 <nz-layout class="hd-login" [@simAnim]="'flyIn'">
   <nz-header>
-    <hd-nav-bar viewTitle="找回密码"></hd-nav-bar>
+    <hd-nav-bar viewTitle="广告上传"></hd-nav-bar>
   </nz-header>
   <nz-content>
-  	<form>
+  	<form #adForm="ngForm" (ngSubmit)="save()">
       <div class="hd-form-group bt" nz-row>
-        <label nz-col [nzSpan]="6">商品标题</label>
-        <input nz-col [nzSpan]="18" type="" name="" placeholder="请输入商品标题">
+        <label nz-col [nzSpan]="6">广告标题</label>
+        <input nz-col [nzSpan]="18" type="" required name="title" [(ngModel)]="data.title" placeholder="请输入广告标题" #titleRef="ngModel">
       </div>
+      <nz-alert [nzType]="'error'" nzCloseable
+        [nzDescription]="'广告标题必填！'" [hidden]="titleRef.valid || titleRef.pristine"></nz-alert>
       <div class="hd-form-group" nz-row>
-        <textarea name="" id="" cols="30" rows="10" class="hd-textarea" nz-col [nzSpan]="18" placeholder="描述一下您的商品吧~"></textarea>
+        <textarea name="dsc" id="" cols="30" rows="10" class="hd-textarea" nz-col [nzSpan]="18" placeholder="描述一下您的广告吧~" [(ngModel)]="data.dsc" >{{data.dsc}}</textarea>
         <div nz-col [nzSpan]="24" class="mt20">
           <nz-upload
             nzAction="https://jsonplaceholder.typicode.com/posts/"
@@ -22,16 +24,20 @@
         </div>
       </div>
   		<div class="hd-form-group" nz-row>
-  			<label nz-col [nzSpan]="6">商品单价</label>
-  			<input nz-col [nzSpan]="18" type="" name="" placeholder="请输入商品单价">
+  			<label nz-col [nzSpan]="6">广告单价</label>
+  			<input nz-col [nzSpan]="18" type="number" placeholder="请输入广告单价" required name="price" [(ngModel)]="data.price" #priceRef="ngModel">
   		</div>
+      <nz-alert [nzType]="'error'" nzCloseable
+        [nzDescription]="'广告单价必填！'" [hidden]="priceRef.valid || priceRef.pristine"></nz-alert>
       <div class="hd-form-group" nz-row>
-        <label nz-col [nzSpan]="6">商品数量</label>
-        <input nz-col [nzSpan]="18" type="" name="" placeholder="请输入商品数量">
+        <label nz-col [nzSpan]="6">广告数量</label>
+        <input nz-col [nzSpan]="18" type="" placeholder="请输入广告数量" required name="num" [(ngModel)]="data.num" #numRef="ngModel">
       </div>
+      <nz-alert [nzType]="'error'" nzCloseable
+        [nzDescription]="'广告数量必填！'" [hidden]="numRef.valid || numRef.pristine"></nz-alert>
   		<div class="login-btn-box">
-  			<div class="login-btn login-btn-green">
-  				<a href="javascript: void(0);">确定上传</a>
+  			<div class="login-btn login-btn-green" [class.login-btn-disabled]="!adForm.form.valid">
+  				<button type="submit" [disabled]="!adForm.form.valid">确认上传</button>
   			</div>
   		</div>
   	</form>

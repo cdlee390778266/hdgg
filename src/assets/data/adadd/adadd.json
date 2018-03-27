@@ -1,0 +1,20 @@
+{
+	"status": 200,
+	"statusText": "登录成功",
+	"data": {
+		"adid": 5,
+		"title": "习近平",
+		"dsc": "皇朝御窖35年 皇家味 香型：浓香型 酒精",
+		"imgsrc": "/assets/images/data_img3.png",
+		"price": 60,
+		"num": 10,
+		"banners": [
+			{
+				"uid": "-1",
+				"name": "'xxx.png",
+				"status": "done",
+				"url": "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
+			}
+		]
+	}
+}

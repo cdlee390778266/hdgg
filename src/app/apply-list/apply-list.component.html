@@ -4,7 +4,7 @@
   </nz-header>
   <nz-content>
   	<div class="list apply-list">
-      <div *ngFor="let item of data" [@simAnim]="'shrinkOut'" class="oh">
+      <div *ngFor="let item of data" [@shrinkOut] class="oh">
        <div class="list-item" nz-row>
          <a routerLink="/myapply/{{item?.sid}}" nz-col [nzSpan]="16">
            <span><span class="red">{{item?.statusText}}</span><span class="ml10 line-through">{{item?.date}}</span> <span class="ml10">{{item?.time}}</span></span>

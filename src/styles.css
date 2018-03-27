@@ -320,3 +320,6 @@ nz-content {
     font-size: 1.8rem;
     text-align: center;
  }
+ .list-item-active {
+    background: #d7d7d7;
+ }

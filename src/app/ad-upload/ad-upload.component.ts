@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import  { simAnim } from '../animations';
+import  { simAnim, shrinkhwOut } from '../animations';
 import { LoginService } from '../login/login.service';
 import { HttpService } from '../http.service'
 import { NzModalService } from 'ng-zorro-antd';
@@ -9,7 +9,7 @@ import { CONFIG } from '../config';
   selector: 'hd-ad-upload',
   templateUrl: './ad-upload.component.html',
   styleUrls: ['./ad-upload.component.css'],
-  animations: [simAnim]
+  animations: [simAnim, shrinkhwOut]
 })
 export class AdUploadComponent implements OnInit {
 
