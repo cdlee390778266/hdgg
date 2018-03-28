@@ -17,15 +17,17 @@ export class UpdateSingleComponent implements OnInit {
 
   constructor(private httpService: HttpService, private loginService: LoginService, private router: Router, private route: ActivatedRoute, private nzModalService: NzModalService) { }
 
-  private user: User;
+  public user: User;
 
-  private inputText: string;
+  public viewTitle: string;
 
-  private inputVal: string;
+  public inputText: string;
 
-  private keyName: string;
+  public inputVal: string;
 
-  private isUpdateSuccess: boolean = true;
+  public keyName: string;
+
+  public isUpdateSuccess: boolean = true;
 
   hideUpdateError() {
   	this.isUpdateSuccess = true;
@@ -58,6 +60,7 @@ export class UpdateSingleComponent implements OnInit {
   ngOnInit() {
   	this.user = this.loginService.getUser();
   	this.route.queryParams.subscribe(params => {
+        this.viewTitle = params['title'];
         this.inputText = params['inputText'];
         this.keyName = params['keyName'];
         this.inputVal = this.loginService.getUserVal(this.keyName.split('.'));

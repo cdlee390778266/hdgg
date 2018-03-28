@@ -10,7 +10,7 @@ export class FootComponent implements OnInit {
 
   constructor(private loginService: LoginService) { }
 
-  private isLogin: boolean = false;
+  public isLogin: boolean = false;
 
   ngOnInit() {
   	if(this.loginService.getLogin()) {

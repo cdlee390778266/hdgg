@@ -34,3 +34,7 @@
 .login-btn a{
 	width: 60%;
 }
+.list-item-user i{
+	color: #666;
+	font-size: 2.4rem;
+}

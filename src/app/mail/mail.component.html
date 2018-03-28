@@ -1,0 +1,33 @@
+<nz-layout class="hd-login" [@simAnim]="'zoomIn'">
+  <nz-header>
+    <hd-nav-bar viewTitle="修改联系人"></hd-nav-bar>
+  </nz-header>
+  <nz-content>
+  	<form #editForm="ngForm" (ngSubmit)="save()">
+  		<div class="hd-form-group bt" nz-row>
+  			<label nz-col [nzSpan]="6">姓名</label>
+  			<input nz-col [nzSpan]="18" type="" name="cname" [(ngModel)]="data.cname" placeholder="请输入姓名" required #cnameRef="ngModel" required="">
+  		</div>
+      <nz-alert [nzType]="'error'" nzCloseable
+        [nzDescription]="'请输入姓名！'" [hidden]="cnameRef.valid || cnameRef.pristine"></nz-alert>
+      <div class="hd-form-group" nz-row>
+  			<label nz-col [nzSpan]="6">电话</label>
+  			<input nz-col [nzSpan]="18" type="number" name="phone" [(ngModel)]="data.cphone" placeholder="请输入电话号码" required #phoneRef="ngModel" required="">
+  		</div>
+      <nz-alert [nzType]="'error'" nzCloseable
+        [nzDescription]="'请输入电话号码！'" [hidden]="phoneRef.valid || phoneRef.pristine"></nz-alert>
+      <div class="hd-form-group" nz-row>
+  			<label nz-col [nzSpan]="6">地址</label>
+  			<input nz-col [nzSpan]="18" type="" name="address" [(ngModel)]="data.caddress" placeholder="请输入地址">
+  		</div>
+
+      <nz-alert [nzType]="'error'" nzCloseable
+        [nzDescription]="'保存失败，请检查输入是否有误！'" [hidden]="isError"></nz-alert>
+  		<div class="login-btn-box">
+  			<div class="login-btn" [class.login-btn-disabled]="!editForm.form.valid">
+  				<button type="submit" [disabled]="!editForm.form.valid">保存/修改</button>
+  			</div>
+  		</div>
+  	</form>
+  </nz-content>
+</nz-layout>

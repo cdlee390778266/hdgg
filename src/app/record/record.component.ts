@@ -16,7 +16,7 @@ export class RecordComponent implements OnInit {
 
   constructor(private httpService: HttpService, private loginService: LoginService) { }
 
-  private data = [];
+  public data = [];
 
   ngOnInit() {
     this.httpService.get('/assets/data/record/record.json')

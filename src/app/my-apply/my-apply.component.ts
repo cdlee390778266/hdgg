@@ -15,7 +15,7 @@ export class MyApplyComponent implements OnInit {
 
   constructor(private httpService: HttpService, private nzModalService: NzModalService, private loginService: LoginService) { }
 
-  private data: Object;
+  public data: any;
 
   ngOnInit() {
   	this.httpService.get('/assets/data/myapply/myapply.json')

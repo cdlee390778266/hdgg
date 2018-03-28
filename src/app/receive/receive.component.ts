@@ -16,19 +16,19 @@ export class ReceiveComponent implements OnInit {
 
   constructor(private loginService: LoginService, private httpService: HttpService, private nzModalService: NzModalService) { }
 
-  private user: User;
+  public user: User;
 
-  private zfb: string;
+  public zfb: string;
 
-  private qq: string;
+  public qq: string;
 
-  private wx: string;
+  public wx: string;
 
-  private yhk: string;
+  public yhk: string;
 
-  private isCanSubmit: boolean = false;
+  public isCanSubmit: boolean = false;
 
-  private isSaveSuccess: boolean = true;
+  public isSaveSuccess: boolean = true;
 
   checkCanSubmit() {
   	if(this.zfb || this.qq || this.wx || this.yhk) {

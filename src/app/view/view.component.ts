@@ -14,13 +14,13 @@ export class ViewComponent implements OnInit {
 
   constructor(private loginService: LoginService, private httpService: HttpService) { }
 
-  private nname: string;
+  public nname: string;
 
-  private uid: number;
+  public uid: number;
 
-  private level: number;
+  public level: number;
 
-  private record: number;
+  public record: number;
 
   ngOnInit() {
   	this.httpService.get('/assets/data/login/login.json')

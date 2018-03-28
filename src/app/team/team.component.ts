@@ -15,9 +15,9 @@ export class TeamComponent implements OnInit {
 
   constructor(private httpService: HttpService, private nzModalService: NzModalService, private loginService: LoginService) { }
 
-  private level: number;
+  public level: number;
 
-  private uid: number;
+  public uid: number;
 
   apply() {
     this.httpService.get('/assets/data/login/login.json')

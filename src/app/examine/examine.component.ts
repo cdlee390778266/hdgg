@@ -15,7 +15,7 @@ export class ExamineComponent implements OnInit {
 
   constructor(private httpService: HttpService, private nzModalService: NzModalService, private loginService: LoginService) { }
 
-  private data: Array<Object>;
+  public data: Array<Object>;
 
   ngOnInit() {
   	this.httpService.get('/assets/data/examine/examine.json')

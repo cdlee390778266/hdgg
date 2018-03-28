@@ -14,19 +14,19 @@ export class HomeComponent implements OnInit {
 
   constructor(private httpService: HttpService, private loginService: LoginService) { }
 
-  private banners = []
+  public banners = []
 
-  private lattices = []
+  public lattices = []
 
-  private article: string;
+  public article: string;
 
-  private isLogin: boolean = false;
+  public isLogin: boolean = false;
 
-  private user: User;
+  public user: User;
 
-  private isShowTopLink: boolean = false;
+  public isShowTopLink: boolean = false;
 
-  private topLink: Object = { text: '登录', href: '/login'};
+  public topLink: Object = { text: '登录', href: '/login'};
 
   ngOnInit() {
     this.user = this.loginService.getUser();

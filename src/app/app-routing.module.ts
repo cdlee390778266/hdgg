@@ -13,12 +13,10 @@ import { PayComponent } from './pay/pay.component';
 import { AuthComponent } from './auth/auth.component';
 import { ShareComponent } from './share/share.component';
 import { UpgradeComponent } from './upgrade/upgrade.component';
-import { AddressComponent } from './address/address.component';
-import { AddressDComponent } from './address-d/address-d.component';
 import { OaComponent } from './oa/oa.component';
-import { BbComponent } from './bb/bb.component';
 import { AgentComponent } from './agent/agent.component';
 import { MailListComponent } from './mail-list/mail-list.component';
+import { MailComponent } from './mail/mail.component';
 import { ReceiveComponent } from './receive/receive.component';
 import { ViewComponent } from './view/view.component';
 import { TeamComponent } from './team/team.component';
@@ -88,20 +86,8 @@ const routes: Routes = [
     component: UpgradeComponent
   },
   {
-    path: 'address',
-    component: AddressComponent
-  },
-  {
-    path: 'addressd',
-    component: AddressDComponent
-  },
-  {
     path: 'oa',
     component: OaComponent
-  },
-  {
-    path: 'bb',
-    component: BbComponent
   },
   {
     path: 'agent',
@@ -110,6 +96,10 @@ const routes: Routes = [
   {
     path: 'maillist',
     component: MailListComponent
+  },
+  {
+    path: 'mail/:id',
+    component: MailComponent
   },
   {
     path: 'receive',

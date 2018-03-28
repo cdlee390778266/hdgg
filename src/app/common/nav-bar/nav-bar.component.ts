@@ -12,16 +12,18 @@ export class NavBarComponent implements OnInit {
   @Input() viewTitle: string;
   @Input() btnType: string = 'btn';
   @Input() btnText: string;
+  @Input() btnIcon: string;
+  @Input() btnLink: string;
   @Output() btnClickFn = new EventEmitter();
 
-  private hasBtn = false;
+  public hasBtn = false;
 
   emitter() {
     this.btnClickFn.emit();
   }
 
   ngOnInit() {
-      if(this.btnText || this.btnType == 'link') {
+      if(this.btnText || this.btnType == 'link' || this.btnIcon) {
           this.hasBtn = true;
       }
   }

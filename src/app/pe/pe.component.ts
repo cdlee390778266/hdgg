@@ -13,9 +13,16 @@ export class PEComponent implements OnInit {
 
   constructor(private httService: HttpService, private route: ActivatedRoute) { }
 
-  private pe: Object = {}
+  public pe: any = {
+    "src": "",
+    "dsc": "",
+    "more": "",
+    "name": "",
+    "price": "",
+    "article": ""
+  }
 
-  private url: string;
+  public url: string;
 
   ngOnInit() {
     switch (this.route.snapshot.paramMap.get('id')) {

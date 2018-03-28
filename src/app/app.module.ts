@@ -25,10 +25,7 @@ import { PayComponent } from './pay/pay.component';
 import { AuthComponent } from './auth/auth.component';
 import { ShareComponent } from './share/share.component';
 import { UpgradeComponent } from './upgrade/upgrade.component';
-import { AddressComponent } from './address/address.component';
 import { OaComponent } from './oa/oa.component';
-import { BbComponent } from './bb/bb.component';
-import { AddressDComponent } from './address-d/address-d.component';
 import { AgentComponent } from './agent/agent.component';
 import { MailListComponent } from './mail-list/mail-list.component';
 import { ReceiveComponent } from './receive/receive.component';
@@ -46,6 +43,7 @@ import { OrderdComponent } from './orderd/orderd.component';
 import { OrderlistComponent } from './orderlist/orderlist.component';
 import { LoadingComponent } from './loading/loading.component';
 import { RecordComponent } from './record/record.component';
+import { MailComponent } from './mail/mail.component';
 
 @NgModule({
   declarations: [
@@ -64,10 +62,7 @@ import { RecordComponent } from './record/record.component';
     AuthComponent,
     ShareComponent,
     UpgradeComponent,
-    AddressComponent,
     OaComponent,
-    BbComponent,
-    AddressDComponent,
     AgentComponent,
     MailListComponent,
     ReceiveComponent,
@@ -85,7 +80,8 @@ import { RecordComponent } from './record/record.component';
     OrderlistComponent,
     LoadingComponent,
     UpdateSingleComponent,
-    RecordComponent
+    RecordComponent,
+    MailComponent
   ],
   imports: [
     BrowserModule,

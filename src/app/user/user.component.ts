@@ -13,19 +13,19 @@ export class UserComponent implements OnInit {
 
   constructor(private loginService: LoginService) { }
 
-  private  user: User;
+  public  user: User;
 
-  private qqAccount: string;
+  public qqAccount: string;
 
-  private wxAccount: string;
+  public wxAccount: string;
 
-  private mmAccount: string;
+  public mmAccount: string;
 
-  private wbAccount: string;
+  public wbAccount: string;
 
-  private cardId: string;
+  public cardId: string;
 
-  private isLogin: boolean = false;
+  public isLogin: boolean = false;
 
   ngOnInit() {
   	this.user = this.loginService.getUser();

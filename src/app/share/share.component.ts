@@ -9,9 +9,19 @@ import  { simAnim } from '../animations';
 })
 export class ShareComponent implements OnInit {
 
-  constructor() { }
+	constructor() { }
 
-  ngOnInit() {
-  }
+	public isVisible: boolean = false;
+
+	showModal() {
+		this.isVisible = true;
+	}
+
+	close() {
+		this.isVisible = false;
+	}
+
+	ngOnInit() {
+	}
 
 }

@@ -16,13 +16,13 @@ export class AuthComponent implements OnInit {
 
   constructor(private loginService: LoginService, private httpService: HttpService, private nzModalService: NzModalService) { }
 
-  private user: User;
+  public user: User;
 
-  private rname: string;
+  public rname: string;
 
-  private ID: string;
+  public ID: string;
 
-  private isAuthSuccess: boolean = true;
+  public isAuthSuccess: boolean = true;
 
   auth() {
   	this.httpService.get('/assets/data/updatepwd/updatepwd.json')

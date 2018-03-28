@@ -16,16 +16,9 @@ export class AdAddComponent implements OnInit {
 
   constructor(private httpService: HttpService, private nzModalService: NzModalService, private loginService: LoginService, private router: Router) { }
 
-  private data: Object = {
-    "adid": 5,
-    "title": "",
-    "dsc": "",
-    "imgsrc": "",
-    "price": "",
-    "num": ""
-  }
+  public data: any;
 
-  private fileList = [];
+  public fileList = [];
 
   previewImage = '';
   previewVisible = false;

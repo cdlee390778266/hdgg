@@ -52,13 +52,9 @@ export class LoginComponent implements OnInit {
               wrapClassName: 'vertical-center-modal hd-tip'
             })
 
-            var path = 'user';
-            if(this.loginService.getUser().level > 18) {
-              path = 'view';
-            }
             setTimeout(() => {
               successModal.destroy();
-              this.router.navigate([path]);
+              this.router.navigate(['view']);
             }, 2000)
             
           }else {

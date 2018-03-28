@@ -1,3 +1,4 @@
+import { Extend } from './extend';
 export class User {
 	uid: number;
 	name: string;
@@ -8,5 +9,5 @@ export class User {
 	cards: Array<string>;
 	email: string;
 	address: string;
-	extend: Object;
+	extend: Extend;
 }

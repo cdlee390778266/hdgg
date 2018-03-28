@@ -15,9 +15,9 @@ export class SmComponent implements OnInit {
 
   constructor(private httpService: HttpService, private nzModalService: NzModalService, private loginService: LoginService) { }
 
-  private data: Object[];
+  public data: Object[];
 
-  private isCanSend: boolean = false;
+  public isCanSend: boolean = false;
 
   changeStatus(item) {
   	for(var i = 0; i < this.data.length; i++) {

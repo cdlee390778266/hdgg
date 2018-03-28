@@ -17,13 +17,13 @@ export class UpdatepwdComponent implements OnInit {
 
   constructor(private nzModalService: NzModalService, private loginService: LoginService, private httpService: HttpService, private router: Router) { }
 
-  private oldPwd: string;
+  public oldPwd: string;
 
-  private newPwd: string;
+  public newPwd: string;
 
-  private confirmPwd: string;
+  public confirmPwd: string;
 
-  private isUpdateSuccess: boolean = true;
+  public isUpdateSuccess: boolean = true;
 
   hideUpdatePwdError() {
   	this.isUpdateSuccess = true;

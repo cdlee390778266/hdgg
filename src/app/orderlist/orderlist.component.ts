@@ -15,7 +15,7 @@ export class OrderlistComponent implements OnInit {
 
   constructor(private httpService: HttpService, private nzModalService: NzModalService, private loginService: LoginService) { }
 
-  private data = [];
+  public data = [];
 
   delete(item) {
   	var that = this;

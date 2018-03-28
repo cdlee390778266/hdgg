@@ -1,0 +1,10 @@
+{
+	"status": 200,
+	"statusText": "登录成功",
+	"data": {
+      "cid": 1,
+      "cname": "张三",
+      "cphone": 13684034806,
+      "caddress": "来自遥远的火星"
+    }
+}

@@ -15,7 +15,7 @@ export class UpgradeDComponent implements OnInit {
 
   constructor(private httpService: HttpService, private nzModalService: NzModalService, private loginService: LoginService) { }
 
-  private data = [];
+  public data = [];
 
   ngOnInit() {
     this.httpService.get('/assets/data/upgraded/upgraded.json')

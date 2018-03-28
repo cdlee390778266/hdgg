@@ -15,7 +15,7 @@ export class AdUploadComponent implements OnInit {
 
   constructor(private httpService: HttpService, private nzModalService: NzModalService, private loginService: LoginService) { }
 
-  private data = [];
+  public data = [];
 
   showModal(item) {
     var that = this;

@@ -1,0 +1,8 @@
+.list-item > a {
+	color: #333;
+}
+.list-item i {
+	font-style: normal;
+	font-size: 1.6rem;
+	color: #108ee9;
+}

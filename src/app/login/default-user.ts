@@ -10,7 +10,7 @@ export let DefaultUser: User ={
 		email: '390778266@qq.com',
 		address: '四川省成都市新都区',
 		extend: {
-			phone: '13684054806',
+			phone: 13684054806,
 			record: 1000
 		}
 	}
@@ -27,7 +27,8 @@ export let DefaultUsers: User[] = [
 		email: '390778266@qq.com',
 		address: '四川省成都市新都区',
 		extend: {
-			phone: ''
+			phone: 0,
+			record: 0
 		}
 	},
 	{
@@ -41,7 +42,8 @@ export let DefaultUsers: User[] = [
 		email: '390778266@qq.com',
 		address: '四川省成都市新都区',
 		extend: {
-			phone: ''
+			phone: 0,
+			record: 0
 		}
 	}
 ]

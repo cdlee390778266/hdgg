@@ -16,7 +16,7 @@ export class UpgradeComponent implements OnInit {
 
   constructor(private httpService: HttpService, private nzModalService: NzModalService, private loginService: LoginService, private router: Router) { }
 
-  private data = [];
+  public data = [];
 
   showModal(data) {
     var that = this;
