@@ -1,14 +1,14 @@
-import { HdggPage } from './app.po';
+import { AppPage } from './app.po';
 
-describe('hdgg App', () => {
-  let page: HdggPage;
+describe('ng App', () => {
+  let page: AppPage;
 
   beforeEach(() => {
-    page = new HdggPage();
+    page = new AppPage();
   });
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to app!!');
+    expect(page.getParagraphText()).toEqual('Welcome to app!');
   });
 });

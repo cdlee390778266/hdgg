@@ -35,11 +35,11 @@ export class HomeComponent implements OnInit {
       this.topLink = this.user.level > 18 ? { text: '我', href: '/view'} : { text: '我', href: '/user'}
     }
     this.isShowTopLink = true;
-    this.httpService.get('/assets/data/home/banners.json')
+    this.httpService.get('../../assets/data/home/banners.json')
     .subscribe(res => this.banners = res)
-    this.httpService.get('/assets/data/home/lattices.json')
+    this.httpService.get('../../assets/data/home/lattices.json')
     .subscribe(res => this.lattices = res)
-    this.httpService.get('/assets/data/home/article.json')
+    this.httpService.get('../../assets/data/home/article.json')
     .subscribe(res => this.article = res.content)
   }
 
