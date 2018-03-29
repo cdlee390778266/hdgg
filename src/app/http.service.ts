@@ -4,12 +4,19 @@ import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import { catchError, map, tap, retry } from 'rxjs/operators';
 import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
-import { LoadingService } from './loading/loading.service';
+import { Store } from '@ngrx/store';
+import { SHOW_LOADING, HIDE_LOADING } from './reducer';
+// import { LoadingService } from './loading/loading.service';
+
+
+interface AppState {
+  isloading: boolean;
+}
 
 @Injectable()
 export class HttpService {
 
-  constructor(private http: HttpClient, private loading: LoadingService) { }
+  constructor(private http: HttpClient, private store: Store<AppState>) { }
 
   handleError(error) {
         if (error.error instanceof ErrorEvent) {
@@ -28,10 +35,11 @@ export class HttpService {
     }
 
     get(url) {
+
     	if(!url) return;
-        //this.loading.open();
+        this.store.dispatch({type: SHOW_LOADING})
         return this.http.get(url)
-            .pipe(tap(data => {this.loading.close();}), catchError(this.handleError))
+            .pipe(tap(data => { this.store.dispatch({type: HIDE_LOADING})}), catchError(this.handleError))
     }
 
 }

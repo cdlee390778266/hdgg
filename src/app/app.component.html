@@ -1,2 +1,4 @@
-<hd-loading></hd-loading>
+<div class="hd-loading-wrapper" *ngIf="isShowLoading">
+	<nz-spin class="hd-loading"></nz-spin>
+</div>
 <router-outlet></router-outlet>

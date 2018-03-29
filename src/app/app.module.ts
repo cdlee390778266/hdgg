@@ -4,6 +4,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
+import { StoreModule } from '@ngrx/store';
+import { reducer } from './reducer';
 import { HttpService } from './http.service';
 import { LoadingService }  from './loading/loading.service';
 import { LoginService } from './login/login.service';
@@ -89,7 +91,8 @@ import { MailComponent } from './mail/mail.component';
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    NgZorroAntdModule.forRoot()
+    NgZorroAntdModule.forRoot(),
+    StoreModule.provideStore({ reducer: reducer }) 
   ],
   providers: [HttpService, LoadingService, LoginService],
   bootstrap: [AppComponent]
