@@ -92,7 +92,7 @@ import { MailComponent } from './mail/mail.component';
     HttpClientModule,
     BrowserAnimationsModule,
     NgZorroAntdModule.forRoot(),
-    StoreModule.provideStore({ reducer: reducer }) 
+    StoreModule.forRoot({ reducer: reducer }) 
   ],
   providers: [HttpService, LoadingService, LoginService],
   bootstrap: [AppComponent]

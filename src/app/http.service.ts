@@ -6,8 +6,6 @@ import { catchError, map, tap, retry } from 'rxjs/operators';
 import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
 import { Store } from '@ngrx/store';
 import { SHOW_LOADING, HIDE_LOADING } from './reducer';
-// import { LoadingService } from './loading/loading.service';
-
 
 interface AppState {
   isloading: boolean;
@@ -35,11 +33,10 @@ export class HttpService {
     }
 
     get(url) {
-
     	if(!url) return;
         this.store.dispatch({type: SHOW_LOADING})
         return this.http.get(url)
-            .pipe(tap(data => { this.store.dispatch({type: HIDE_LOADING})}), catchError(this.handleError))
+            .pipe(tap(data => {this.store.dispatch({type: HIDE_LOADING})}), catchError(this.handleError))
     }
 
 }

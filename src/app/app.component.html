@@ -1,4 +1,4 @@
-<div class="hd-loading-wrapper" *ngIf="isShowLoading">
+<div class="hd-loading-wrapper" *ngIf="isShowLoading | async">
 	<nz-spin class="hd-loading"></nz-spin>
 </div>
 <router-outlet></router-outlet>
