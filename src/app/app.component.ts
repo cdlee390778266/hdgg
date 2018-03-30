@@ -1,11 +1,7 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Store, select } from '@ngrx/store';
-import { SHOW_LOADING, HIDE_LOADING } from './reducer';
-
-interface AppState {
-  isloading: boolean;
-}
+import * as reducer from './reducer';
 
 @Component({
   selector: 'app-root',
@@ -13,10 +9,13 @@ interface AppState {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  public isShowLoading: Observable<boolean>;
+  
+  public isShowLoading: boolean;
 
-  constructor(private store: Store<AppState>) {
-  	this.isShowLoading = this.store.pipe(select('reducer'));
+  constructor(private store: Store<reducer.HdStade>) {
+  	this.store.pipe(select('reducer')).subscribe(hdState => {
+  		this.isShowLoading = hdState.loadingState;
+  	})
   }
 
 
