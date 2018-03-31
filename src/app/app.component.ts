@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Store, select } from '@ngrx/store';
-import * as reducer from './reducer';
+import * as reducer from './ngrx/reducer';
 
 @Component({
   selector: 'app-root',
@@ -12,11 +12,14 @@ export class AppComponent {
   
   public isShowLoading: boolean;
 
+  public hdState: Observable<reducer.HdStade>;
+
   constructor(private store: Store<reducer.HdStade>) {
-  	this.store.pipe(select('reducer')).subscribe(hdState => {
-  		this.isShowLoading = hdState.loadingState;
+  	this.hdState = this.store.pipe(select('reducer'));
+    this.hdState.subscribe(hdState => {
+      console.log(this.isShowLoading)
+      this.isShowLoading = hdState.sysStatus.isLoading;
   	})
   }
-
 
 }
