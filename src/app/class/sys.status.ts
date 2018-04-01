@@ -1,7 +1,7 @@
 export class SysStatus {
-  version: string;
+  version?: string;
   dsc?: string;
-  isLogin: boolean;
-  isLoading: boolean;
+  isLogin?: boolean;
+  isLoading?: boolean;
 }
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from '../../login/login.service';
+import { HdStateService } from '../../../service/hd.state.service';
 
 @Component({
   selector: 'hd-foot',
@@ -8,14 +8,20 @@ import { LoginService } from '../../login/login.service';
 })
 export class FootComponent implements OnInit {
 
-  constructor(private loginService: LoginService) { }
+  constructor(private getHdStateService: HdStateService) { }
 
   public isLogin: boolean = false;
 
+  public isShowLoginLink: boolean = false;
+
   ngOnInit() {
-  	if(this.loginService.getLogin()) {
-  		this.isLogin = true
-  	}
+  	this.getHdStateService.getHdStateObservable()
+      .subscribe(hdState => {
+        if(hdState.isLogin) {
+          this.isLogin = hdState.isLogin;
+        }
+        this.isShowLoginLink = true;
+      })
   }
 
 }

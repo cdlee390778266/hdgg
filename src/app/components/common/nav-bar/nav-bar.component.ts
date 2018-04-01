@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'hd-nav-bar',
@@ -7,7 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class NavBarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private title: Title) { }
 
   @Input() viewTitle: string;
   @Input() btnType: string = 'btn';
@@ -26,6 +27,8 @@ export class NavBarComponent implements OnInit {
       if(this.btnText || this.btnType == 'link' || this.btnIcon) {
           this.hasBtn = true;
       }
+
+      this.title.setTitle(this.viewTitle || '互动广告')
   }
 
 }

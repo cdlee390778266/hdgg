@@ -6,7 +6,8 @@ export class User {
   password?: string;
   level?: number;
   cards?: Array<string>;
-  email: string;
+  email?: string;
   address?: string;
-  extend?: any;
+  phone?: number;
+  record?: number;
 }

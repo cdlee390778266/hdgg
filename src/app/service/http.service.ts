@@ -1,16 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs/Observable';
-import { of } from 'rxjs/observable/of';
 import { catchError, map, tap, retry } from 'rxjs/operators';
 import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
 import { Store } from '@ngrx/store';
-import * as reducer from '../ngrx/reducer';
+import { HdStateInterface} from '../class/hd.state.interface';
+import * as actions  from '../ngrx/actions';
 
 @Injectable()
 export class HttpService {
 
-  constructor(private http: HttpClient, private store: Store<reducer.HdStade>) { }
+  constructor(private http: HttpClient, private store: Store<HdStateInterface>) { }
 
   handleError(error) {
         if (error.error instanceof ErrorEvent) {
@@ -30,9 +29,9 @@ export class HttpService {
 
     get(url) {
     	if(!url) return;
-        this.store.dispatch({type: reducer.SHOW_LOADING})
+        this.store.dispatch({type: actions.SHOW_LOADING, payload: {}})
         return this.http.get(url)
-            .pipe(tap(data => {this.store.dispatch({type: reducer.HIDE_LOADING})}), catchError(this.handleError))
+            .pipe(tap(data => {this.store.dispatch({type: actions.HIDE_LOADING})}), catchError(this.handleError))
     }
 
 }

@@ -1,0 +1,86 @@
+<nz-layout class="hd-login" [@simAnim]="'flyIn'">
+  <nz-header>
+    <hd-nav-bar viewTitle="个人中心"></hd-nav-bar>
+  </nz-header>
+  <nz-content>
+  	<div class="top">
+  		<img src="/assets/images/data_bg.png" alt="" class="img-responsive">
+  		<div class="top-title">{{nname}}</div>
+  		<div class="top-nav" nz-row>
+  			<span nz-col [nzSpan]="8">等级<i>{{level}}级</i></span>
+  			<span nz-col [nzSpan]="8">积分<i>{{record}}</i></span>
+  			<span nz-col [nzSpan]="8">编号<i>{{uid}}</i></span>
+  		</div>
+  	</div>
+  	<div class="list">
+		<a routerLink="/admin/team/{{uid}}" class="list-item" nz-row>
+			<span nz-col [nzSpan]="10"><img src="/assets/images/icon15.png" alt=""><strong>团队信息</strong></span>
+			<span nz-col [nzSpan]="12" class="tr blue"></span>
+			<i nz-col [nzSpan]="2" class="anticon anticon-right"></i>
+		</a>
+		<a routerLink="/admin/upgrade" class="list-item" nz-row>
+			<span nz-col [nzSpan]="10"><img src="/assets/images/icon16.png" alt=""><strong>我要升级</strong></span>
+			<span nz-col [nzSpan]="12" class="tr blue"></span>
+			<i nz-col [nzSpan]="2" class="anticon anticon-right"></i>
+		</a>
+		<a routerLink="/admin/applylist/{{uid}}" class="list-item" nz-row>
+			<span nz-col [nzSpan]="10"><img src="/assets/images/icon17.png" alt=""><strong>审核状态</strong></span>
+			<span nz-col [nzSpan]="12" class="tr blue"></span>
+			<i nz-col [nzSpan]="2" class="anticon anticon-right"></i>
+		</a>
+		<a routerLink="/admin/orderlist/{{uid}}" class="list-item" nz-row>
+			<span nz-col [nzSpan]="10"><img src="/assets/images/icon18.png" alt=""><strong>我的订单</strong></span>
+			<span nz-col [nzSpan]="12" class="tr blue"></span>
+			<i nz-col [nzSpan]="2" class="anticon anticon-right"></i>
+		</a>
+		<a routerLink="/admin/record" class="list-item" nz-row>
+			<span nz-col [nzSpan]="10"><img src="/assets/images/icon19.png" alt=""><strong>积分商城</strong></span>
+			<span nz-col [nzSpan]="12" class="tr blue"></span>
+			<i nz-col [nzSpan]="2" class="anticon anticon-right"></i>
+		</a>
+		<div class="list-title" nz-row>
+			<span nz-col [nzSpan]="24">广告招商</span>
+		</div>
+		<a routerLink="/admin/agent" class="list-item" nz-row>
+			<span nz-col [nzSpan]="10"><img src="/assets/images/icon20.png" alt=""><strong>签约代理</strong></span>
+			<span nz-col [nzSpan]="12" class="tr blue"></span>
+			<i nz-col [nzSpan]="2" class="anticon anticon-right"></i>
+		</a>
+		<div class="list-title" nz-row>
+			<span nz-col [nzSpan]="24">广告体验上传</span>
+		</div>
+		<a routerLink="/admin/adupload/88" class="list-item" nz-row>
+			<span nz-col [nzSpan]="10"><img src="/assets/images/icon23.png" alt=""><strong>我的广告</strong></span>
+			<span nz-col [nzSpan]="12" class="tr blue"></span>
+			<i nz-col [nzSpan]="2" class="anticon anticon-right"></i>
+		</a>
+		<div class="list-title" nz-row>
+			<span nz-col [nzSpan]="24">我要分享</span>
+		</div>
+		<a routerLink="/admin/sm" class="list-item" nz-row>
+			<span nz-col [nzSpan]="10"><img src="/assets/images/icon21.png" alt=""><strong>短信分享</strong></span>
+			<span nz-col [nzSpan]="12" class="tr blue"></span>
+			<i nz-col [nzSpan]="2" class="anticon anticon-right"></i>
+		</a>
+		<a routerLink="/admin/share" class="list-item" nz-row>
+			<span nz-col [nzSpan]="10"><img src="/assets/images/icon22.png" alt=""><strong>二维码分享</strong></span>
+			<span nz-col [nzSpan]="12" class="tr blue"></span>
+			<i nz-col [nzSpan]="2" class="anticon anticon-right"></i>
+		</a>
+		<div class="list-title" nz-row>
+			<span nz-col [nzSpan]="24">我的资料</span>
+		</div>
+		<a routerLink="/admin/user" class="list-item list-item-user" nz-row>
+			<span nz-col [nzSpan]="10"><i class="anticon anticon-user"></i><strong>我</strong></span>
+			<span nz-col [nzSpan]="12" class="tr blue"></span>
+			<i nz-col [nzSpan]="2" class="anticon anticon-right"></i>
+		</a>
+  	</div>
+
+  	<div class="login-btn-box">
+		<div class="login-btn">
+			<a href="javascript: void(0);">退出登录</a>
+		</div>
+	</div>
+  </nz-content>
+</nz-layout>

@@ -1,0 +1,14 @@
+<nz-layout class="hd-login" [@simAnim]="'flyIn'">
+  <nz-header>
+    <hd-nav-bar viewTitle="审核状态"></hd-nav-bar>
+  </nz-header>
+  <nz-content>
+  	<div class="list mt10">
+		<a *ngFor="let item of data" routerLink="/admin/myapply/{{item?.pid}}" class="list-item" nz-row>
+			<span nz-col [nzSpan]="16"><img src="/assets/images/sh.png" alt=""><strong>商品单价 <span class="ml10">{{item?.price}}</span></strong></span>
+			<span nz-col [nzSpan]="6" class="tr blue"></span>
+			<i nz-col [nzSpan]="2" class="anticon anticon-right"></i>
+		</a>
+  	</div>
+  </nz-content>
+</nz-layout>

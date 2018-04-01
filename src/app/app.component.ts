@@ -1,25 +1,45 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { Store, select } from '@ngrx/store';
-import * as reducer from './ngrx/reducer';
+import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
+import { Title } from '@angular/platform-browser';
+import { HdStateService } from './service/hd.state.service';
+import 'rxjs/add/operator/filter';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/mergeMap';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   
   public isShowLoading: boolean;
 
-  public hdState: Observable<reducer.HdStade>;
+  constructor(
+    private getHdStateService: HdStateService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
+    private titleService: Title
+    ) {}
 
-  constructor(private store: Store<reducer.HdStade>) {
-  	this.hdState = this.store.pipe(select('reducer'));
-    this.hdState.subscribe(hdState => {
-      console.log(this.isShowLoading)
-      this.isShowLoading = hdState.sysStatus.isLoading;
-  	})
+  ngOnInit() {
+    this.getHdStateService.getHdStateObservable()
+      .subscribe(hdState => {
+        console.log(hdState)
+         this.isShowLoading = hdState.isLoading;
+      })
+
+    this.router.events
+      .filter(event => event instanceof NavigationEnd)
+      .map(() => this.activatedRoute)
+      .map(route => {
+        while (route.firstChild) route = route.firstChild;
+        return route;
+      })
+      .filter(route => route.outlet === 'primary')
+      .mergeMap(route => route.data)
+      .subscribe((event) => this.titleService.setTitle(event['title'] || '互动广告'));
   }
 
 }
