@@ -6,13 +6,13 @@
   	<form #loginForm="ngForm" (ngSubmit)="login()">
   		<div class="hd-form-group bt" nz-row>
   			<label nz-col [nzSpan]="6">用户名</label>
-  			<input nz-col [nzSpan]="18" type="" name="name" [(ngModel)]="name" placeholder="请输入用户名" required #user="ngModel">
+  			<input nz-col [nzSpan]="18" type="" name="name" [(ngModel)]="name" placeholder="请输入用户名" required #user="ngModel" (keyup)="hideError()">
   		</div>
       <nz-alert [nzType]="'error'" nzCloseable
         [nzDescription]="'请输入6-20位的用户名！'" [hidden]="user.valid || user.pristine"></nz-alert>
       <div class="hd-form-group" nz-row>
         <label nz-col [nzSpan]="6">密码</label>
-        <input nz-col [nzSpan]="18" type="password" name="password" minlength="6" maxlength="20" [(ngModel)]="password"  placeholder="请输入密码" required #pwd="ngModel"> 
+        <input nz-col [nzSpan]="18" type="password" name="password" minlength="6" maxlength="20" [(ngModel)]="password"  placeholder="请输入密码" required #pwd="ngModel" (keyup)="hideError()"> 
       </div>
       <nz-alert [nzType]="'error'" nzCloseable
         [nzDescription]="'请输入6-20位的密码！'" [hidden]="pwd.valid || pwd.pristine || !user.valid"></nz-alert>

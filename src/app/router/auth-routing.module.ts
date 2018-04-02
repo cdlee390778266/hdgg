@@ -5,6 +5,7 @@ import { AuthGuard } from '../service/auth-guard.service';
 import { LoginComponent } from '../components/authcomponents/login/login.component';
 import { RegisterComponent } from '../components/authcomponents/register/register.component';
 import { GetpwdComponent } from '../components/authcomponents/getpwd/getpwd.component';
+import { SetpwdComponent } from '../components//authcomponents/setpwd/setpwd.component';
 
 const routes: Routes = [
   {
@@ -30,6 +31,13 @@ const routes: Routes = [
         component: GetpwdComponent,
         data: {
           title: '找回密码'
+        }
+      },
+      {
+        path: 'setpwd/:name',
+        component: SetpwdComponent,
+        data: {
+          title: '重置密码'
         }
       },
       {

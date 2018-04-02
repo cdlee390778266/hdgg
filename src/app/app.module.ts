@@ -25,6 +25,7 @@ import { NavBarComponent } from './components/common/nav-bar/nav-bar.component';
 import { LoginComponent } from './components/authcomponents/login/login.component';
 import { RegisterComponent } from './components/authcomponents/register/register.component';
 import { GetpwdComponent } from './components//authcomponents/getpwd/getpwd.component';
+import { SetpwdComponent } from './components//authcomponents/setpwd/setpwd.component';
 
 import { UserComponent } from './components/admincomponents/user/user.component';
 import { UpdateSingleComponent } from './components/admincomponents/update-single/update-single.component';
@@ -62,6 +63,7 @@ import { MailComponent } from './components/admincomponents/mail/mail.component'
     LoginComponent,
     RegisterComponent,
     GetpwdComponent,
+    SetpwdComponent,
     UserComponent,
     UpdatepwdComponent,
     PayComponent,

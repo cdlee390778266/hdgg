@@ -1,0 +1,32 @@
+<nz-layout class="hd-login" [@simAnim]="'flyIn'">
+  <nz-header>
+    <hd-nav-bar viewTitle="重置密码"></hd-nav-bar>
+  </nz-header>
+  <nz-content>
+  	<form #setPwdForm="ngForm" (ngSubmit)="setPwd()">
+
+  		<div class="hd-form-group" nz-row>
+        <label nz-col [nzSpan]="8">新密码</label>
+        <input nz-col [nzSpan]="16" type="password" minlength="6" maxlength="20" required name="pwd" [(ngModel)]="pwd" placeholder="请输入6-20位的新密码！" required #pwdRef="ngModel" (keyup)="hideError()">
+      </div>
+      <nz-alert [nzType]="'error'" nzCloseable
+        [nzDescription]="'请输入6-20位的新密码！'" [hidden]="pwdRef.valid || pwdRef.pristine"></nz-alert>
+
+      <div class="hd-form-group" nz-row>
+        <label nz-col [nzSpan]="8">重复新密码</label>
+        <input nz-col [nzSpan]="16" type="password" minlength="6" maxlength="20" name="cpwd" [(ngModel)]="cpwd" placeholder="请输入6-20位的重复新密码！" required #cpwdRef="ngModel" (keyup)="hideError()">
+      </div>
+      <nz-alert [nzType]="'error'" nzCloseable
+        [nzDescription]="'重复新密码与新密码不一致！'" [hidden]=" cpwdRef.pristine || cpwdRef.value == pwdRef.value"></nz-alert>
+
+        <nz-alert [nzType]="'error'" nzCloseable
+        [nzDescription]="'保存失败，请检查密码是否正确！'" [hidden]="isSetSuccess"></nz-alert>
+
+  		<div class="login-btn-box">
+  			<div class="login-btn" [class.login-btn-disabled]="!setPwdForm.form.valid || cpwdRef.value != pwdRef.value">
+          <button type="submit" [disabled]="!setPwdForm.form.valid || cpwdRef.value != pwdRef.value">保存</button>
+        </div>
+  		</div>
+  	</form>
+  </nz-content>
+</nz-layout>

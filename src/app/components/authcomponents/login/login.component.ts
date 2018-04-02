@@ -28,6 +28,10 @@ export class LoginComponent implements OnInit {
   public password: string;
   public name: string;
 
+  hideError() {
+    this.isLogin = true;
+  }
+
   login() {
     this.httpService.get('/assets/data/login/login.json')
       .subscribe(res => {
@@ -52,7 +56,7 @@ export class LoginComponent implements OnInit {
 
             setTimeout(() => {
               successModal.destroy();
-              this.router.navigate(['view']);
+              this.router.navigate(['/admin/view']);
             }, 2000)
             
           }else {
