@@ -1,25 +1,7 @@
 import { ActionReducer, Action } from '@ngrx/store';
 import { User } from '../class/user';
-import { HdStateInterface } from '../class/hd.state.interface';
+import { HdStateInterface, InitialState } from '../class/hd.state.interface';
 import * as actions  from './actions';
-
-export const initialState: HdStateInterface = {
-    version: '',
-    dsc: '',
-    isLogin: false,
-    isLoading: false,
-    uid: -1,
-    name: '',
-    nname: '',
-    rname: '',
-    password: '',
-    level: 0,
-    cards: [],
-    email: '',
-    address: '',
-    phone: 0,
-    record: 0
-}
 
 export let DefaultUsers: User[] = [
   {
@@ -50,7 +32,7 @@ export let DefaultUsers: User[] = [
   }
 ]
 
-export function reducer(state: HdStateInterface = initialState, action: actions.All) {
+export function reducer(state: HdStateInterface = InitialState, action: actions.All) {
   //console.log(state)
   switch (action.type) {
     case actions.SHOW_LOADING: {

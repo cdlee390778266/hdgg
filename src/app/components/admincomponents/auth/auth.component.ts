@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { simAnim } from '../../../animations';
-import { User } from '../../../class/user';
-import { LoginService } from '../../authcomponents/login/login.service';
+import { HdStateInterface } from '../../../class/hd.state.interface';
+import { HdStateService} from '../../../service/hd.state.service';
 import { HttpService } from '../../../service/http.service'
 import { NzModalService } from 'ng-zorro-antd';
 import { CONFIG } from '../../../config';
@@ -14,9 +14,9 @@ import { CONFIG } from '../../../config';
 })
 export class AuthComponent implements OnInit {
 
-  constructor(private loginService: LoginService, private httpService: HttpService, private nzModalService: NzModalService) { }
+  constructor(private hdStateService: HdStateService, private httpService: HttpService, private nzModalService: NzModalService) { }
 
-  public user: User;
+  public hdState: HdStateInterface;
 
   public rname: string;
 
@@ -28,8 +28,10 @@ export class AuthComponent implements OnInit {
   	this.httpService.get('/assets/data/updatepwd/updatepwd.json')
       .subscribe(res => {
         if(res.status == 200) {
-          	this.loginService.setUserVal('rname', this.rname);
-          	this.loginService.setUserVal(['extend', 'ID'], this.ID);
+            this.hdStateService.setHdState({
+              rname: this.rname,
+              ID: this.ID
+            })
           	var successModal = this.nzModalService.open({
               content : CONFIG.success.s4,
               closable: false,
@@ -50,9 +52,12 @@ export class AuthComponent implements OnInit {
   }
 
   ngOnInit() {
-  	this.user = this.loginService.getUser();
-  	this.rname = this.loginService.getUserVal('rname');
-  	this.ID = this.loginService.getUserVal(['extend', 'ID']);
+    this.hdStateService.getHdStateObservable()
+      .subscribe(hdState =>  {
+        this.hdState = hdState;
+        this.rname = hdState.rname
+        this.ID = hdState.ID;
+      })
   }
 
 }

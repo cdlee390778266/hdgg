@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import  { simAnim } from '../../../animations';
 import { DefaultUsers } from '../../../ngrx/reducer';
 import { HttpService } from '../../../service/http.service';
-import { HdStateInterface } from '../../../class/hd.state.interface';
+import { HdStateInterface, InitialState } from '../../../class/hd.state.interface';
 import { HdStateService } from '../../../service/hd.state.service';
 import { NzModalService } from 'ng-zorro-antd';
 import { AuthService } from '../../../service/auth.service';
@@ -24,7 +24,7 @@ export class RegisterComponent implements OnInit {
   public name: string;
   public email: string;
   public pwd: string;
-  public defaultData: HdStateInterface = reducer.initialState;
+  private defaultData: HdStateInterface = Object.assign({}, InitialState);
 
   register() {
     this.httpService.get('/assets/data/login/login.json')

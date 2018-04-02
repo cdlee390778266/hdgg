@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import  { simAnim, shrinkOut } from '../../../animations';
-import { LoginService } from '../../authcomponents/login/login.service';
+import { simAnim, shrinkOut } from '../../../animations';
+import { HdStateInterface } from '../../../class/hd.state.interface';
+import { HdStateService } from '../../../service/hd.state.service';
 import { HttpService } from '../../../service/http.service'
 import { NzModalService } from 'ng-zorro-antd';
 import { CONFIG } from '../../../config';
@@ -13,9 +14,10 @@ import { CONFIG } from '../../../config';
 })
 export class ApplyListComponent implements OnInit {
 
-  constructor(private httpService: HttpService, private nzModalService: NzModalService, private loginService: LoginService) { }
+  constructor(private httpService: HttpService, private nzModalService: NzModalService, private hdStateService: HdStateService) { }
 
   public data = [];
+  public hdState: HdStateInterface;
 
   showModal(item) {
     var that = this;
@@ -38,8 +40,11 @@ export class ApplyListComponent implements OnInit {
   }
 
   ngOnInit() {
+    
     this.httpService.get('/assets/data/applylist/applylist.json')
-      .subscribe(res => this.data = res.data)
+      .subscribe(res => {
+        this.data = res.data;
+      })
   }
 
 }

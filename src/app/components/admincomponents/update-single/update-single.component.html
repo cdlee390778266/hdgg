@@ -8,7 +8,6 @@
   			<label nz-col [nzSpan]="6">{{inputText}}</label>
   			<input nz-col [nzSpan]="18" type="text" name="inputVal" [(ngModel)]="inputVal" placeholder="请输入{{inputText}}" required #inputRef="ngModel" (focus)="hideUpdateError()">
   		</div>
-
       <nz-alert [nzType]="'error'" nzCloseable
         [nzDescription]="'请输入'+inputText" [hidden]="inputRef.valid || inputRef.pristine"></nz-alert>
 

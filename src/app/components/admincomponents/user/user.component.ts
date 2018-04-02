@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import  { simAnim } from '../../../animations';
-import { User } from '../../authcomponents/login/user';
-import { LoginService } from '../../authcomponents/login/login.service';
+import { simAnim } from '../../../animations';
+import { HdStateInterface } from '../../../class/hd.state.interface';
+import { HdStateService } from '../../../service/hd.state.service';
 
 @Component({
   selector: 'hd-user',
@@ -11,9 +11,9 @@ import { LoginService } from '../../authcomponents/login/login.service';
 })
 export class UserComponent implements OnInit {
 
-  constructor(private loginService: LoginService) { }
+  constructor(private hdStateService: HdStateService) { }
 
-  public  user: User;
+  public hdState: HdStateInterface;
 
   public qqAccount: string;
 
@@ -25,17 +25,11 @@ export class UserComponent implements OnInit {
 
   public cardId: string;
 
-  public isLogin: boolean = false;
-
   ngOnInit() {
-  	this.user = this.loginService.getUser();
-  	this.isLogin = this.loginService.getLogin();
-
-    this.cardId = this.loginService.getUserVal(['extend', 'zfb']) || this.loginService.getUserVal(['extend', 'qq']) || this.loginService.getUserVal(['extend', 'wx']) || this.loginService.getUserVal(['extend', 'yhk']);
-    this.qqAccount = this.loginService.getUserVal(['extend', 'qqAccount']);
-    this.wxAccount = this.loginService.getUserVal(['extend', 'wxAccount']);
-    this.mmAccount = this.loginService.getUserVal(['extend', 'mmAccount']);
-    this.wbAccount = this.loginService.getUserVal(['extend', 'wbAccount']);
+  	this.hdStateService.getHdStateObservable()
+      .subscribe(hdState => {
+        this.hdState = hdState;
+      })
   }
 
 }

@@ -5,7 +5,7 @@
   <nz-content>
   	<div class="top">
   		<img src="/assets/images/data_bg.png" alt="" class="img-responsive">
-  		<div class="top-title">{{nname}}</div>
+  		<div class="top-title">{{nname || name}}</div>
   		<div class="top-nav" nz-row>
   			<span nz-col [nzSpan]="8">等级<i>{{level}}级</i></span>
   			<span nz-col [nzSpan]="8">积分<i>{{record}}</i></span>
@@ -79,7 +79,7 @@
 
   	<div class="login-btn-box">
 		<div class="login-btn">
-			<a href="javascript: void(0);">退出登录</a>
+			<a href="javascript: void(0);" (click)="loginOut()">退出登录</a>
 		</div>
 	</div>
   </nz-content>

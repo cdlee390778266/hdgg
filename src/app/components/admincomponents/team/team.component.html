@@ -5,7 +5,7 @@
   <nz-content>
   	<div class="list ">
   		<div class="list-title" nz-row>
-  			<span nz-col [nzSpan]="24">我的当前等级：{{level}}级</span>
+  			<span nz-col [nzSpan]="24">我的当前等级：{{hdState?.level || 0}}级</span>
   		</div>
   		<div class="lrSpace tc tbSpace c999" nz-row>
   			<div nz-col [nzSpan]="24"><img src="/assets/images/grade1.png" alt="" class="img-responsive">张三</div>
@@ -43,9 +43,9 @@
 		</a>
   	</div>
   	<div class="login-btn-box">
-		<div class="login-btn">
-			<a href="javascript: void(0);" (click)="apply()">要求加入</a>
-		</div>
+		  <div class="login-btn">
+        <button (click)="apply()">{{ hdState?.isJoinTeam ? '退出团队' : '要求加入'}}</button>
+      </div>
 	</div>
   </nz-content>
 </nz-layout>
