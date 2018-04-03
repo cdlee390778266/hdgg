@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import  { simAnim, shrinkOut } from '../../../animations';
-import { LoginService } from '../../authcomponents/login/login.service';
+import { simAnim, shrinkOut } from '../../../animations';
+import { HdStateService } from '../../../service/hd.state.service';
+import { HdStateInterface } from '../../../class/hd.state.interface';
 import { HttpService } from '../../../service/http.service'
 import { NzModalService } from 'ng-zorro-antd';
 import { CONFIG } from '../../../config';
@@ -13,9 +14,10 @@ import { CONFIG } from '../../../config';
 })
 export class OrderlistComponent implements OnInit {
 
-  constructor(private httpService: HttpService, private nzModalService: NzModalService, private loginService: LoginService) { }
+  constructor(private httpService: HttpService, private nzModalService: NzModalService, private hdStateService: HdStateService) { }
 
   public data = [];
+  public hdState: HdStateInterface;
 
   delete(item) {
   	var that = this;
@@ -29,7 +31,8 @@ export class OrderlistComponent implements OnInit {
         return new Promise((resolve) => {
           that.httpService.get('/assets/data/orderlist/orderlist.json')
           	.subscribe(res => {
-          		that.data.splice(that.data.indexOf(item), 1);
+          		that.hdState.orderList.splice(that.data.indexOf(item), 1);
+              that.hdStateService.setHdState(that.hdState);
           		resolve();
           	})
         });
@@ -39,7 +42,16 @@ export class OrderlistComponent implements OnInit {
 
   ngOnInit() {
   	this.httpService.get('/assets/data/orderlist/orderlist.json')
-      .subscribe(res => this.data = res.data)
+      .subscribe(res => {
+        this.hdStateService.getHdStateObservable(hdState => {
+          this.hdState = hdState;
+          if(!this.hdState.orderList) {
+            this.data = this.hdState.orderList = res.data;
+          }else {
+            this.data = this.hdState.orderList;
+          }
+        })
+      })
   }
 
 }

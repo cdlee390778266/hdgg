@@ -18,5 +18,5 @@ export const InitialState: HdStateInterface = {
     email: '390778266@qq.com',
     address: '四川省成都市新都区',
     phone: 13684054803,
-    record: 100
+    record: 30000000
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { HdStateService } from '../../../service/hd.state.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { HdStateService } from '../../../service/hd.state.service';
   templateUrl: './foot.component.html',
   styleUrls: ['./foot.component.css']
 })
-export class FootComponent implements OnInit {
+export class FootComponent implements OnInit, OnDestroy {
 
   constructor(private getHdStateService: HdStateService) { }
 
@@ -15,13 +15,16 @@ export class FootComponent implements OnInit {
   public isShowLoginLink: boolean = false;
 
   ngOnInit() {
-  	this.getHdStateService.getHdStateObservable()
-      .subscribe(hdState => {
+  	this.getHdStateService.getHdStateObservable(hdState => {
         if(hdState.isLogin) {
           this.isLogin = hdState.isLogin;
         }
         this.isShowLoginLink = true;
       })
+  }
+
+  ngOnDestroy() {
+    this.getHdStateService.unSubsribe();
   }
 
 }

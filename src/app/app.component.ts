@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { Title } from '@angular/platform-browser';
@@ -10,9 +10,10 @@ import 'rxjs/add/operator/mergeMap';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
+  providers: [HdStateService],
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnDestroy {
   
   public isShowLoading: boolean;
 
@@ -24,11 +25,9 @@ export class AppComponent implements OnInit {
     ) {}
 
   ngOnInit() {
-    this.getHdStateService.getHdStateObservable()
-      .subscribe(hdState => {
-        console.log(hdState)
-         this.isShowLoading = hdState.isLoading;
-      })
+    this.getHdStateService.getHdStateObservable(hdState => {
+       this.isShowLoading = hdState.isLoading;
+    })
 
     this.router.events
       .filter(event => event instanceof NavigationEnd)
@@ -40,6 +39,10 @@ export class AppComponent implements OnInit {
       .filter(route => route.outlet === 'primary')
       .mergeMap(route => route.data)
       .subscribe((event) => this.titleService.setTitle(event['title'] || '互动广告'));
+  }
+
+  ngOnDestroy() {
+    this.getHdStateService.unSubsribe();
   }
 
 }

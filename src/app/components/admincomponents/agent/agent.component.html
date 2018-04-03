@@ -26,8 +26,8 @@
         </div>
     </div>
     <div class="login-btn-box">
-      <div class="login-btn">
-        <button (click)="showModal(confirmTpl)">我要签约</button>
+      <div class="login-btn" [class.login-btn-disabled]="hdState.isSign">
+        <button (click)="showModal(confirmTpl)">{{hdState.isSign ? '已签约' : '我要签约'}}</button>
       </div>
     </div>
 

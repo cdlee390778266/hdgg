@@ -7,5 +7,5 @@ export class Apply {
     pname?: string;
     num?: string;
     price?: string;
-    sprice?: string
+    sprice?: string;
 }

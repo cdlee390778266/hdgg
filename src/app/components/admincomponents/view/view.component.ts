@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { simAnim } from '../../../animations';
 import { HdStateService } from '../../../service/hd.state.service';
@@ -13,7 +13,7 @@ import * as reducer from '../../../ngrx/reducer';
   styleUrls: ['./view.component.css'],
   animations: [simAnim]
 })
-export class ViewComponent implements OnInit {
+export class ViewComponent implements OnInit, OnDestroy {
 
   constructor(private hdStateService: HdStateService, private httpService: HttpService, private authService: AuthService, private router: Router) { }
 
@@ -33,8 +33,7 @@ export class ViewComponent implements OnInit {
   ngOnInit() {
   	this.httpService.get('/assets/data/login/login.json')
   		.subscribe(res => {
-  		  this.hdStateService.getHdStateObservable()
-          .subscribe(hdState =>  {
+  		  this.hdStateService.getHdStateObservable(hdState =>  {
             this.name = hdState.name;
             this.nname = hdState.nname;
             this.uid = hdState.uid;
@@ -42,6 +41,10 @@ export class ViewComponent implements OnInit {
             this.record = hdState.record;
           })
   		})
+  }
+
+  ngOnDestroy() {
+    this.hdStateService.unSubsribe();
   }
 
 }

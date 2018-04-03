@@ -29,7 +29,7 @@ export class HttpService {
 
     get(url) {
     	if(!url) return;
-        this.store.dispatch({type: actions.SHOW_LOADING, payload: {}})
+        this.store.dispatch({type: actions.SHOW_LOADING})
         return this.http.get(url)
             .pipe(tap(data => {this.store.dispatch({type: actions.HIDE_LOADING})}), catchError(this.handleError))
     }

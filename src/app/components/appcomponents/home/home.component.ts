@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { simAnim } from '../../../animations';
 import { HttpService } from '../../../service/http.service';
 import { HdStateService } from '../../../service/hd.state.service';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +10,7 @@ import { HdStateService } from '../../../service/hd.state.service';
   styleUrls: ['./home.component.css'],
   animations: [simAnim]
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
 
   constructor(private httpService: HttpService, private getHdStateService: HdStateService) { }
 
@@ -21,10 +22,12 @@ export class HomeComponent implements OnInit {
 
   public isShowTopLink: boolean = false;
 
+  public sub: Subscription;
+
   public topLink: Object = { text: '登录', href: '/auth/login'};
 
   ngOnInit() {
-    this.getHdStateService.getHdStateObservable()
+    this.sub = this.getHdStateService.getHdStateObservable()
       .subscribe(hdState =>  {
         if(hdState.isLogin) {
           this.topLink = { text: '我', href: '/admin/view'};
@@ -37,6 +40,11 @@ export class HomeComponent implements OnInit {
     .subscribe(res => this.lattices = res)
     this.httpService.get('../../assets/data/home/article.json')
     .subscribe(res => this.article = res.content)
+  }
+
+  ngOnDestroy() {
+    this.sub.unsubscribe();
+    this.getHdStateService.unSubsribe();
   }
 
 }

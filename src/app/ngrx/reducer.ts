@@ -47,7 +47,9 @@ export function reducer(state: HdStateInterface = InitialState, action: actions.
       return Object.assign({}, state, action.payload)
     }
 
-    case actions.GETSTATE: ;
+    case actions.GETSTATE: {
+      return state;
+    }
 
     default: {
       return state;

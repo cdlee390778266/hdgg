@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { simAnim } from '../../../animations';
 import { HttpService } from '../../../service/http.service';
-import { HdStateService } from '../../../service/hd.state.service';
 import { NzModalService } from 'ng-zorro-antd';
 import { DefaultUsers } from '../../../ngrx/reducer';
 import { CONFIG } from '../../../config';
@@ -15,7 +14,7 @@ import { CONFIG } from '../../../config';
 })
 export class GetpwdComponent implements OnInit {
 
-  constructor(private httpService: HttpService, private nzModalService: NzModalService, private hdStateService: HdStateService, private router: Router) { }
+  constructor(private httpService: HttpService, private nzModalService: NzModalService, private router: Router) { }
 
   public isGetSuccess: boolean = true;
   public name: string;
