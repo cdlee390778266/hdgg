@@ -164,7 +164,7 @@ const routes: Routes = [
         }
       },
       {
-        path: 'adupload/:id',
+        path: 'adupload',
         component: AdUploadComponent,
         data: {
           title: '广告列表'

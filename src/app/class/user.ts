@@ -1,5 +1,6 @@
 import { Apply } from './apply';
 import { Order } from './order';
+import { Ad } from './ad'
 
 export class User {
   uid?: number;
@@ -21,5 +22,6 @@ export class User {
   ID?: string;
   applyList?: Apply[];
   orderList?: Order[];
+  adList?: Ad[];
   isSign?: boolean;
 }
