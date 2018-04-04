@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { simAnim } from '../../../animations';
 import { HdStateInterface } from '../../../class/hd.state.interface';
 import { HdStateService } from '../../../service/hd.state.service';
@@ -12,7 +12,7 @@ import { CONFIG } from '../../../config';
   styleUrls: ['./agent.component.css'],
   animations: [simAnim]
 })
-export class AgentComponent implements OnInit {
+export class AgentComponent implements OnInit, OnDestroy {
 
   constructor(private httpService: HttpService, private hdStateService: HdStateService, private nzModalService: NzModalService) { }
 
@@ -63,6 +63,10 @@ export class AgentComponent implements OnInit {
     this.hdStateService.getHdStateObservable(hdState => {
       this.hdState = hdState;
     })
+  }
+
+  ngOnDestroy() {
+    this.hdStateService.unSubsribe();
   }
 
 }

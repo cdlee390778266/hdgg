@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
-import { User } from '../../authcomponents/login/user';
-import  { simAnim } from '../../../animations';
-import { LoginService } from '../../authcomponents/login/login.service';
+import { HdStateInterface } from '../../../class/hd.state.interface';
+import { simAnim } from '../../../animations';
+import { HdStateService } from '../../../service/hd.state.service';
 import { HttpService } from '../../../service/http.service'
 import { NzModalService } from 'ng-zorro-antd';
 import { CONFIG } from '../../../config';
@@ -13,9 +13,11 @@ import { CONFIG } from '../../../config';
   styleUrls: ['./updatepwd.component.css'],
   animations: [simAnim]
 })
-export class UpdatepwdComponent implements OnInit {
+export class UpdatepwdComponent implements OnInit, OnDestroy {
 
-  constructor(private nzModalService: NzModalService, private loginService: LoginService, private httpService: HttpService, private router: Router) { }
+  constructor(private nzModalService: NzModalService, private hdStateService: HdStateService, private httpService: HttpService, private router: Router) { }
+
+  public hdState: HdStateInterface;
 
   public oldPwd: string;
 
@@ -33,10 +35,9 @@ export class UpdatepwdComponent implements OnInit {
   	this.httpService.get('/assets/data/updatepwd/updatepwd.json')
       .subscribe(res => {
         if(res.status == 200) {
-          var user = this.loginService.getUser();
-          if(user.password == this.oldPwd) {
-          	this.loginService.setUserVal('password', this.newPwd);
-
+          if(this.hdState.password == this.oldPwd) {
+            this.hdState.password = this.newPwd;
+            this.hdStateService.setHdState(this.hdState);
           	var successModal = this.nzModalService.open({
               content : CONFIG.success.s3,
               closable: false,
@@ -66,6 +67,13 @@ export class UpdatepwdComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.hdStateService.getHdStateObservable(hdState => {
+      this.hdState = hdState;
+    })
+  }
+
+  ngOnDestroy() {
+    this.hdStateService.unSubsribe();
   }
 
 }

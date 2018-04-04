@@ -23,8 +23,6 @@ export class UserComponent implements OnInit {
 
   public wbAccount: string;
 
-  public cardId: string;
-
   ngOnInit() {
   	this.hdStateService.getHdStateObservable()
       .subscribe(hdState => {

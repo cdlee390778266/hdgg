@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import  { simAnim, shrinkOut } from '../../../animations';
-import { LoginService } from '../../authcomponents/login/login.service';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { simAnim, shrinkOut } from '../../../animations';
+import { Person } from '../../../class/person';
+import { HdStateInterface } from '../../../class/hd.state.interface';
+import { HdStateService } from '../../../service/hd.state.service';
 import { HttpService } from '../../../service/http.service'
 import { NzModalService } from 'ng-zorro-antd';
 import { CONFIG } from '../../../config';
@@ -11,11 +13,12 @@ import { CONFIG } from '../../../config';
   styleUrls: ['./mail-list.component.css'],
   animations: [simAnim, shrinkOut]
 })
-export class MailListComponent implements OnInit {
+export class MailListComponent implements OnInit, OnDestroy {
 
-  constructor(private httpService: HttpService, private loginService: LoginService, private nzModalService: NzModalService) { }
+  constructor(private httpService: HttpService, private hdStateService: HdStateService , private nzModalService: NzModalService) { }
 
-  public data: Object[];
+  public data: Person[];
+  public hdState: HdStateInterface;
 
   showModal(item) {
     var that = this;
@@ -28,7 +31,7 @@ export class MailListComponent implements OnInit {
         return new Promise((resolve) => {
           that.httpService.get('/assets/data/maillist/maillist.json')
           	.subscribe(res => {
-          		that.data.splice(that.data.indexOf(item), 1);
+          		that.hdState.contactList.splice(that.data.indexOf(item), 1);
           		resolve();
           	})
 	    });
@@ -38,7 +41,20 @@ export class MailListComponent implements OnInit {
 
   ngOnInit() {
   	this.httpService.get('/assets/data/maillist/maillist.json')
-      .subscribe(res => this.data = res.data)
+      .subscribe(res => {
+        this.hdStateService.getHdStateObservable(hdState => {
+          this.hdState = hdState;
+          if(this.hdState.contactList) {
+            this.data = this.hdState.contactList;
+          }else {
+            this.data = this.hdState.contactList = res.data;
+          }
+        })
+      })
+  }
+
+  ngOnDestroy() {
+    this.hdStateService.unSubsribe();
   }
 
 }

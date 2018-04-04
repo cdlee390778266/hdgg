@@ -7,19 +7,19 @@
   		<div class="bgWhite">
 	  		<div class="hd-form-group bt" nz-row>
 	  			<label nz-col [nzSpan]="6">支付宝</label>
-	  			<input nz-col [nzSpan]="18" type="" placeholder="请输入支付宝账号" name="zfb" [(ngModel)]="zfb" (keyup)="checkCanSubmit()">
+	  			<input nz-col [nzSpan]="18" type="" placeholder="请输入支付宝账号" name="zfb" [(ngModel)]="hdState.zfbReceiveId" (keyup)="checkCanSubmit()">
 	  		</div>
 	  		<div class="hd-form-group" nz-row>
 	  			<label nz-col [nzSpan]="6">QQ钱包</label>
-	  			<input nz-col [nzSpan]="18" type="" placeholder="请输入QQ账号" name="qq" [(ngModel)]="qq" (keyup)="checkCanSubmit()">
+	  			<input nz-col [nzSpan]="18" type="" placeholder="请输入QQ账号" name="qq" [(ngModel)]="hdState.qqReceiveId" (keyup)="checkCanSubmit()">
 	  		</div>
 	  		<div class="hd-form-group" nz-row>
 	  			<label nz-col [nzSpan]="6">微信账号</label>
-	  			<input nz-col [nzSpan]="18" type="" placeholder="请输入微信账号" name="wx" [(ngModel)]="wx" (keyup)="checkCanSubmit()">
+	  			<input nz-col [nzSpan]="18" type="" placeholder="请输入微信账号" name="wx" [(ngModel)]="hdState.wxReceiveId" (keyup)="checkCanSubmit()">
 	  		</div>
 	  		<div class="hd-form-group" nz-row>
 	  			<label nz-col [nzSpan]="6">银行卡号</label>
-	  			<input nz-col [nzSpan]="18" type="" placeholder="请输入银行卡号" name="yhk" [(ngModel)]="yhk" (keyup)="checkCanSubmit()">
+	  			<input nz-col [nzSpan]="18" type="" placeholder="请输入银行卡号" name="yhk" [(ngModel)]="hdState.yhkReceiveId" (keyup)="checkCanSubmit()">
 	  		</div>
 	  		<nz-alert [nzType]="'error'" nzCloseable
         	[nzDescription]="'至少填写一个收款账号！'" [hidden]="isCanSubmit"></nz-alert>

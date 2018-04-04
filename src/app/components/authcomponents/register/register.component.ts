@@ -31,7 +31,7 @@ export class RegisterComponent implements OnInit {
       .subscribe(res => {
         if(res.status == 200) {
 	        this.authService.isLoggedIn = true;
-	       	this.defaultData.uid = 1;
+	       	this.defaultData.uid = Math.floor(Math.random()*1000);
 	       	this.defaultData.level = 1;
 	       	this.defaultData.isLogin = true;
 	       	this.defaultData.name = this.name;

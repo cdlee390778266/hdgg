@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { User } from '../../authcomponents/login/user';
-import  { simAnim } from '../../../animations';
-import { LoginService } from '../../authcomponents/login/login.service';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { simAnim } from '../../../animations';
+import { HdStateInterface } from '../../../class/hd.state.interface';
+import { HdStateService } from '../../../service/hd.state.service';
 import { HttpService } from '../../../service/http.service'
 import { NzModalService } from 'ng-zorro-antd';
 import { CONFIG } from '../../../config';
@@ -12,26 +12,19 @@ import { CONFIG } from '../../../config';
   styleUrls: ['./receive.component.css'],
   animations: [simAnim]
 })
-export class ReceiveComponent implements OnInit {
+export class ReceiveComponent implements OnInit, OnDestroy {
 
-  constructor(private loginService: LoginService, private httpService: HttpService, private nzModalService: NzModalService) { }
+  constructor(private hdStateService: HdStateService, private httpService: HttpService, private nzModalService: NzModalService) { }
 
-  public user: User;
+  public hdState: HdStateInterface;
 
-  public zfb: string;
-
-  public qq: string;
-
-  public wx: string;
-
-  public yhk: string;
 
   public isCanSubmit: boolean = false;
 
   public isSaveSuccess: boolean = true;
 
   checkCanSubmit() {
-  	if(this.zfb || this.qq || this.wx || this.yhk) {
+  	if(this.hdState.zfbReceiveId || this.hdState.qqReceiveId || this.hdState.wxReceiveId || this.hdState.yhkReceiveId) {
   		this.isCanSubmit = true;
   	}else {
   		this.isCanSubmit = false;
@@ -42,10 +35,7 @@ export class ReceiveComponent implements OnInit {
   	this.httpService.get('/assets/data/updatepwd/updatepwd.json')
       .subscribe(res => {
         if(res.status == 200) {
-          	this.loginService.setUserVal(['extend', 'zfb'], this.zfb);
-          	this.loginService.setUserVal(['extend', 'qq'], this.qq);
-          	this.loginService.setUserVal(['extend', 'wx'], this.wx);
-          	this.loginService.setUserVal(['extend', 'yhk'], this.yhk);
+            this.hdStateService.setHdState(this.hdState);
           	var successModal = this.nzModalService.open({
               content : CONFIG.success.s5,
               closable: false,
@@ -66,11 +56,13 @@ export class ReceiveComponent implements OnInit {
   }
 
   ngOnInit() {
-  	this.zfb = this.loginService.getUserVal(['extend', 'zfb']);
-  	this.qq = this.loginService.getUserVal(['extend', 'qq']);
-  	this.wx = this.loginService.getUserVal(['extend', 'wx']);
-  	this.yhk = this.loginService.getUserVal(['extend', 'yhk']);
-  	this.checkCanSubmit();
+  	this.hdStateService.getHdStateObservable(hdState => {
+      this.hdState = hdState;
+      this.checkCanSubmit();
+    })
   }
 
+  ngOnDestroy() {
+    this.hdStateService.unSubsribe();
+  }
 }

@@ -34,7 +34,6 @@ export class AdAddComponent implements OnInit {
   previewVisible = false;
 
   save() {
-    console.log(this.data)
     this.httpService.get('/assets/data/adadd/adadd.json')
       .subscribe(res => {
         if(res.status == 200) {
@@ -99,7 +98,7 @@ export class AdAddComponent implements OnInit {
 
               setTimeout(() => {
                 successModal.destroy();
-                this.router.navigate(['/admin/adupload'])
+                history.back();
               }, 2000)
             }
         })

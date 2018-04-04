@@ -6,13 +6,13 @@
   	<form #authForm="ngForm" (ngSubmit)="auth()">
   		<div class="hd-form-group bt" nz-row>
   			<label nz-col [nzSpan]="6">真实姓名</label>
-  			<input nz-col [nzSpan]="18" type="" name="rname" [(ngModel)]="rname" placeholder="请输入真实姓名" required #rnameRef="ngModel" minlength="2" maxlength="6">
+  			<input nz-col [nzSpan]="18" type="" name="rname" [(ngModel)]="hdState.rname" placeholder="请输入真实姓名" required #rnameRef="ngModel" minlength="2" maxlength="6">
   		</div>
       <nz-alert [nzType]="'error'" nzCloseable
         [nzDescription]="'请输入2-6位的真实姓名！'" [hidden]="rnameRef.valid || rnameRef.pristine"></nz-alert>
       <div class="hd-form-group" nz-row>
         <label nz-col [nzSpan]="6">身份证号</label>
-        <input nz-col [nzSpan]="18" type="text" minlength="15" maxlength="18" name="ID" [(ngModel)]="ID" placeholder="请输入身份证号" required #IDRef="ngModel">
+        <input nz-col [nzSpan]="18" type="text" minlength="15" maxlength="18" name="ID" [(ngModel)]="hdState.ID" placeholder="请输入身份证号" required #IDRef="ngModel">
       </div>
       <nz-alert [nzType]="'error'" nzCloseable
         [nzDescription]="'请输入15-18位的身份证号！'" [hidden]="IDRef.valid || IDRef.pristine"></nz-alert>

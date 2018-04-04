@@ -9,7 +9,7 @@
   			<div class="bgWhite">
 	  			<a class="ad-img" routerLink="/admin/adadd/{{item?.adid}}" [ngStyle]="{'background-image': 'url(' + (item.imgsrc ? item.imgsrc : item.banners[0].thumbUrl) +')'}"></a>
 	  			<div class="ad-text">
-	  				<h1>{{item.title}}</h1>
+	  				<h1 class="ellipsis">{{item.title}}</h1>
 	  				<p>{{item.dsc}}</p>
 	  			</div>
 	  		</div>

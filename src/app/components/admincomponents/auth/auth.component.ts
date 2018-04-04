@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs/Subscription';
 import { simAnim } from '../../../animations';
 import { HdStateInterface } from '../../../class/hd.state.interface';
 import { HdStateService} from '../../../service/hd.state.service';
@@ -12,26 +13,19 @@ import { CONFIG } from '../../../config';
   styleUrls: ['./auth.component.css'],
   animations: [simAnim]
 })
-export class AuthComponent implements OnInit {
+export class AuthComponent implements OnInit, OnDestroy {
 
   constructor(private hdStateService: HdStateService, private httpService: HttpService, private nzModalService: NzModalService) { }
 
   public hdState: HdStateInterface;
-
-  public rname: string;
-
-  public ID: string;
-
   public isAuthSuccess: boolean = true;
+  public sub: Subscription;
 
   auth() {
   	this.httpService.get('/assets/data/updatepwd/updatepwd.json')
       .subscribe(res => {
         if(res.status == 200) {
-            this.hdStateService.setHdState({
-              rname: this.rname,
-              ID: this.ID
-            })
+            this.hdStateService.setHdState(this.hdState);
           	var successModal = this.nzModalService.open({
               content : CONFIG.success.s4,
               closable: false,
@@ -52,12 +46,14 @@ export class AuthComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.hdStateService.getHdStateObservable()
+    this.sub = this.hdStateService.getHdStateObservable()
       .subscribe(hdState =>  {
         this.hdState = hdState;
-        this.rname = hdState.rname
-        this.ID = hdState.ID;
       })
+  }
+
+  ngOnDestroy() {
+    this.sub.unsubscribe();
   }
 
 }

@@ -129,21 +129,21 @@ const routes: Routes = [
         }
       },
       {
-        path: 'team/:id',
+        path: 'team',
         component: TeamComponent,
         data: {
           title: '团队'
         }
       },
       {
-        path: 'teamsize/:id',
+        path: 'teamsize',
         component: TeamSizeComponent,
         data: {
           title: '团队规模'
         }
       },
       {
-        path: 'upgraded/:id',
+        path: 'upgraded',
         component: UpgradeDComponent,
         data: {
           title: '升级详情'
