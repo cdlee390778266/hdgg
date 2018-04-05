@@ -51,6 +51,10 @@ export function reducer(state: HdStateInterface = InitialState, action: actions.
       return state;
     }
 
+    case actions.RESETSTATE: {
+      return {};
+    }
+
     default: {
       return state;
     }

@@ -5,7 +5,7 @@ import { DefaultUsers } from '../../../ngrx/reducer';
 import { HdStateService } from '../../../service/hd.state.service';
 import { AuthService } from '../../../service/auth.service';
 import { HttpService } from '../../../service/http.service';
-import { HdStateInterface, InitialState } from '../../../class/hd.state.interface';
+import { HdStateInterface } from '../../../class/hd.state.interface';
 import * as reducer from '../../../ngrx/reducer';
 
 @Component({
@@ -24,7 +24,6 @@ export class ViewComponent implements OnInit, OnDestroy {
   public uid: number;
   public level: number;
   public record: number;
-  public emptyData: HdStateInterface = Object.assign({}, InitialState);
 
   loginOut() {
     for(let i = 0; i < DefaultUsers.length; i++) {
@@ -33,7 +32,7 @@ export class ViewComponent implements OnInit, OnDestroy {
         break;
       }
     }
-    this.hdStateService.setHdState(this.emptyData);
+    this.hdStateService.resetHdState();
     this.authService.logout();
     this.router.navigate(['/home']);
   }

@@ -30,6 +30,10 @@ export class HdStateService {
   	this.store.dispatch({type: actions.SETSTATE, payload: newState})
   }
 
+  resetHdState() {
+    this.store.dispatch({type: actions.RESETSTATE});
+  }
+
   unSubsribe() {
   	if(this.subscribe) {
       this.subscribe.unsubscribe();

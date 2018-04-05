@@ -18,19 +18,7 @@ export const InitialState: HdStateInterface = {
     email: '',
     address: '',
     phone: null,
-    record: 300000,
-    isJoinTeam: false,
-    qqAccount: null,
-    wxAccount: '',
-    mmAccount: '',
-    wbAccount: '',
-    zfbReceiveId: null,
-    qqReceiveId: '',
-    wxReceiveId: '',
-    yhkReceiveId: '',
-    ID: '',
-    oa: null,
-    isSign: false
+    record: 300000
 }
 
 // export const InitialState: HdStateInterface = {
