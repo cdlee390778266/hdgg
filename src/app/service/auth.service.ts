@@ -10,6 +10,7 @@ export class AuthService {
   	) {
   	hdStateService.getHdStateObservable()
   		.subscribe(hdState => {
+        //console.log(hdState)
   			this.isLoggedIn = hdState.isLogin;
   		})
   }

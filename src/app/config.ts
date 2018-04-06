@@ -27,5 +27,8 @@ export const CONFIG = {
 		's9': '注册成功',
 		's11': '修改成功',
 		's12': '操作成功'
-	}
+	},
+	cookiesName: 'hdUserId',
+	storageName: 'hdStates',
+	host: ''
 }

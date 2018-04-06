@@ -2,6 +2,8 @@ import { ActionReducer, Action } from '@ngrx/store';
 import { User } from '../class/user';
 import { HdStateInterface, InitialState } from '../class/hd.state.interface';
 import * as actions  from './actions';
+import * as cookies from '../class/cookies';
+import { CONFIG } from '../config';
 
 export let DefaultUsers: User[] = [
   {
@@ -44,7 +46,9 @@ export function reducer(state: HdStateInterface = InitialState, action: actions.
     }
 
     case actions.SETSTATE: {
-      return Object.assign({}, state, action.payload)
+      let newState = Object.assign({}, state, action.payload);
+      cookies.set_cookie(CONFIG.cookiesName, JSON.stringify(newState), 2);
+      return newState;
     }
 
     case actions.GETSTATE: {
@@ -52,6 +56,7 @@ export function reducer(state: HdStateInterface = InitialState, action: actions.
     }
 
     case actions.RESETSTATE: {
+      cookies.delete_cookie(CONFIG.cookiesName);
       return {};
     }
 
