@@ -22,7 +22,7 @@ export class hideLoadingAction implements Action {
 export class setStateAction implements Action {
   readonly type = SETSTATE;
 
-  constructor(public payload: HdStateInterface) {}
+  constructor(public payload: HdStateInterface, public isAdd?: boolean) {}
 }
 
 export class getStateAction implements Action {

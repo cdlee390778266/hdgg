@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { simAnim, shrinkOut } from '../../../animations';
 import { HdStateService } from '../../../service/hd.state.service';
 import { HdStateInterface } from '../../../class/hd.state.interface';
@@ -12,7 +12,7 @@ import { CONFIG } from '../../../config';
   styleUrls: ['./orderlist.component.css'],
   animations: [simAnim, shrinkOut]
 })
-export class OrderlistComponent implements OnInit {
+export class OrderlistComponent implements OnInit, OnDestroy {
 
   constructor(private httpService: HttpService, private nzModalService: NzModalService, private hdStateService: HdStateService) { }
 
@@ -46,7 +46,7 @@ export class OrderlistComponent implements OnInit {
         this.hdStateService.getHdStateObservable(hdState => {
           this.hdState = hdState;
           if(!this.hdState.orderList) {
-            this.data = this.hdState.orderList = res.data;
+            this.data = this.hdState['orderList'] = res.data;
           }else {
             this.data = this.hdState.orderList;
           }
@@ -54,4 +54,7 @@ export class OrderlistComponent implements OnInit {
       })
   }
 
+  ngOnDestroy() {
+    this.hdStateService.unSubsribe();
+  }
 }

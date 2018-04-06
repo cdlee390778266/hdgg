@@ -12,9 +12,15 @@ import { Subscription } from 'rxjs/Subscription';
 export class HdStateService {
 
   constructor(private store: Store<HdStateInterface>) {
-    let hdState = cookies.get_cookie(CONFIG.cookiesName);
-    if(hdState) {
-      this.store.dispatch({type: actions.SETSTATE, payload: JSON.parse(hdState)});
+    let hdUserId = parseInt(cookies.get_cookie(CONFIG.cookiesName));
+    if(hdUserId) {
+      for(let i = 0; i < reducer.DefaultUsers.length; i++){
+        if(reducer.DefaultUsers[i].uid == hdUserId) {
+          this.hdState = reducer.DefaultUsers[i];
+          this.store.dispatch({type: actions.SETSTATE, payload: this.hdState});
+          break;
+        }
+      }
     }
   }
 
@@ -31,9 +37,13 @@ export class HdStateService {
   	
   }
 
-  setHdState(newState: HdStateInterface) {
+  setHdState(newState: HdStateInterface, isAdd?: boolean) {
   	if(!newState) return;
-  	this.store.dispatch({type: actions.SETSTATE, payload: newState})
+    if(isAdd) {
+      this.store.dispatch({type: actions.SETSTATE, payload: newState, isAdd: isAdd})
+    }else {
+    	this.store.dispatch({type: actions.SETSTATE, payload: newState})
+    }
   }
 
   resetHdState() {

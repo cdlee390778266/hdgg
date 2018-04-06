@@ -9,6 +9,7 @@ import { NzModalService } from 'ng-zorro-antd';
 import { AuthService } from '../../../service/auth.service';
 import { CONFIG } from '../../../config';
 import * as reducer from '../../../ngrx/reducer';
+import * as cookies from '../../../class/cookies';
 
 @Component({
   selector: 'hd-register',
@@ -38,7 +39,9 @@ export class RegisterComponent implements OnInit {
 	       	this.defaultData.email = this.email;
 	       	this.defaultData.password = this.pwd;
 
-	       	this.hdStateService.setHdState(this.defaultData);
+	       	cookies.set_cookie(CONFIG.cookiesName, this.defaultData.uid.toString(), 2);
+	       	this.hdStateService.resetHdState();
+	       	this.hdStateService.setHdState(this.defaultData, true);
 	       	DefaultUsers.push(this.defaultData);
 
 			this.isRegisterSuccess = true;

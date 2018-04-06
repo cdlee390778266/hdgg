@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HdStateService } from './hd.state.service';
 import { Observable } from 'rxjs';
 import { tap, delay } from 'rxjs/operators';
+import { InitialState } from '../class/hd.state.interface';
 
 @Injectable()
 export class AuthService {
@@ -10,8 +11,7 @@ export class AuthService {
   	) {
   	hdStateService.getHdStateObservable()
   		.subscribe(hdState => {
-        //console.log(hdState)
-  			this.isLoggedIn = hdState.isLogin;
+        this.isLoggedIn = hdState.isLogin;
   		})
   }
 

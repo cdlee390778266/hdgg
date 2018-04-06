@@ -6,7 +6,9 @@ import { HdStateService } from '../../../service/hd.state.service';
 import { AuthService } from '../../../service/auth.service';
 import { HttpService } from '../../../service/http.service';
 import { HdStateInterface } from '../../../class/hd.state.interface';
+import { CONFIG } from '../../../config';
 import * as reducer from '../../../ngrx/reducer';
+import * as cookies from '../../../class/cookies';
 
 @Component({
   selector: 'hd-view',
@@ -32,6 +34,7 @@ export class ViewComponent implements OnInit, OnDestroy {
         break;
       }
     }
+    cookies.delete_cookie(CONFIG.cookiesName);
     this.hdStateService.resetHdState();
     this.authService.logout();
     this.router.navigate(['/home']);

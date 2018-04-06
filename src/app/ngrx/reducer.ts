@@ -2,10 +2,10 @@ import { ActionReducer, Action } from '@ngrx/store';
 import { User } from '../class/user';
 import { HdStateInterface, InitialState } from '../class/hd.state.interface';
 import * as actions  from './actions';
-import * as cookies from '../class/cookies';
+import * as storage from '../class/storage';
 import { CONFIG } from '../config';
 
-export let DefaultUsers: User[] = [
+let defaultUsers: User[] = [
   {
     uid: 99,
     name: 'hdAdmin',
@@ -34,6 +34,40 @@ export let DefaultUsers: User[] = [
   }
 ]
 
+function getUsers(): User[] {
+  let storages = storage.getObject(CONFIG.storageName);
+  if(storages) {
+    defaultUsers = storages;
+  }else {
+    let storageObj = {};
+    storageObj[CONFIG.storageName] = defaultUsers;
+    storage.setObject(storageObj);
+  }
+  return defaultUsers;
+}
+
+export let DefaultUsers: User[] = getUsers();
+
+function updateDefaultUser(newState, isAdd?: boolean) {
+  if(isAdd) {
+    DefaultUsers.push(newState);
+  }else {
+    for(let i = 0; i < DefaultUsers.length; i++) {
+      if(DefaultUsers[i].uid == newState.uid) {
+        DefaultUsers[i] = newState;
+        isAdd = false;
+        break;
+      }
+    } 
+  }
+}
+
+function updateStorage() {
+  let storageObj = {};
+  storageObj[CONFIG.storageName] = DefaultUsers;
+  storage.setObject(storageObj);
+}
+
 export function reducer(state: HdStateInterface = InitialState, action: actions.All) {
   //console.log(state)
   switch (action.type) {
@@ -47,7 +81,12 @@ export function reducer(state: HdStateInterface = InitialState, action: actions.
 
     case actions.SETSTATE: {
       let newState = Object.assign({}, state, action.payload);
-      cookies.set_cookie(CONFIG.cookiesName, JSON.stringify(newState), 2);
+      if(newState.uid != InitialState.uid) {
+        
+        updateDefaultUser(newState, action.isAdd);
+        updateStorage();
+      }
+      
       return newState;
     }
 
@@ -56,7 +95,6 @@ export function reducer(state: HdStateInterface = InitialState, action: actions.
     }
 
     case actions.RESETSTATE: {
-      cookies.delete_cookie(CONFIG.cookiesName);
       return {};
     }
 

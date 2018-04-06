@@ -7,6 +7,7 @@ import { HdStateInterface } from '../../../class/hd.state.interface';
 import { HdStateService } from '../../../service/hd.state.service';
 import { NzModalService } from 'ng-zorro-antd';
 import { CONFIG } from '../../../config';
+import * as cookies from '../../../class/cookies';
 
 import {
   FormBuilder,
@@ -40,6 +41,8 @@ export class LoginComponent implements OnInit {
           for(let i = 0, len = DefaultUsers.length; i < len; i++) {
             if(DefaultUsers[i].name == this.name && DefaultUsers[i].password == this.password) {
               isloginSuccess = true;
+              cookies.set_cookie(CONFIG.cookiesName, DefaultUsers[i].uid.toString(), 2);
+              this.hdStateService.resetHdState();
               this.hdStateService.setHdState(Object.assign({}, DefaultUsers[i], {isLogin: true}))
               break;
             }

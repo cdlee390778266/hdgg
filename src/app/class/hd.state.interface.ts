@@ -8,7 +8,7 @@ export const InitialState: HdStateInterface = {
     dsc: '',
     isLogin: false,
     isLoading: false,
-    uid: null,
+    uid: -1,
     name: '',
     nname: '',
     rname: '',
