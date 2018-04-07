@@ -25,9 +25,14 @@ export class RegisterComponent implements OnInit {
   public name: string;
   public email: string;
   public pwd: string;
-  private defaultData: HdStateInterface = Object.assign({}, InitialState);
+  public cpwd: string;
+  public defaultData: HdStateInterface = Object.assign({}, InitialState);
+  public canSubmit: boolean = true;
 
   register() {
+  	if(!this.canSubmit) return;
+  	console.log(DefaultUsers)
+  	this.canSubmit = false;
     this.httpService.get('/assets/data/login/login.json')
       .subscribe(res => {
         if(res.status == 200) {
@@ -42,8 +47,7 @@ export class RegisterComponent implements OnInit {
 	       	cookies.set_cookie(CONFIG.cookiesName, this.defaultData.uid.toString(), 2);
 	       	this.hdStateService.resetHdState();
 	       	this.hdStateService.setHdState(this.defaultData, true);
-	       	DefaultUsers.push(this.defaultData);
-
+	       	
 			this.isRegisterSuccess = true;
 	        var successModal = this.nzModalService.open({
 	          content : CONFIG.success.s9,
@@ -56,9 +60,11 @@ export class RegisterComponent implements OnInit {
 	        setTimeout(() => {
 	          successModal.destroy();
 	          this.router.navigate(['/admin/view']);
+	          this.canSubmit = true;
 	        }, 2000)
         }else {
           this.isRegisterSuccess = false;
+          this.canSubmit = true;
         }
       })
   }
