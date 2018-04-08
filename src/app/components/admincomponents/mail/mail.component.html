@@ -11,11 +11,12 @@
       <nz-alert [nzType]="'error'" nzCloseable
         [nzDescription]="'请输入姓名！'" [hidden]="cnameRef.valid || cnameRef.pristine"></nz-alert>
       <div class="hd-form-group" nz-row>
-  			<label nz-col [nzSpan]="6">电话</label>
-  			<input nz-col [nzSpan]="18" type="number" name="phone" [(ngModel)]="data.cphone" placeholder="请输入电话号码" required #phoneRef="ngModel" required="">
+  			<label nz-col [nzSpan]="6">手机号码</label>
+  			<input nz-col [nzSpan]="18"  name="phone" [(ngModel)]="data.cphone" placeholder="请输入手机号码" required #phoneRef="ngModel" required="" hdPhone maxlength="11">
   		</div>
+      {{phoneRef.errors | json}}
       <nz-alert [nzType]="'error'" nzCloseable
-        [nzDescription]="'请输入电话号码！'" [hidden]="phoneRef.valid || phoneRef.pristine"></nz-alert>
+        [nzDescription]="'请输入正确的手机号码！'" [hidden]="phoneRef.valid || phoneRef.pristine"></nz-alert>
       <div class="hd-form-group" nz-row>
   			<label nz-col [nzSpan]="6">地址</label>
   			<input nz-col [nzSpan]="18" type="" name="address" [(ngModel)]="data.caddress" placeholder="请输入地址">

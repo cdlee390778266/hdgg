@@ -6,17 +6,17 @@
   	<form #getPwdForm="ngForm" (ngSubmit)="getPwd()">
       <div class="hd-form-group bt" nz-row>
         <label nz-col [nzSpan]="6">用户名</label>
-        <input nz-col [nzSpan]="18" type="" name="name" [(ngModel)]="name" placeholder="请输入用户名" required #nameRef="ngModel" (keyup)="hideError()">
+        <input nz-col [nzSpan]="18" type="" name="name" [(ngModel)]="name" placeholder="请输入用户名" required #nameRef="ngModel" (keyup)="hideError()" minlength="2" maxlength="6">
       </div>
       <nz-alert [nzType]="'error'" nzCloseable
-        [nzDescription]="'请输入6-20位的用户名！'" [hidden]="nameRef.valid || nameRef.pristine"></nz-alert>
+        [nzDescription]="'请输入2-6位的用户名！'" [hidden]="nameRef.valid || nameRef.pristine"></nz-alert>
 
   		<div class="hd-form-group" nz-row>
   			<label nz-col [nzSpan]="6">电子邮箱</label>
-  			<input nz-col [nzSpan]="18" type="" name="email" [(ngModel)]="email" placeholder="请输入用户名" required #emailRef="ngModel" (keyup)="hideError()">
+  			<input nz-col [nzSpan]="18" type="" name="email" [(ngModel)]="email" placeholder="请输入用户名" required #emailRef="ngModel" (keyup)="hideError()" hdEmail>
   		</div>
       <nz-alert [nzType]="'error'" nzCloseable
-        [nzDescription]="'请输入电子邮箱！'" [hidden]="emailRef.valid || emailRef.pristine"></nz-alert>
+        [nzDescription]="'请输入正确的电子邮箱！'" [hidden]="emailRef.valid || emailRef.pristine"></nz-alert>
 
         <nz-alert [nzType]="'error'" nzCloseable
         [nzDescription]="'发送失败，用户名与电子邮箱不匹配！'" [hidden]="isGetSuccess"></nz-alert>

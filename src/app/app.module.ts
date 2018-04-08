@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { StoreModule } from '@ngrx/store';
@@ -51,6 +51,8 @@ import { OrderdComponent } from './components/admincomponents/orderd/orderd.comp
 import { OrderlistComponent } from './components/admincomponents/orderlist/orderlist.component';
 import { RecordComponent } from './components/admincomponents/record/record.component';
 import { MailComponent } from './components/admincomponents/mail/mail.component';
+import { EmailDirective } from './Directives/email.directive';
+import { PhoneDirective } from './directives/phone.directive';
 
 @NgModule({
   declarations: [
@@ -87,7 +89,9 @@ import { MailComponent } from './components/admincomponents/mail/mail.component'
     OrderlistComponent,
     UpdateSingleComponent,
     RecordComponent,
-    MailComponent
+    MailComponent,
+    EmailDirective,
+    PhoneDirective
   ],
   imports: [
     BrowserModule,
@@ -95,7 +99,6 @@ import { MailComponent } from './components/admincomponents/mail/mail.component'
     AdminRoutingModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
     NgZorroAntdModule.forRoot(),

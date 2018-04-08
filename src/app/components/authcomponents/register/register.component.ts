@@ -30,6 +30,10 @@ export class RegisterComponent implements OnInit {
   public defaultData: HdStateInterface = Object.assign({}, InitialState);
   public canSubmit: boolean = true;
 
+  hideError() {
+    this.isRegisterSuccess = true;
+  }
+
   register() {
   	if(!this.canSubmit) return;
   	console.log(DefaultUsers)
@@ -70,25 +74,5 @@ export class RegisterComponent implements OnInit {
       })
   }
 
-  forbiddenNameValidator(nameRe: RegExp): ValidatorFn {
-    return (control: AbstractControl): {[key: string]: any} => {
-      const forbidden = nameRe.test(control.value);
-      return forbidden ? {'forbiddenName': {value: control.value}} : null;
-    };
-  }
-
-  heroForm: FormGroup;
-
-  ngOnInit() {
-    this.heroForm = new FormGroup({
-      'names': new FormControl(this.name, [
-        this.forbiddenNameValidator(/bob/i)
-      ])
-    });
-
-  }
-
-  get names() { return this.heroForm.get('name'); }
-
-
+  ngOnInit() {}
 }

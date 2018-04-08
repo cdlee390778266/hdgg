@@ -28,13 +28,13 @@
   			<input nz-col [nzSpan]="17" type="number" placeholder="请输入广告单价" required name="price" [(ngModel)]="data.price" #priceRef="ngModel">
   		</div>
       <nz-alert [nzType]="'error'" nzCloseable
-        [nzDescription]="'广告单价必填！'" [hidden]="priceRef.valid || priceRef.pristine"></nz-alert>
+        [nzDescription]="'广告单价必填且必须为数字！'" [hidden]="priceRef.valid || priceRef.pristine"></nz-alert>
       <div class="hd-form-group" nz-row>
         <label nz-col [nzSpan]="7">广告数量</label>
-        <input nz-col [nzSpan]="17" type="" placeholder="请输入广告数量" required name="num" [(ngModel)]="data.num" #numRef="ngModel">
+        <input nz-col [nzSpan]="17" type="number" placeholder="请输入广告数量" required name="num" [(ngModel)]="data.num" #numRef="ngModel">
       </div>
       <nz-alert [nzType]="'error'" nzCloseable
-        [nzDescription]="'广告数量必填！'" [hidden]="numRef.valid || numRef.pristine"></nz-alert>
+        [nzDescription]="'广告数量必填且必须为数字！'" [hidden]="numRef.valid || numRef.pristine"></nz-alert>
   		<div class="login-btn-box">
   			<div class="login-btn login-btn-green" [class.login-btn-disabled]="!adForm.form.valid">
   				<button type="submit" [disabled]="!adForm.form.valid">确认上传</button>

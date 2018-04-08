@@ -7,28 +7,28 @@
 
   		<div class="hd-form-group bt" nz-row>
   			<label nz-col [nzSpan]="6">用户名</label>
-  			<input nz-col [nzSpan]="18" type="" name="name" [(ngModel)]="name" placeholder="请输入用户名" required #nameRef="ngModel">
+  			<input nz-col [nzSpan]="18" type="" name="name" [(ngModel)]="name" placeholder="请输入用户名" required #nameRef="ngModel" minlength="2" maxlength="6" (key.up)="hideError()">
   		</div>
       <nz-alert [nzType]="'error'" nzCloseable
-        [nzDescription]="'用户名必填！'" [hidden]="nameRef.valid || nameRef.pristine"></nz-alert>
+        [nzDescription]="'请输入2-6位用户名！'" [hidden]="nameRef.valid || nameRef.pristine"></nz-alert>
 
   		<div class="hd-form-group" nz-row>
   			<label nz-col [nzSpan]="6">电子邮箱</label>
-  			<input nz-col [nzSpan]="18" type="" name="email" [(ngModel)]="email" placeholder="请输入电子邮箱" required #emailRef="ngModel">
+  			<input nz-col [nzSpan]="18" type="" name="email" [(ngModel)]="email" placeholder="请输入电子邮箱" required #emailRef="ngModel" hdEmail (key.up)="hideError()">
   		</div>
       <nz-alert [nzType]="'error'" nzCloseable
-        [nzDescription]="'电子邮箱必填！'" [hidden]="emailRef.valid || emailRef.pristine"></nz-alert>
+        [nzDescription]="'请输入正确的电子邮箱！'" [hidden]="emailRef.valid || emailRef.pristine"></nz-alert>
 
   		<div class="hd-form-group" nz-row>
   			<label nz-col [nzSpan]="6">密码</label>
-  			<input nz-col [nzSpan]="18" type="password" minlength="6" maxlength="20" required name="pwd" [(ngModel)]="pwd" placeholder="请输入6-20位的密码！" required #pwdRef="ngModel">
+  			<input nz-col [nzSpan]="18" type="password" minlength="6" maxlength="20" required name="pwd" [(ngModel)]="pwd" placeholder="请输入6-20位的密码！" required #pwdRef="ngModel" (key.up)="hideError()">
   		</div>
       <nz-alert [nzType]="'error'" nzCloseable
         [nzDescription]="'请输入6-20位的密码！'" [hidden]="pwdRef.valid || pwdRef.pristine"></nz-alert>
 
       <div class="hd-form-group" nz-row>
         <label nz-col [nzSpan]="6">重复密码</label>
-        <input nz-col [nzSpan]="18" type="password" minlength="6" maxlength="20" name="cpwd" [(ngModel)]="cpwd" placeholder="请输入6-20位的重复密码！" required #cpwdRef="ngModel">
+        <input nz-col [nzSpan]="18" type="password" minlength="6" maxlength="20" name="cpwd" [(ngModel)]="cpwd" placeholder="请输入6-20位的重复密码！" required #cpwdRef="ngModel" (key.up)="hideError()">
       </div>
       <nz-alert [nzType]="'error'" nzCloseable
         [nzDescription]="'重复密码与密码不一致！'" [hidden]=" cpwdRef.pristine || cpwdRef.value == pwdRef.value"></nz-alert>
