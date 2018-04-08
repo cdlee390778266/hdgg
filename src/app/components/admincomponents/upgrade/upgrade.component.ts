@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import  { simAnim } from '../../../animations';
-import { LoginService } from '../../authcomponents/login/login.service';
 import { HttpService } from '../../../service/http.service'
 import { NzModalService } from 'ng-zorro-antd';
 import { CONFIG } from '../../../config';
@@ -14,7 +13,7 @@ import { CONFIG } from '../../../config';
 })
 export class UpgradeComponent implements OnInit {
 
-  constructor(private httpService: HttpService, private nzModalService: NzModalService, private loginService: LoginService, private router: Router) { }
+  constructor(private httpService: HttpService, private nzModalService: NzModalService, private router: Router) { }
 
   public data = [];
 

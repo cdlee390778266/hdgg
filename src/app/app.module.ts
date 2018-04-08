@@ -1,14 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { StoreModule } from '@ngrx/store';
 import { reducer } from './ngrx/reducer';
 import { HttpService } from './service/http.service';
 import { HdStateService } from './service/hd.state.service';
-import { LoginService } from './components/authcomponents/login/login.service';
 import { AuthService } from './service/auth.service';
 
 import { AuthRoutingModule } from './router/auth-routing.module';
@@ -96,12 +95,13 @@ import { MailComponent } from './components/admincomponents/mail/mail.component'
     AdminRoutingModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
     NgZorroAntdModule.forRoot(),
     StoreModule.forRoot({ reducer: reducer }) 
   ],
-  providers: [HttpService, HdStateService, LoginService, AuthService],
+  providers: [HttpService, HdStateService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

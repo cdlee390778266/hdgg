@@ -10,6 +10,7 @@ import { AuthService } from '../../../service/auth.service';
 import { CONFIG } from '../../../config';
 import * as reducer from '../../../ngrx/reducer';
 import * as cookies from '../../../class/cookies';
+import { AbstractControl, NG_VALIDATORS, Validator, ValidatorFn, Validators, FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'hd-register',
@@ -48,7 +49,7 @@ export class RegisterComponent implements OnInit {
 	       	this.hdStateService.resetHdState();
 	       	this.hdStateService.setHdState(this.defaultData, true);
 	       	
-			this.isRegisterSuccess = true;
+			    this.isRegisterSuccess = true;
 	        var successModal = this.nzModalService.open({
 	          content : CONFIG.success.s9,
 	          closable: false,
@@ -69,7 +70,25 @@ export class RegisterComponent implements OnInit {
       })
   }
 
-  ngOnInit() {
+  forbiddenNameValidator(nameRe: RegExp): ValidatorFn {
+    return (control: AbstractControl): {[key: string]: any} => {
+      const forbidden = nameRe.test(control.value);
+      return forbidden ? {'forbiddenName': {value: control.value}} : null;
+    };
   }
+
+  heroForm: FormGroup;
+
+  ngOnInit() {
+    this.heroForm = new FormGroup({
+      'names': new FormControl(this.name, [
+        this.forbiddenNameValidator(/bob/i)
+      ])
+    });
+
+  }
+
+  get names() { return this.heroForm.get('name'); }
+
 
 }

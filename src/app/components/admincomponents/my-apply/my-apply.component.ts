@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import  { simAnim } from '../../../animations';
-import { LoginService } from '../../authcomponents/login/login.service';
 import { HttpService } from '../../../service/http.service'
 import { NzModalService } from 'ng-zorro-antd';
 import { CONFIG } from '../../../config';
@@ -13,7 +12,7 @@ import { CONFIG } from '../../../config';
 })
 export class MyApplyComponent implements OnInit {
 
-  constructor(private httpService: HttpService, private nzModalService: NzModalService, private loginService: LoginService) { }
+  constructor(private httpService: HttpService, private nzModalService: NzModalService) { }
 
   public data: any;
 
