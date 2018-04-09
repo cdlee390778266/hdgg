@@ -3,7 +3,7 @@ import { AbstractControl, NG_VALIDATORS, Validator, ValidatorFn, Validators } fr
 
 export function phoneValidator(): ValidatorFn {
   return (control: AbstractControl): {[key: string]: any} => {
-    const isValid = RegExp("^1[34578]\d{9}$").test(control.value);
+    const isValid = RegExp("^((13[0-9])|(14[5|7])|(15([0-3]|[5-9]))|(18[0,5-9]))\\d{8}$").test(control.value);
     return isValid ? null : {'phone': {value: control.value}};
   };
 }
@@ -17,7 +17,7 @@ export class PhoneDirective implements Validator {
   constructor() { }
 
   validate(control: AbstractControl): {[key: string]: any} {
-    return phoneValidator()(control);                      
+    return phoneValidator()(control);
   }
 
 }

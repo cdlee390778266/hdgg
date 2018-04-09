@@ -14,7 +14,6 @@
   			<label nz-col [nzSpan]="6">手机号码</label>
   			<input nz-col [nzSpan]="18"  name="phone" [(ngModel)]="data.cphone" placeholder="请输入手机号码" required #phoneRef="ngModel" required="" hdPhone maxlength="11">
   		</div>
-      {{phoneRef.errors | json}}
       <nz-alert [nzType]="'error'" nzCloseable
         [nzDescription]="'请输入正确的手机号码！'" [hidden]="phoneRef.valid || phoneRef.pristine"></nz-alert>
       <div class="hd-form-group" nz-row>

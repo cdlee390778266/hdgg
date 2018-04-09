@@ -6,6 +6,7 @@ import { HdStateService } from '../../../service/hd.state.service';
 import { HttpService } from '../../../service/http.service'
 import { NzModalService } from 'ng-zorro-antd';
 import { CONFIG } from '../../../config';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'hd-mail-list',
@@ -15,10 +16,11 @@ import { CONFIG } from '../../../config';
 })
 export class MailListComponent implements OnInit, OnDestroy {
 
-  constructor(private httpService: HttpService, private hdStateService: HdStateService , private nzModalService: NzModalService) { }
+  constructor(private httpService: HttpService, private hdStateService: HdStateService , private nzModalService: NzModalService, private route: ActivatedRoute) { }
 
   public data: Person[];
   public hdState: HdStateInterface;
+  public selectId: string;
 
   showModal(item) {
     var that = this;
@@ -40,6 +42,7 @@ export class MailListComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    this.selectId = this.route.snapshot.paramMap.get('id');
   	this.httpService.get('/assets/data/maillist/maillist.json')
       .subscribe(res => {
         this.hdStateService.getHdStateObservable(hdState => {

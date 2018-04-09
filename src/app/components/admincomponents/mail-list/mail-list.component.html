@@ -4,7 +4,7 @@
   </nz-header>
   <nz-content>
   	<div class="list">
-		<div  class="list-item oh" nz-row *ngFor="let item of data" [@shrinkOut]>
+		<div  class="list-item oh" [class.isSelected]="item.cid == selectId" nz-row *ngFor="let item of data" [@shrinkOut]>
 			<a routerLink="/admin/mail/{{item.cid}}" nz-col [nzSpan]="20">
 				<span>{{item.cname}}</span>
 				<span class="tr c999 fr">{{item.cphone}}</span>

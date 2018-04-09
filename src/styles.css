@@ -176,6 +176,9 @@ nz-content {
 .list .list-item:first-child {
     border-top: 1px solid #d7d7d7;
 }
+.list .list-item.isSelected {
+    background: #ddd;
+}
 .list .list-title {
     font-size: 1.6rem;
     color: #333;
@@ -349,4 +352,7 @@ nz-content {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+}
+.hd-login .ant-alert-error {
+    border-top-color: transparent;
 }
