@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AuthGuard } from '../service/auth-guard.service';
+import { AuthGuard } from '../../service/auth-guard.service';
 
-import { LoginComponent } from '../components/authcomponents/login/login.component';
-import { RegisterComponent } from '../components/authcomponents/register/register.component';
-import { GetpwdComponent } from '../components/authcomponents/getpwd/getpwd.component';
-import { SetpwdComponent } from '../components//authcomponents/setpwd/setpwd.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { GetpwdComponent } from './getpwd/getpwd.component';
+import { SetpwdComponent } from './setpwd/setpwd.component';
 
 const routes: Routes = [
   {
-    path: 'auth',
+    path: '',
     canActivate: [AuthGuard],
     children: [
       {

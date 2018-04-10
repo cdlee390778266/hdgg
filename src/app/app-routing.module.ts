@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { HomeComponent } from '../components/appcomponents/home/home.component';
-import { PEComponent } from '../components/appcomponents/pe/pe.component';
+import { HomeComponent } from './modules/appModule/home/home.component'
+import { PEComponent } from './modules/appModule/pe/pe.component';
 
 const routes: Routes = [
   {
@@ -19,10 +19,14 @@ const routes: Routes = [
       title: '广告体验'
     }
   },
-  // {
-  //   path: 'auth',
-  //   loadChildren: 'app/auth.module#AuthModule'
-  // },
+  {
+    path: 'auth',
+    loadChildren: 'app/modules/authModule/auth.module#AuthModule'
+  },
+  {
+    path: 'admin',
+    loadChildren: 'app/modules/adminModule/admin.module#AdminModule'
+  },
   {
     path: '**',
     component: HomeComponent,

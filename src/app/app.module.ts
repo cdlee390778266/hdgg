@@ -7,14 +7,11 @@ import { HdStateService } from './service/hd.state.service';
 import { AuthService } from './service/auth.service';
 
 import { SharedModule } from './modules/sharedModule/shared.module';
-import { AuthModule } from './auth.module';
-import { AdminModule } from './admin.module';
-
-import { AppRoutingModule } from './router/app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './components/appcomponents/home/home.component';
-import { PEComponent } from './components/appcomponents/pe/pe.component';
+import { HomeComponent } from './modules/appModule/home/home.component'
+import { PEComponent } from './modules/appModule/pe/pe.component';
 
 @NgModule({
   declarations: [
@@ -25,8 +22,6 @@ import { PEComponent } from './components/appcomponents/pe/pe.component';
   imports: [
     BrowserModule,
     SharedModule,
-    AuthModule,
-    AdminModule,
     AppRoutingModule,
     StoreModule.forRoot({ reducer: reducer }) 
   ],
