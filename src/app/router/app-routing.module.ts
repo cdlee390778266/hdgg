@@ -19,6 +19,10 @@ const routes: Routes = [
       title: '广告体验'
     }
   },
+  // {
+  //   path: 'auth',
+  //   loadChildren: 'app/auth.module#AuthModule'
+  // },
   {
     path: '**',
     component: HomeComponent,

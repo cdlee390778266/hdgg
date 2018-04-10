@@ -1,0 +1,17 @@
+.hd-nav-bar {
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+    padding: 0 10px;
+    background: #3e9bd5;
+}
+.hd-nav-bar a {
+    color: #fff;
+    font-size: 30px;
+}
+.goBack {
+    font-size: 20px;
+}
+.nav-right-btn {
+	font-size: 20px !important;
+}

@@ -1,16 +1,7 @@
 import { NgModule } from '@angular/core';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
 
-import { StoreModule } from '@ngrx/store';
-import { reducer } from './ngrx/reducer';
-import { HttpService } from './service/http.service';
-import { HdStateService } from './service/hd.state.service';
+import { SharedModule } from './modules/sharedModule/shared.module';
 import { AdminRoutingModule } from './router/admin-routing.module';
-
-import { FootComponent } from './components/common/foot/foot.component';
-import { NavBarComponent } from './components/common/nav-bar/nav-bar.component';
 
 import { UserComponent } from './components/admincomponents/user/user.component';
 import { UpdateSingleComponent } from './components/admincomponents/update-single/update-single.component';
@@ -37,14 +28,9 @@ import { OrderdComponent } from './components/admincomponents/orderd/orderd.comp
 import { OrderlistComponent } from './components/admincomponents/orderlist/orderlist.component';
 import { RecordComponent } from './components/admincomponents/record/record.component';
 import { MailComponent } from './components/admincomponents/mail/mail.component';
-import { EmailDirective } from './Directives/email.directive';
-import { PhoneDirective } from './directives/phone.directive';
 
 @NgModule({
   declarations: [
-   
-    FootComponent,
-    NavBarComponent,
     UserComponent,
     UpdatepwdComponent,
     PayComponent,
@@ -69,17 +55,11 @@ import { PhoneDirective } from './directives/phone.directive';
     OrderlistComponent,
     UpdateSingleComponent,
     RecordComponent,
-    MailComponent,
-    EmailDirective,
-    PhoneDirective
+    MailComponent
   ],
   imports: [
-    FormsModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    AdminRoutingModule,
-    StoreModule.forRoot({ reducer: reducer }) 
-  ],
-  providers: [HttpService, HdStateService]
+    SharedModule,
+    AdminRoutingModule
+  ]
 })
 export class AdminModule { }
