@@ -8,7 +8,9 @@
     		<div nz-row class="list-item">
     			<div nz-col [nzSpan]="24" class="product-title">{{item.status}} <span>{{item.date}}</span> <span>{{item.time}}</span><i class="anticon anticon-delete fr" (click)="delete(item)"></i></div>
     			<div nz-col [nzSpan]="8">
-    				<a routerLink="/admin/orderd/{{item.pid}}"><img src="/assets/images/img1.png" alt="" class="img-responsive"></a>
+    				<a routerLink="/admin/orderd/{{item.pid}}">
+              <img [defaultImage]="defaultImg"  [lazyLoad]="'/assets/images/img1.png'" [offset]="1000" alt="" class="img-responsive">
+            </a>
     			</div>
     			<div nz-col [nzSpan]="16" class="product-dsc">
     				<h1>{{item.pname}}</h1>

@@ -23,6 +23,7 @@
     width: 80%;
     max-width: 100%;
     margin: 0 auto;
+    border-radius: 100%;
 }
 .lattices img:hover, .lattices a.active img {
     transition: all .4s;

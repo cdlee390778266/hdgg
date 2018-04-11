@@ -18,6 +18,7 @@ export class AdUploadComponent implements OnInit, OnDestroy {
 
   public data = [];
   public hdState: HdStateInterface;
+  public defaultImage: string = CONFIG.defaultImgUrl;
 
   showModal(item) {
     var that = this;

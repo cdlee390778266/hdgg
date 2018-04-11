@@ -26,6 +26,7 @@ export class ViewComponent implements OnInit, OnDestroy {
   public uid: number;
   public level: number;
   public record: number;
+  public defaultImg: string = CONFIG.defaultImgUrl;
 
   loginOut() {
     for(let i = 0; i < DefaultUsers.length; i++) {

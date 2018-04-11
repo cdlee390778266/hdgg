@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import  { simAnim } from '../../../animations';
+import { simAnim } from '../../../animations';
 import { HttpService } from '../../../service/http.service';
+import { CONFIG } from '../../../config';
 
 @Component({
   selector: 'hd-pe',
@@ -23,6 +24,8 @@ export class PEComponent implements OnInit {
   }
 
   public url: string;
+
+  public defaultImg: string = CONFIG.defaultImgUrl;
 
   ngOnInit() {
     switch (this.route.snapshot.paramMap.get('id')) {

@@ -3,7 +3,7 @@
     <nz-content>
       <div *ngIf="pe.src">
         <div class="bgWhite">
-            <img [src]="pe.src" class="img-responsive" *ngIf="pe.src">
+            <img [defaultImage]="defaultImg"  [lazyLoad]="pe.src" [offset]="100" class="img-responsive" *ngIf="pe.src">
             <div class="bgWhite mt20 mb20 lrSpace" *ngIf="pe.dsc">{{pe.dsc}}</div>
             <nz-collapseset [nzBordered]="false" *ngIf="pe.dsc">
               <nz-collapse  [nzTitle]="'查看更多'">

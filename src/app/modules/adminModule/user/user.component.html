@@ -36,22 +36,22 @@
        <span nz-col [nzSpan]="24">账号绑定</span>
      </div>
      <a routerLink="/admin/updatesingle" [queryParams]="{'title': 'QQ绑定', 'keyName': 'qqAccount', 'inputText': 'QQ账号'}" class="list-item" nz-row>
-       <span nz-col [nzSpan]="6"><img src="/assets/images/icon14.png" alt=""><strong>QQ</strong></span>
+       <span nz-col [nzSpan]="6"><img [defaultImage]="defaultImg"  [lazyLoad]="'/assets/images/icon14.png'" [offset]="1000" alt=""><strong>QQ</strong></span>
        <span nz-col [nzSpan]="16" class="tr blue">{{hdState?.qqAccount ? '已绑定' : '未绑定'}}</span>
        <i nz-col [nzSpan]="2" class="anticon anticon-right"></i>
      </a>
      <a routerLink="/admin/updatesingle" [queryParams]="{'title': '微信绑定', 'keyName': 'wxAccount', 'inputText': '微信账号'}" class="list-item" nz-row>
-       <span nz-col [nzSpan]="6"><img src="/assets/images/icon13.png" alt=""><strong>微信</strong></span>
+       <span nz-col [nzSpan]="6"><img [defaultImage]="defaultImg"  [lazyLoad]="'/assets/images/icon13.png'" [offset]="1000" alt=""><strong>微信</strong></span>
        <span nz-col [nzSpan]="16" class="tr blue">{{hdState?.wxAccount ? '已绑定' : '未绑定'}}</span>
        <i nz-col [nzSpan]="2" class="anticon anticon-right"></i>
      </a>
      <a routerLink="/admin/updatesingle" [queryParams]="{'title': '陌陌绑定', 'keyName': 'mmAccount', 'inputText': '陌陌账号'}" class="list-item" nz-row>
-       <span nz-col [nzSpan]="6"><img src="/assets/images/icon12.png" alt=""><strong>陌陌</strong></span>
+       <span nz-col [nzSpan]="6"><img [defaultImage]="defaultImg"  [lazyLoad]="'/assets/images/icon12.png'" [offset]="1000" alt=""><strong>陌陌</strong></span>
        <span nz-col [nzSpan]="16" class="tr blue">{{hdState?.mmAccount ? '已绑定' : '未绑定'}}</span>
        <i nz-col [nzSpan]="2" class="anticon anticon-right"></i>
      </a>
      <a routerLink="/admin/updatesingle" [queryParams]="{'title': '微博绑定', 'keyName': 'wbAccount', 'inputText': '微博账号'}" class="list-item" nz-row>
-       <span nz-col [nzSpan]="6"><img src="/assets/images/icon11.png" alt=""><strong>微博</strong></span>
+       <span nz-col [nzSpan]="6"><img [defaultImage]="defaultImg"  [lazyLoad]="'/assets/images/icon11.png'" [offset]="1000" alt=""><strong>微博</strong></span>
        <span nz-col [nzSpan]="16" class="tr blue">{{hdState?.wbAccount ? '已绑定' : '未绑定'}}</span>
        <i nz-col [nzSpan]="2" class="anticon anticon-right"></i>
      </a>

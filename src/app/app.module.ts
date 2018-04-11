@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { Router } from '@angular/router';
+
 import { reducer } from './ngrx/reducer';
 import { HttpService } from './service/http.service';
 import { HdStateService } from './service/hd.state.service';
@@ -21,11 +24,16 @@ import { PEComponent } from './modules/appModule/pe/pe.component';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     SharedModule,
     AppRoutingModule,
-    StoreModule.forRoot({ reducer: reducer }) 
+    StoreModule.forRoot({ reducer: reducer })
   ],
   providers: [HttpService, HdStateService, AuthService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  // constructor(router: Router) {
+  //   console.log('Routes: ', JSON.stringify(router.config, undefined, 2));
+  // }
+}

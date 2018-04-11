@@ -1,18 +1,21 @@
 <nz-layout [@simAnim]="'flyIn'">
   <nz-header class="home-head">
     <div nz-row>
-        <div nz-col [nzSpan]="4" [nzOffset]="'20'" *ngIf="isShowTopLink"><a [routerLink]="topLink.href">{{topLink.text}}</a></div>
+        <div nz-col [nzSpan]="4" [nzOffset]="'20'" *ngIf="isShowTopLink"><a [routerLink]="topLink.href" >{{topLink.text}}</a></div>
     </div>
   </nz-header>
   <nz-content>
     <!-- 轮播图 -->
     <nz-carousel *ngIf="banners.length">
-        <div nz-carousel-content *ngFor="let banner of banners"><img [src]="banner.imgSrc" alt=""  class="img-responsive"/></div>
+        <div nz-carousel-content *ngFor="let banner of banners">
+          <img [defaultImage]="defaultImg"  [lazyLoad]="banner.imgSrc" [offset]="1000" alt=""  class="img-responsive"/>
+
+        </div>
     </nz-carousel>
     <!-- 九宫格 -->
     <div nz-row class="lattices"  *ngIf="lattices.length">
         <div nz-col [nzSpan]="6" *ngFor="let lattice of lattices; let i=index;">
-            <a [routerLink]="['/pe', i]" ><img [src]="lattice.imgSrc"  alt=""  />{{lattice.text}}</a>
+            <a [routerLink]="['/pe', i]" ><img [defaultImage]="defaultImg"  [lazyLoad]="lattice.imgSrc" [offset]="1000" alt=""  />{{lattice.text}}</a>
         </div>
     </div>
     <!-- 文章 -->

@@ -7,7 +7,9 @@
   		<div nz-col [nzSpan]="12" class="ad oh" *ngFor="let item of data" [@shrinkhwOut]>
   			<div class="close" (click)="showModal(item)"><i class="anticon anticon-delete"></i></div>
   			<div class="bgWhite">
-	  			<a class="ad-img" routerLink="/admin/adadd/{{item?.adid}}" [ngStyle]="{'background-image': 'url(' + (item.imgsrc ? item.imgsrc : item.banners[0].thumbUrl) +')'}"></a>
+	  			<a routerLink="/admin/adadd/{{item?.adid}}" >
+            <div [defaultImage]="defaultImage" [lazyLoad]="item.imgsrc ? item.imgsrc : item.banners[0].thumbUrl" [offset]="1000" class="ad-img"></div>    
+          </a>
 	  			<div class="ad-text">
 	  				<h1 class="ellipsis">{{item.title}}</h1>
 	  				<p>{{item.dsc}}</p>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { simAnim } from '../../../animations';
 import { HdStateInterface } from '../../../class/hd.state.interface';
 import { HdStateService } from '../../../service/hd.state.service';
+import { CONFIG } from '../../../config';
 
 @Component({
   selector: 'hd-user',
@@ -22,6 +23,8 @@ export class UserComponent implements OnInit {
   public mmAccount: string;
 
   public wbAccount: string;
+
+  public defaultImg: string = CONFIG.defaultImgUrl;
 
   ngOnInit() {
   	this.hdStateService.getHdStateObservable()

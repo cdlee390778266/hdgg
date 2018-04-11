@@ -30,5 +30,6 @@ export const CONFIG = {
 	},
 	cookiesName: 'hdUserId',
 	storageName: 'hdStates',
-	host: ''
+	host: '',
+	defaultImgUrl: 'assets/images/default.gif'
 }

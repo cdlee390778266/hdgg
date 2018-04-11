@@ -17,6 +17,7 @@ export class TeamComponent implements OnInit {
   constructor(private httpService: HttpService, private nzModalService: NzModalService, private hdStateService: HdStateService) { }
 
   public hdState: HdStateInterface;
+  public defaultImg: string = CONFIG.defaultImgUrl;
 
   apply() {
     this.httpService.get('/assets/data/login/login.json')

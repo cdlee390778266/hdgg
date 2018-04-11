@@ -18,6 +18,7 @@ export class OrderlistComponent implements OnInit, OnDestroy {
 
   public data = [];
   public hdState: HdStateInterface;
+  public defaultImg: string = CONFIG.defaultImgUrl;
 
   delete(item) {
   	var that = this;

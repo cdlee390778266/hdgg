@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
+import { LazyLoadImageModule } from 'ng-lazyload-image';
 
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FootComponent } from './foot/foot.component';
@@ -16,8 +16,8 @@ import { PhoneDirective } from '../../Directives/phone.directive';
     CommonModule,
     FormsModule,
     HttpClientModule,
-    BrowserAnimationsModule,
-    NgZorroAntdModule.forRoot()
+    NgZorroAntdModule.forRoot(),
+    LazyLoadImageModule
   ],
   declarations: [
   	NavBarComponent,
@@ -30,7 +30,7 @@ import { PhoneDirective } from '../../Directives/phone.directive';
     FormsModule,
     HttpClientModule,
     NgZorroAntdModule,
-    BrowserAnimationsModule,
+    LazyLoadImageModule,
     NavBarComponent,
     FootComponent,
     EmailDirective,

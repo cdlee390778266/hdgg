@@ -14,7 +14,7 @@ export function get_cookie(name: string) {
 }
 
 export function delete_cookie(name: string) {
-    this.set_cookie(name, '', -1);
+    set_cookie(name, '', -1);
 }
 
 export function set_cookie(name: string, value: string, expireDays: number, path: string = '') {

@@ -3,6 +3,7 @@ import { simAnim } from '../../../animations';
 import { HttpService } from '../../../service/http.service';
 import { HdStateService } from '../../../service/hd.state.service';
 import { Subscription } from 'rxjs/Subscription';
+import { CONFIG } from '../../../config';
 
 @Component({
   selector: 'app-home',
@@ -25,6 +26,8 @@ export class HomeComponent implements OnInit, OnDestroy {
   public sub: Subscription;
 
   public topLink: Object = { text: '登录', href: '/auth/login'};
+
+  public defaultImg: string = CONFIG.defaultImgUrl;
 
   ngOnInit() {
     this.sub = this.getHdStateService.getHdStateObservable()

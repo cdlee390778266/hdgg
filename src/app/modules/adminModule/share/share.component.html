@@ -4,7 +4,7 @@
   </nz-header>
   <nz-content>
   	<div class="bgWhite lrSpace tbSpace">
-  		<img src="/assets/images/wx.png" alt="" class="img-responsive">
+  		<img [defaultImage]="defaultImg"  [lazyLoad]="'/assets/images/wx.png'" [offset]="1000" alt="" class="img-responsive">
   		<p class="mt20">这是您个人专属的二维码，任何情况扫码注册都将正价您的团队成员。</p>
   	</div>
 
@@ -14,24 +14,24 @@
         <h1 class="tcenter">分享</h1>
         <div nz-row>
           <div nz-col [nzSpan]="8">
-            <a routerLink="/home"><img src="/assets/images/icon5.png"  alt="" />微信好友</a>
+            <a routerLink="/home"><img [defaultImage]="defaultImg"  [lazyLoad]="'/assets/images/icon5.png'" [offset]="1000" alt="" />微信好友</a>
           </div>
           <div nz-col [nzSpan]="8">
-            <a routerLink="/home"><img src="/assets/images/icon6.png"  alt="" />QQ</a>
+            <a routerLink="/home"><img [defaultImage]="defaultImg"  [lazyLoad]="'/assets/images/icon6.png'" [offset]="1000"  alt="" />QQ</a>
           </div>
           <div nz-col [nzSpan]="8">
-            <a routerLink="/home"><img src="/assets/images/icon7.png"  alt="" />微信朋友圈</a>
+            <a routerLink="/home"><img [defaultImage]="defaultImg"  [lazyLoad]="'/assets/images/icon7.png'" [offset]="1000"  alt="" />微信朋友圈</a>
           </div>
         </div>
         <div nz-row>
           <div nz-col [nzSpan]="8">
-            <a routerLink="/home"><img src="/assets/images/icon8.png"  alt="" />QQ空间</a>
+            <a routerLink="/home"><img [defaultImage]="defaultImg"  [lazyLoad]="'/assets/images/icon8.png'" [offset]="1000"  alt="" />QQ空间</a>
           </div>
           <div nz-col [nzSpan]="8">
-            <a routerLink="/home"><img src="/assets/images/icon9.png"  alt="" />新浪微博</a>
+            <a routerLink="/home"><img [defaultImage]="defaultImg"  [lazyLoad]="'/assets/images/icon9.png'" [offset]="1000"  alt="" />新浪微博</a>
           </div>
           <div nz-col [nzSpan]="8">
-            <a routerLink="/home"><img src="/assets/images/icon10.png"  alt="" />短信</a>
+            <a routerLink="/home"><img [defaultImage]="defaultImg"  [lazyLoad]="'/assets/images/icon10.png'" [offset]="1000"  alt="" />短信</a>
           </div>
         </div>
         <div nz-row class="share-cancel" (click)="close()">

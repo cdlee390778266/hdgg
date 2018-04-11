@@ -4,7 +4,7 @@
   </nz-header>
   <nz-content>
   	<div class="top">
-  		<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523088944456&di=2ebaad5c1d895282b63f4165d369cbcb&imgtype=0&src=http%3A%2F%2Fnews.hainan.net%2FEditor%2Fimg%2F201709%2F20170928%2Fbig%2F20170928092834371_4920128.jpg" alt="" class="img-responsive">
+  		<img [defaultImage]="defaultImg"  [lazyLoad]="'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523088944456&di=2ebaad5c1d895282b63f4165d369cbcb&imgtype=0&src=http%3A%2F%2Fnews.hainan.net%2FEditor%2Fimg%2F201709%2F20170928%2Fbig%2F20170928092834371_4920128.jpg'" [offset]="1000" alt="" class="img-responsive">
   		<div class="top-title">{{nname || name}}</div>
   		<div class="top-nav" nz-row>
   			<span nz-col [nzSpan]="8">等级<i>{{level}}级</i></span>
@@ -14,27 +14,27 @@
   	</div>
   	<div class="list">
 		<a routerLink="/admin/team" class="list-item" nz-row>
-			<span nz-col [nzSpan]="10"><img src="/assets/images/icon15.png" alt=""><strong>团队信息</strong></span>
+			<span nz-col [nzSpan]="10"><img [defaultImage]="defaultImg"  [lazyLoad]="'/assets/images/icon15.png'" [offset]="1000" alt=""><strong>团队信息</strong></span>
 			<span nz-col [nzSpan]="12" class="tr blue"></span>
 			<i nz-col [nzSpan]="2" class="anticon anticon-right"></i>
 		</a>
 		<a routerLink="/admin/upgrade" class="list-item" nz-row>
-			<span nz-col [nzSpan]="10"><img src="/assets/images/icon16.png" alt=""><strong>我要升级</strong></span>
+			<span nz-col [nzSpan]="10"><img [defaultImage]="defaultImg"  [lazyLoad]="'/assets/images/icon16.png'" [offset]="1000" alt=""><strong>我要升级</strong></span>
 			<span nz-col [nzSpan]="12" class="tr blue"></span>
 			<i nz-col [nzSpan]="2" class="anticon anticon-right"></i>
 		</a>
 		<a routerLink="/admin/applylist/{{uid}}" class="list-item" nz-row>
-			<span nz-col [nzSpan]="10"><img src="/assets/images/icon17.png" alt=""><strong>审核状态</strong></span>
+			<span nz-col [nzSpan]="10"><img [defaultImage]="defaultImg"  [lazyLoad]="'/assets/images/icon17.png'" [offset]="1000" alt=""><strong>审核状态</strong></span>
 			<span nz-col [nzSpan]="12" class="tr blue"></span>
 			<i nz-col [nzSpan]="2" class="anticon anticon-right"></i>
 		</a>
 		<a routerLink="/admin/orderlist/{{uid}}" class="list-item" nz-row>
-			<span nz-col [nzSpan]="10"><img src="/assets/images/icon18.png" alt=""><strong>我的订单</strong></span>
+			<span nz-col [nzSpan]="10"><img [defaultImage]="defaultImg"  [lazyLoad]="'/assets/images/icon18.png'" [offset]="1000" alt=""><strong>我的订单</strong></span>
 			<span nz-col [nzSpan]="12" class="tr blue"></span>
 			<i nz-col [nzSpan]="2" class="anticon anticon-right"></i>
 		</a>
 		<a routerLink="/admin/record" class="list-item" nz-row>
-			<span nz-col [nzSpan]="10"><img src="/assets/images/icon19.png" alt=""><strong>积分商城</strong></span>
+			<span nz-col [nzSpan]="10"><img [defaultImage]="defaultImg"  [lazyLoad]="'/assets/images/icon19.png'" [offset]="1000" alt=""><strong>积分商城</strong></span>
 			<span nz-col [nzSpan]="12" class="tr blue"></span>
 			<i nz-col [nzSpan]="2" class="anticon anticon-right"></i>
 		</a>
@@ -42,7 +42,7 @@
 			<span nz-col [nzSpan]="24">广告招商</span>
 		</div>
 		<a routerLink="/admin/agent" class="list-item" nz-row>
-			<span nz-col [nzSpan]="10"><img src="/assets/images/icon20.png" alt=""><strong>签约代理</strong></span>
+			<span nz-col [nzSpan]="10"><img [defaultImage]="defaultImg"  [lazyLoad]="'/assets/images/icon20.png'" [offset]="1000" alt=""><strong>签约代理</strong></span>
 			<span nz-col [nzSpan]="12" class="tr blue"></span>
 			<i nz-col [nzSpan]="2" class="anticon anticon-right"></i>
 		</a>
@@ -50,7 +50,7 @@
 			<span nz-col [nzSpan]="24">广告体验上传</span>
 		</div>
 		<a routerLink="/admin/adupload" class="list-item" nz-row>
-			<span nz-col [nzSpan]="10"><img src="/assets/images/icon23.png" alt=""><strong>我的广告</strong></span>
+			<span nz-col [nzSpan]="10"><img [defaultImage]="defaultImg"  [lazyLoad]="'/assets/images/icon23.png'" [offset]="1000" alt=""><strong>我的广告</strong></span>
 			<span nz-col [nzSpan]="12" class="tr blue"></span>
 			<i nz-col [nzSpan]="2" class="anticon anticon-right"></i>
 		</a>
@@ -58,12 +58,12 @@
 			<span nz-col [nzSpan]="24">我要分享</span>
 		</div>
 		<a routerLink="/admin/sm" class="list-item" nz-row>
-			<span nz-col [nzSpan]="10"><img src="/assets/images/icon21.png" alt=""><strong>短信分享</strong></span>
+			<span nz-col [nzSpan]="10"><img [defaultImage]="defaultImg"  [lazyLoad]="'/assets/images/icon21.png'" [offset]="1000" alt=""><strong>短信分享</strong></span>
 			<span nz-col [nzSpan]="12" class="tr blue"></span>
 			<i nz-col [nzSpan]="2" class="anticon anticon-right"></i>
 		</a>
 		<a routerLink="/admin/share" class="list-item" nz-row>
-			<span nz-col [nzSpan]="10"><img src="/assets/images/icon22.png" alt=""><strong>二维码分享</strong></span>
+			<span nz-col [nzSpan]="10"><img [defaultImage]="defaultImg"  [lazyLoad]="'/assets/images/icon22.png'" [offset]="1000" alt=""><strong>二维码分享</strong></span>
 			<span nz-col [nzSpan]="12" class="tr blue"></span>
 			<i nz-col [nzSpan]="2" class="anticon anticon-right"></i>
 		</a>
